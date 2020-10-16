@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "e e",
+    "e e"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:emerald",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:emerald_boots"
+  }
+}

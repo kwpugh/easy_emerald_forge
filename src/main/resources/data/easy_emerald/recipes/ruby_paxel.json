@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "abc",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "a": {
+      "item": "easy_emerald:ruby_axe"
+    },
+    "b": {
+      "item": "easy_emerald:ruby_shovel"
+    },
+    "c": {
+      "item": "easy_emerald:ruby_pickaxe"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:ruby_paxel"
+  }
+}

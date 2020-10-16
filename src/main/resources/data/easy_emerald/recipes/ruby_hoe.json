@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rr ",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "tag": "forge:gems/ruby"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:ruby_hoe"
+  }
+}

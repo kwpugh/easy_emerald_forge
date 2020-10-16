@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key": {
+    "r": {
+      "tag": "forge:gems/ruby"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:ruby_body"
+  }
+}

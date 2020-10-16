@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " g ",
+    "grg",
+    " g "
+  ],
+  "key": {
+    "r": {
+      "tag": "forge:gems/ruby"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:ruby_juju"
+  }
+}

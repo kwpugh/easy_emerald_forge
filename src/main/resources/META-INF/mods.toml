@@ -1,0 +1,33 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="[34,)" #mandatory (24 is current forge version)
+
+credits="Thanks to Udemy for great Java courses." #optional
+
+authors="kwpugh" #optional
+license="MIT"
+
+[[mods]] #mandatory
+modId="easy_emerald" #mandatory
+version="1.0.10" #mandatory
+displayName="Easy Emerald" #mandatory
+description='''
+Gear made from gems
+'''
+
+
+[[dependencies.ring_of_return]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[34,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+
+# Here's another dependency
+[[dependencies.ring_of_return]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3]"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "easy_emerald:emerald_sword"
+  },
+  "addition": {
+    "tag": "forge:gems/ruby"
+  },
+  "result": {
+    "item": "easy_emerald:ruby_sword"
+  }
+}

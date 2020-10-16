@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "acb",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "a": {
+    "item": "easy_emerald:emerald_axe"
+    },
+    "b": {
+    "item": "easy_emerald:emerald_pickaxe"
+    },
+    "c": {
+    "item": "easy_emerald:emerald_shovel"
+    },
+    "s": {
+      "item": "minecraft:stick",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:emerald_paxel"
+  }
+}

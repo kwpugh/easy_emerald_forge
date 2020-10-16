@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rb ",
+    "rs ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "easy_emerald:ruby_block"
+    },
+    "r": {
+      "tag": "forge:gems/ruby"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:ruby_treeaxe"
+  }
+}

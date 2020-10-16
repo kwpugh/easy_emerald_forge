@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eb ",
+    "es ",
+    " s "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:emerald"
+    },
+    "b": {
+      "item": "minecraft:emerald_block"
+    },
+    "s": {
+      "item": "minecraft:stick",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:emerald_treeaxe"
+  }
+}
