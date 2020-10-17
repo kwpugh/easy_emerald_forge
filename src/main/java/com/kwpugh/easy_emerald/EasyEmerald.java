@@ -44,8 +44,7 @@ public class EasyEmerald
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-   
-    
+     
     private void setup(final FMLCommonSetupEvent event)
     {
         logger.info("EasyEmerald common setup");

@@ -3,6 +3,7 @@ package com.kwpugh.easy_emerald.init;
 import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.items.EmeraldJuju;
 import com.kwpugh.easy_emerald.items.EmeraldPotato;
+import com.kwpugh.easy_emerald.items.RubyArmor;
 import com.kwpugh.easy_emerald.items.RubyJuju;
 import com.kwpugh.easy_emerald.items.RubyPotato;
 import com.kwpugh.easy_emerald.lists.ArmorMaterialList;
@@ -63,10 +64,10 @@ public class ItemInit
 	public static final RegistryObject<Item> RUBY_PAXEL = ITEMS.register("ruby_paxel", () -> new RubyPaxel(4, -3.0f, ToolMaterialList.RUBY, null, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_TREEAXE = ITEMS.register("ruby_treeaxe", () -> new RubyTreeAxe(ToolMaterialList.RUBY, 4, -3.0f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
 	
-	public static final RegistryObject<Item> ARMOR_RUBY_HEAD = ITEMS.register("ruby_head", () -> new ArmorItem(ArmorMaterialList.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> ARMOR_RUBY_BODY = ITEMS.register("ruby_body", () -> new ArmorItem(ArmorMaterialList.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> ARMOR_RUBY_LEGGINGS = ITEMS.register("ruby_leggings", () -> new ArmorItem(ArmorMaterialList.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> ARMOR_RUBY_BOOTS = ITEMS.register("ruby_boots", () -> new ArmorItem(ArmorMaterialList.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(EasyEmerald.easy_emerald_group)));	
+	public static final RegistryObject<Item> ARMOR_RUBY_HEAD = ITEMS.register("ruby_head", () -> new RubyArmor(ArmorMaterialList.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> ARMOR_RUBY_BODY = ITEMS.register("ruby_body", () -> new RubyArmor(ArmorMaterialList.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> ARMOR_RUBY_LEGGINGS = ITEMS.register("ruby_leggings", () -> new RubyArmor(ArmorMaterialList.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> ARMOR_RUBY_BOOTS = ITEMS.register("ruby_boots", () -> new RubyArmor(ArmorMaterialList.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(EasyEmerald.easy_emerald_group)));	
 	
 	public static final RegistryObject<Item> EMERALD_POTATO = ITEMS.register("emerald_potato", () -> new EmeraldPotato(new Item.Properties().food(FoodList.emerald_potato).group(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_POTATO = ITEMS.register("ruby_potato", () -> new RubyPotato(new Item.Properties().food(FoodList.ruby_potato).group(EasyEmerald.easy_emerald_group)));
