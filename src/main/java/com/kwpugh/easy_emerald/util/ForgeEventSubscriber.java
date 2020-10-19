@@ -1,10 +1,14 @@
 package com.kwpugh.easy_emerald.util;
 
 import com.kwpugh.easy_emerald.EasyEmerald;
+import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
+import net.minecraftforge.event.entity.living.LootingLevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -43,4 +47,37 @@ public final class ForgeEventSubscriber
             }
         } 
     }
-} 
+    
+    @SubscribeEvent
+    public static void extraLootingEvent(LootingLevelEvent event)
+    {    	
+    	if (event.getDamageSource().getTrueSource() instanceof PlayerEntity)
+        {
+    		PlayerEntity playerEntity = (PlayerEntity) event.getDamageSource().getTrueSource();
+			
+    		if (PlayerEquipUtil.isPlayerGotRubySwordInHand(playerEntity))
+            {
+                event.setLootingLevel(event.getLootingLevel()+9);
+            }
+        }
+    }
+    
+    @SubscribeEvent
+    public static void onKillingExpDropEvent(LivingExperienceDropEvent event)
+    {
+    	int killingExp = GeneralModConfig.KILLING_EXP.get();
+    	
+    	if (event.getAttackingPlayer() instanceof PlayerEntity && event.getEntityLiving()instanceof MobEntity)
+    	{
+    		PlayerEntity player = (PlayerEntity) event.getAttackingPlayer();
+    		
+    		if (PlayerEquipUtil.isPlayerGotRubySwordInHand(player))
+    		{
+    			int orgExp = event.getOriginalExperience();
+    			int newExp = orgExp * killingExp;
+    			event.setDroppedExperience(newExp);
+    		} 
+    	}
+    }
+}
+ 

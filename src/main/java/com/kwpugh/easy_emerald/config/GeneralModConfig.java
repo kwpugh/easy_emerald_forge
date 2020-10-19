@@ -8,6 +8,7 @@ public class GeneralModConfig
 	public static ForgeConfigSpec.IntValue ATTACK_DAMAGE_ADDITION;
 	public static ForgeConfigSpec.IntValue TOOL_EFFICIENCY;
 	public static ForgeConfigSpec.IntValue ARMOR_DURABILITY_ADDITION;
+	public static ForgeConfigSpec.IntValue KILLING_EXP;
 	
     public static void init(ForgeConfigSpec.Builder SERVER_BUILDER)
     {          	
@@ -17,6 +18,7 @@ public class GeneralModConfig
         ATTACK_DAMAGE_ADDITION = SERVER_BUILDER.comment("Attack damage addtion [1-40, default: 3]").defineInRange("attackDamageAddition", 3, 0, 40);
         TOOL_EFFICIENCY = SERVER_BUILDER.comment("Tool efficiency [1-16, default: 7]").defineInRange("toolEfficiency", 7, 0, 16);
         ARMOR_DURABILITY_ADDITION = SERVER_BUILDER.comment("Armor durability addition [1-50, default: 25]").defineInRange("armorDurabilityAddition", 25, 0, 50);
+        KILLING_EXP = SERVER_BUILDER.comment("Extra Killing Exp [1-50, default: 25]").defineInRange("extraKillingExp", 25, 0, 50);
         
         SERVER_BUILDER.pop();
     }

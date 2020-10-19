@@ -72,4 +72,16 @@ public final class PlayerEquipUtil
       		
         return false;
     }
+    
+    public static boolean isPlayerGotRubySwordInHand(PlayerEntity player)
+    { 	    
+    	ItemStack mainHand = player.getHeldItemMainhand();
+    	
+    	if(mainHand.getItem() == ItemInit.RUBY_SWORD.get())
+      	{
+      		return true;  		
+      	} 
+		
+        return false;
+    }
 } 
