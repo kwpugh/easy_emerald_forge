@@ -2,6 +2,7 @@ package com.kwpugh.easy_emerald.lists;
 
 import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
+import com.kwpugh.easy_emerald.init.ItemInit;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
@@ -16,7 +17,9 @@ public enum ArmorMaterialList implements IArmorMaterial
 	//Armor order: helmet, leggings, chestplate, boots
 	EMERALD("emerald_", 1, new int[] {3, 6, 8, 3}, 15, Items.EMERALD, "entity.ender_wolf.growl", 0.0F, 0.0F),
 	
-	RUBY("ruby_", 5, new int[] {3, 6, 8, 3}, 15, Items.EMERALD, "entity.ender_wolf.growl", 0.5F, 0.1F);
+	RUBY("ruby_", 5, new int[] {3, 6, 8, 3}, 15, ItemInit.RUBY.get(), "entity.ender_wolf.growl", 0.5F, 0.1F),
+	
+	OBSIDIAN("obsidian", 1, new int[] {3, 6, 8, 3}, 15, Items.OBSIDIAN, "entity.ender_wolf.growl", 0.0F, 0.0F);
 	
 	private static final int[] max_damage_array = new int[]{13, 15, 16, 11};
 	

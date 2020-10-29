@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	[
+		" IS",
+		"I S",
+		" IS"
+	],
+	
+	"key":
+	{
+		"I": { "item": "minecraft:obsidian" },
+		"S": { "item": "minecraft:string" }	
+	},
+	
+	"result": { "item": "easy_emerald:obsidian_bow" }
+}

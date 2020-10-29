@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eb ",
+    "es ",
+    " s "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:obsidian"
+    },
+    "b": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "s": {
+      "item": "minecraft:stick",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:obsidian_treeaxe"
+  }
+}

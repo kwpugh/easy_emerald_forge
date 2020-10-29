@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rr ",
+    "rs ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:obsidian_axe"
+  }
+}

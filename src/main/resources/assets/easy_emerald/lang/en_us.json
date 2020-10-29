@@ -4,6 +4,7 @@
   "item.easy_emerald.paxel.tip1": "A Pickaxe, Axe, & Shovel",
   
   "item.easy_emerald.emerald_sword": "Emerald Sword",
+  "item.easy_emerald.emerald_bow": "Emerald Bow",
   "item.easy_emerald.emerald_pickaxe": "Emerald Pickaxe",
   "item.easy_emerald.emerald_shovel": "Emerald Shovel",
   "item.easy_emerald.emerald_hoe": "Emerald Hoe",
@@ -20,6 +21,7 @@
 
    "item.easy_emerald.ruby": "Ruby",
    "item.easy_emerald.ruby_sword": "Ruby Sword",
+   "item.easy_emerald.ruby_bow": "Ruby Bow",
    "item.easy_emerald.ruby_pickaxe": "Ruby Pickaxe",
    "item.easy_emerald.ruby_axe": "Ruby Axe",
    "item.easy_emerald.ruby_shovel": "Ruby Shovel",
@@ -36,6 +38,22 @@
 	
    "item.easy_emerald.ruby_block": "Ruby Block",
    "block.easy_emerald.ruby_block": "Ruby Block",
+   
+   "item.easy_emerald.obsidian_sword": "Obsidian Sword",
+   "item.easy_emerald.obsidian_bow": "Obsidian Bow",
+   "item.easy_emerald.obsidian_pickaxe": "Obsidian Pickaxe",
+   "item.easy_emerald.obsidian_axe": "Obsidian Axe",
+   "item.easy_emerald.obsidian_shovel": "Obsidian Shovel",
+   "item.easy_emerald.obsidian_hoe": "Obsidian Hoe",
+   "item.easy_emerald.obsidian_excavator": "Obsidian Excavator",
+   "item.easy_emerald.obsidian_obsidian": "Obsidian Hammer",
+   "item.easy_emerald.obsidian_paxel": "Obsidian Paxel",
+   "item.easy_emerald.obsidian_treeaxe": "Obsidian TreeAxe",
+   
+   "item.easy_emerald.obsidian_head": "Obsidian Helmet",
+   "item.easy_emerald.obsidian_body": "Obsidian Chestplate",
+   "item.easy_emerald.obsidian_leggings": "Obsidian Leggings",
+   "item.easy_emerald.obsidian_boots": "Obsidian Boots",
    
    "item.easy_emerald.emerald_potato": "Emerald Potato of Health",
    "item.easy_emerald.ruby_potato": "Ruby Potato of Battle",

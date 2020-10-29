@@ -19,6 +19,9 @@ public enum ToolMaterialList implements IItemTier
     
     RUBY(1.0F, 1.0f, 150, 3, 25, () -> {
             return Ingredient.fromItems(ItemInit.RUBY.get());
+    }),
+    OBSIDIAN(0.0F, 0.0f, 75, 2, 18, () -> {
+        return Ingredient.fromItems(Items.OBSIDIAN);
     });
 
 	private float attackDamage;

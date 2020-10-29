@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	[
+		" IS",
+		"I S",
+		" IS"
+	],
+	
+	"key":
+	{
+		"I": { "tag": "forge:gems/ruby" },
+		"S": { "item": "minecraft:string" }	
+	},
+	
+	"result": { "item": "easy_emerald:ruby_bow" }
+}
