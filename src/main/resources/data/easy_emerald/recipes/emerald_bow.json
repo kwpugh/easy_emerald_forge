@@ -1,18 +1,12 @@
 {
-	"type": "minecraft:crafting_shaped",
-	
-	"pattern":
-	[
-		" IS",
-		"I S",
-		" IS"
-	],
-	
-	"key":
-	{
-		"I": { "item": "minecraft:emerald" },
-		"S": { "item": "minecraft:string" }	
-	},
-	
-	"result": { "item": "easy_emerald:emerald_bow" }
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:bow"
+  },
+  "addition": {
+    "item": "minecraft:emerald"
+  },
+  "result": {
+    "item": "easy_emerald:emerald_bow"
+  }
 }
