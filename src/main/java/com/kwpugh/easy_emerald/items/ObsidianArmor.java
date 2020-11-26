@@ -1,15 +1,13 @@
 package com.kwpugh.easy_emerald.items;
 
 import com.kwpugh.easy_emerald.init.ItemInit;
-import com.kwpugh.easy_emerald.util.PlayerSpecialAbilities;
- 
+
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.potion.Effects;
 import net.minecraft.world.World;
 
 public class ObsidianArmor extends ArmorItem
@@ -34,15 +32,15 @@ public class ObsidianArmor extends ArmorItem
 	    			legs.getItem() == ItemInit.ARMOR_OBSIDIAN_LEGGINGS.get() && 
 	    			feet.getItem() == ItemInit.ARMOR_OBSIDIAN_BOOTS.get())
 	    	{
-				player.removeActivePotionEffect(Effects.POISON);
+//				player.removeActivePotionEffect(Effects.POISON);
 	    	}	
 		    
 		    //Helmet
 		    if(head.getItem() == ItemInit.ARMOR_OBSIDIAN_HEAD.get())
 			{
-				int newfoodlevel = 1;
-				float newsatlevel = 0.25F;
-				PlayerSpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);	
+//				int newfoodlevel = 1;
+//				float newsatlevel = 0.25F;
+//				PlayerSpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);	
 			}
 			else
 			{

@@ -43,13 +43,13 @@ public final class PlayerEquipUtil
 	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
 	    
 	    //Full armor or Token
-    	if(		((head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
-    			chest.getItem() == ItemInit.ARMOR_RUBY_BODY.get() && 
-    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
-    			feet.getItem() == ItemInit.ARMOR_RUBY_BOOTS.get()))      )     
-	      	{
-	      		return true;  		
-	      	}
+//    	if(		((head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
+//    			chest.getItem() == ItemInit.ARMOR_RUBY_BODY.get() && 
+//    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
+//    			feet.getItem() == ItemInit.ARMOR_RUBY_BOOTS.get()))      )     
+//	      	{
+//	      		return true;  		
+//	      	}
       		
         return false;
     }
@@ -62,13 +62,13 @@ public final class PlayerEquipUtil
 	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
 	    
 	    //Full armor or Token
-    	if(		((head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
-    			chest.getItem() == ItemInit.ARMOR_RUBY_BODY.get() && 
-    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
-    			feet.getItem() == ItemInit.ARMOR_RUBY_BOOTS.get()))      )     
-	      	{
-	      		return true;  		
-	      	}
+//    	if(		((head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
+//    			chest.getItem() == ItemInit.ARMOR_RUBY_BODY.get() && 
+//    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
+//    			feet.getItem() == ItemInit.ARMOR_RUBY_BOOTS.get()))      )     
+//	      	{
+//	      		return true;  		
+//	      	}
       		
         return false;
     }

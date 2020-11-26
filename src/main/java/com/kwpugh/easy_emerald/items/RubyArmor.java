@@ -1,18 +1,12 @@
 package com.kwpugh.easy_emerald.items;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import com.kwpugh.easy_emerald.init.ItemInit;
-import com.kwpugh.easy_emerald.util.PlayerSpecialAbilities;
- 
+
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Effects;
 import net.minecraft.world.World;
 
 public class RubyArmor extends ArmorItem
@@ -37,15 +31,15 @@ public class RubyArmor extends ArmorItem
 	    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
 	    			feet.getItem() == ItemInit.ARMOR_RUBY_BOOTS.get())
 	    	{
-				player.removeActivePotionEffect(Effects.POISON);
+//				player.removeActivePotionEffect(Effects.POISON);
 	    	}	
 		    
 		    //Helmet
 		    if(head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get())
 			{
-				int newfoodlevel = 1;
-				float newsatlevel = 0.25F;
-				PlayerSpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);	
+//				int newfoodlevel = 1;
+//				float newsatlevel = 0.25F;
+//				PlayerSpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);	
 			}
 			else
 			{
