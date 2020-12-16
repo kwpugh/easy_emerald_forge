@@ -47,21 +47,27 @@ public final class ForgeEventSubscriber
             }
         } 
     }
-    
+
+    //Gives extra loot drops when killing a mob
     @SubscribeEvent
     public static void extraLootingEvent(LootingLevelEvent event)
     {    	
-    	if (event.getDamageSource().getTrueSource() instanceof PlayerEntity)
-        {
-    		PlayerEntity playerEntity = (PlayerEntity) event.getDamageSource().getTrueSource();
+    	if(event.getDamageSource() !=null && event.getDamageSource().getTrueSource() !=null)
+    	{	
+			if(event.getEntity() instanceof MobEntity && event.getDamageSource().getTrueSource() instanceof PlayerEntity)
+			{
+				PlayerEntity playerEntity = (PlayerEntity) event.getDamageSource().getTrueSource();
+				
+				if (PlayerEquipUtil.isPlayerGotRubySwordInHand(playerEntity))
+	            {
+	                event.setLootingLevel(event.getLootingLevel()+9);
+	            }
 			
-    		if (PlayerEquipUtil.isPlayerGotRubySwordInHand(playerEntity))
-            {
-                event.setLootingLevel(event.getLootingLevel()+9);
-            }
-        }
+			}
+    	} 	
     }
-    
+
+    //Gives greater XP when killing mobs that normally drop XP on death
     @SubscribeEvent
     public static void onKillingExpDropEvent(LivingExperienceDropEvent event)
     {

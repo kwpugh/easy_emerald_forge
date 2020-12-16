@@ -37,12 +37,12 @@ public final class PlayerEquipUtil
     
     public static boolean isPlayerGotFireProtection(PlayerEntity player)
     {
-    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-		ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
-	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
-	    
-	    //Full armor or Token
+//    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
+//		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
+//		ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
+//	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
+//	    
+//	    //Full armor or Token
 //    	if(		((head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
 //    			chest.getItem() == ItemInit.ARMOR_RUBY_BODY.get() && 
 //    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
@@ -56,12 +56,12 @@ public final class PlayerEquipUtil
     
     public static boolean isPlayerGotWaterBreathing(PlayerEntity player)
     {
-    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-		ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
-	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
-	    
-	    //Full armor or Token
+//    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
+//		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
+//		ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
+//	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
+//	    
+//	    //Full armor or Token
 //    	if(		((head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
 //    			chest.getItem() == ItemInit.ARMOR_RUBY_BODY.get() && 
 //    			legs.getItem() == ItemInit.ARMOR_RUBY_LEGGINGS.get() && 
