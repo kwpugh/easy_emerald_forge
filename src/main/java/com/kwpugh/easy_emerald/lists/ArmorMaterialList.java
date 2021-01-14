@@ -15,11 +15,11 @@ import net.minecraft.util.SoundEvent;
 public enum ArmorMaterialList implements IArmorMaterial
 {
 	//Armor order: helmet, leggings, chestplate, boots
-	EMERALD("emerald", 1, new int[] {3, 6, 8, 3}, 15, Items.EMERALD, "entity.ender_wolf.growl", 0.0F, 0.0F),
+	EMERALD("emerald", 1, new int[] {3, 6, 8, 3}, 15, Items.EMERALD, "item.armor.equip_diamond", 0.0F, 0.0F),
 	
-	RUBY("ruby", 5, new int[] {3, 6, 8, 3}, 15, ItemInit.RUBY.get(), "entity.ender_wolf.growl", 0.5F, 0.1F),
+	RUBY("ruby", 5, new int[] {3, 6, 8, 3}, 15, ItemInit.RUBY.get(), "item.armor.equip_diamond", 0.5F, 0.1F),
 	
-	OBSIDIAN("obsidian", 1, new int[] {3, 6, 8, 3}, 15, Items.OBSIDIAN, "entity.ender_wolf.growl", 0.0F, 0.0F);
+	OBSIDIAN("obsidian", 1, new int[] {3, 6, 8, 3}, 15, Items.OBSIDIAN, "item.armor.equip_iron", 0.0F, 0.0F);
 	
 	private static final int[] max_damage_array = new int[]{13, 15, 16, 11};
 	

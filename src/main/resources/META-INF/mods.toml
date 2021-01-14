@@ -1,6 +1,6 @@
 modLoader="javafml" #mandatory
 
-loaderVersion="[34,)" #mandatory (24 is current forge version)
+loaderVersion="[34,)" #mandatory (35 is current forge version)
 
 credits="Thanks to Udemy for great Java courses." #optional
 
@@ -9,7 +9,7 @@ license="MIT"
 
 [[mods]] #mandatory
 modId="easy_emerald" #mandatory
-version="1.0.19" #mandatory
+version="1.0.20" #mandatory
 displayName="Easy Emerald" #mandatory
 description='''
 Gear made from gems
