@@ -68,22 +68,22 @@ public final class ForgeEventSubscriber
     }
 
     //Gives greater XP when killing mobs that normally drop XP on death
-    @SubscribeEvent
-    public static void onKillingExpDropEvent(LivingExperienceDropEvent event)
-    {
-    	int killingExp = GeneralModConfig.KILLING_EXP.get();
-    	
-    	if (event.getAttackingPlayer() instanceof PlayerEntity && event.getEntityLiving()instanceof MobEntity)
-    	{
-    		PlayerEntity player = (PlayerEntity) event.getAttackingPlayer();
-    		
-    		if (PlayerEquipUtil.isPlayerGotRubySwordInHand(player))
-    		{
-    			int orgExp = event.getOriginalExperience();
-    			int newExp = orgExp * killingExp;
-    			event.setDroppedExperience(newExp);
-    		} 
-    	}
-    }
+//    @SubscribeEvent
+//    public static void onKillingExpDropEvent(LivingExperienceDropEvent event)
+//    {
+//    	//int killingExp = GeneralModConfig.KILLING_EXP.get();
+//    	
+//    	if (event.getAttackingPlayer() instanceof PlayerEntity && event.getEntityLiving()instanceof MobEntity)
+//    	{
+//    		PlayerEntity player = (PlayerEntity) event.getAttackingPlayer();
+//    		
+//    		if (PlayerEquipUtil.isPlayerGotRubySwordInHand(player))
+//    		{
+//    			int orgExp = event.getOriginalExperience();
+//    			int newExp = orgExp * killingExp;
+//    			event.setDroppedExperience(newExp);
+//    		} 
+//    	}
+//    }
 }
  
