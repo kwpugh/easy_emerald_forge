@@ -23,7 +23,7 @@ public class RubyToolMaterial implements IItemTier
 	@Override
 	public float getEfficiency()
 	{
-		return (float) rubyEfficiency;
+		return 6.5f;
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public class EmeraldToolMaterial implements IItemTier
 	@Override
 	public float getEfficiency()
 	{
-		return (float) emeraldEfficiency;
+		return 5.5f;
 	}
 
 	@Override

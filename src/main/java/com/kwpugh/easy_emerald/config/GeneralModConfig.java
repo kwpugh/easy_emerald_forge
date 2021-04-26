@@ -42,7 +42,7 @@ public class GeneralModConfig
         SERVER_BUILDER.comment("Emerald Tool Material").push("emerald_tool_material");
 
         EMERALD_TOOL_DURABILITY = SERVER_BUILDER.comment("Emerald Tool Durability [250-3000, default: 700]").defineInRange("emeraldToolDurability", 700, 250, 3000);
-        EMERALD_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Emerald Tool efficiency [1.0-7.0, default: 1.0]").defineInRange("emeraldToolEfficiency", 1.0, 0.0, 7.0);
+        EMERALD_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Emerald Tool efficiency [1.0-7.0, default: 1.0]").defineInRange("emeraldToolEfficiency", 5.5, 0.0, 7.0);
         EMERALD_TOOL_ATTACK = SERVER_BUILDER.comment("Emerald attack damage [1-40, default: 3.0]").defineInRange("emeraldAttackDamage", 3.0, 0.0, 40.0);
         EMERALD_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Emerald tool mining level [1-5, default: 2]").defineInRange("emeraldMiningLevel", 2, 1, 5);
         EMERALD_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Emerald tool enchantability [1-30, default: 21]").defineInRange("emeraldEnchantability", 21, 1, 30);
@@ -53,7 +53,7 @@ public class GeneralModConfig
         SERVER_BUILDER.comment("Ruby Tool Material").push("ruby_tool_material");
 
         RUBY_TOOL_DURABILITY = SERVER_BUILDER.comment("Ruby Tool Durability [250-3000, default: 1050]").defineInRange("emeraldToolDurability", 1050, 250, 3000);
-        RUBY_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Ruby Tool efficiency [1.0-7.0, default: 2.0]").defineInRange("emeraldToolEfficiency", 2.0, 0.0, 7.0);
+        RUBY_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Ruby Tool efficiency [1.0-7.0, default: 2.0]").defineInRange("emeraldToolEfficiency", 6.5, 0.0, 7.0);
         RUBY_TOOL_ATTACK = SERVER_BUILDER.comment("Ruby attack damage [1-40, default: 4.0]").defineInRange("emeraldAttackDamage", 4.0, 0.0, 40.0);
         RUBY_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Ruby tool mining level [1-5, default: 3]").defineInRange("emeraldMiningLevel", 3, 1, 5);
         RUBY_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Ruby tool enchantability [1-30, default: 25]").defineInRange("emeraldEnchantability", 25, 1, 30);
@@ -64,7 +64,7 @@ public class GeneralModConfig
         SERVER_BUILDER.comment("Obsidian Tool Material").push("obsidian_tool_material");
 
         OBSIDIAN_TOOL_DURABILITY = SERVER_BUILDER.comment("Obsidian Tool Durability [250-3000, default: 525]").defineInRange("emeraldToolDurability", 525, 250, 3000);
-        OBSIDIAN_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Obsidian Tool efficiency [1.0-7.0, default: 1.0]").defineInRange("emeraldToolEfficiency", 1.0, 0.0, 7.0);
+        OBSIDIAN_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Obsidian Tool efficiency [1.0-7.0, default: 1.0]").defineInRange("emeraldToolEfficiency", 5.5, 0.0, 7.0);
         OBSIDIAN_TOOL_ATTACK = SERVER_BUILDER.comment("Obsidian attack damage [1-40, default: 3.0]").defineInRange("emeraldAttackDamage", 3.0, 0.0, 40.0);
         OBSIDIAN_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Obsidian tool mining level [1-5, default: 3]").defineInRange("emeraldMiningLevel", 3, 1, 5);
         OBSIDIAN_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Obsidian tool enchantability [1-30, default: 18]").defineInRange("emeraldEnchantability", 18, 1, 30);

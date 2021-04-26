@@ -23,7 +23,7 @@ public class ObsidianToolMaterial implements IItemTier
 	@Override
 	public float getEfficiency()
 	{
-		return (float) obsidianEfficiency;
+		return 5.5f;
 	}
 
 	@Override
