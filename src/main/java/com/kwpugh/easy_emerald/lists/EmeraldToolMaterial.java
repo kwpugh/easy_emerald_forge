@@ -8,13 +8,12 @@ import net.minecraft.item.crafting.Ingredient;
 
 public class EmeraldToolMaterial implements IItemTier
 {
-
 	private int emeraldDurability = GeneralModConfig.EMERALD_TOOL_DURABILITY.get(); 
 	private double emeraldEfficiency = GeneralModConfig.EMERALD_TOOL_EFFICIENCY.get();
 	private double emeraldAttack = GeneralModConfig.EMERALD_TOOL_ATTACK.get();
 	private int emeraldMiningLevel = GeneralModConfig.EMERALD_TOOL_MINING_LEVEL.get();
 	private int emeraldEnchantability = GeneralModConfig.EMERALD_TOOL_ENCHANTABILITY.get();
-	
+    
 	@Override
 	public int getMaxUses()
 	{

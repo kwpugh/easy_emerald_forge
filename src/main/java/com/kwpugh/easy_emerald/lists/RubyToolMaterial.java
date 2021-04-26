@@ -8,7 +8,6 @@ import net.minecraft.item.crafting.Ingredient;
 
 public class RubyToolMaterial implements IItemTier
 {
-
 	private int rubyDurability = GeneralModConfig.RUBY_TOOL_DURABILITY.get();
 	private double rubyEfficiency = GeneralModConfig.RUBY_TOOL_EFFICIENCY.get();
 	private double rubyAttack = GeneralModConfig.RUBY_TOOL_ATTACK.get();

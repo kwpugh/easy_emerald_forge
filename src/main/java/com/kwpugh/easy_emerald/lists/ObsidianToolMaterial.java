@@ -8,7 +8,6 @@ import net.minecraft.item.crafting.Ingredient;
 
 public class ObsidianToolMaterial implements IItemTier
 {
-
 	private int obsidianDurability = GeneralModConfig.OBSIDIAN_TOOL_DURABILITY.get(); 
 	private double obsidianEfficiency = GeneralModConfig.OBSIDIAN_TOOL_EFFICIENCY.get();
 	private double obsidianAttack = GeneralModConfig.OBSIDIAN_TOOL_ATTACK.get();

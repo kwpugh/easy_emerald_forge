@@ -39,6 +39,7 @@ import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
+
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
@@ -61,7 +62,7 @@ public class ItemInit
 	public static final RegistryObject<Item> EMERALD_BOW = ITEMS.register("emerald_bow", () -> new EmeraldBow((new Item.Properties()).maxStackSize(1).group(EasyEmerald.easy_emerald_group).maxDamage(700)));
 	public static final RegistryObject<Item> EMERALD_PICKAXE = ITEMS.register("emerald_pickaxe", () -> new PickaxeItem(EMERALD_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> EMERALD_AXE = ITEMS.register("emerald_axe", () -> new AxeItem(EMERALD_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_SHOVEL = ITEMS.register("emerald_shovel", () -> new ShovelItem(EMERALD_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_SHOVEL = ITEMS.register("emerald_shovel", () -> new ShovelItem(EMERALD_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> EMERALD_HOE = ITEMS.register("emerald_hoe", () -> new HoeItem(EMERALD_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> EMERALD_EXCAVATOR = ITEMS.register("emerald_excavator", () -> new EmeraldExcavator(EMERALD_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> EMERALD_HAMMER = ITEMS.register("emerald_hammer", () -> new EmeraldHammer(EMERALD_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().group(EasyEmerald.easy_emerald_group)));
