@@ -1,0 +1,68 @@
+{
+  "item.easy_emerald.excavator.tip1": "Una Pala 3x3",
+  "item.easy_emerald.hammer.tip1": "Un Piccone 3x3",
+  "item.easy_emerald.paxel.tip1": "Un Piccone, Ascia & Pala",
+  
+  "item.easy_emerald.emerald_sword": "Spada di Smeraldo",
+  "item.easy_emerald.emerald_bow": "Arco di Smeraldo",
+  "item.easy_emerald.emerald_pickaxe": "Piccone di Smeraldo",
+  "item.easy_emerald.emerald_shovel": "Pala di Smeraldo",
+  "item.easy_emerald.emerald_hoe": "Zappa di Smeraldo",
+  "item.easy_emerald.emerald_axe": "Ascia di Smeraldo",
+  "item.easy_emerald.emerald_excavator": "Escavatore di Smeraldo",
+  "item.easy_emerald.emerald_hammer": "Martello di Smeraldo",
+  "item.easy_emerald.emerald_paxel": "Paxel di Smeraldo",
+  "item.easy_emerald.emerald_treeaxe": "Ascia per Alberi di Smeraldo",
+  
+  "item.easy_emerald.emerald_head": "Elmo di Smeraldo",
+  "item.easy_emerald.emerald_body": "Corazza di Smeraldo",
+  "item.easy_emerald.emerald_leggings": "Gambiere di Smeraldo",
+  "item.easy_emerald.emerald_boots": "Stivali di Smeraldo",
+
+   "item.easy_emerald.ruby": "Rubino",
+   "item.easy_emerald.ruby_sword": "Spada di Rubino",
+   "item.easy_emerald.ruby_bow": "Arco di Rubino",
+   "item.easy_emerald.ruby_pickaxe": "Piccone di Rubino",
+   "item.easy_emerald.ruby_axe": "Ascia di Rubino",
+   "item.easy_emerald.ruby_shovel": "Pala di Rubino",
+   "item.easy_emerald.ruby_hoe": "Zappa di Rubino",
+   "item.easy_emerald.ruby_excavator": "Escavatore di Rubino",
+   "item.easy_emerald.ruby_hammer": "Martello di Rubino",
+   "item.easy_emerald.ruby_paxel": "Paxel di Rubino",
+   "item.easy_emerald.ruby_treeaxe": "Ascia per Alberi di Rubino",
+
+   "item.easy_emerald.ruby_head": "Elmo di Rubino",
+   "item.easy_emerald.ruby_body": "Corazza di Rubino",
+   "item.easy_emerald.ruby_leggings": "Gambiere di Rubino",
+   "item.easy_emerald.ruby_boots": "Stivali di Rubino",
+	
+   "item.easy_emerald.ruby_block": "Blocco di Rubino",
+   "block.easy_emerald.ruby_block": "Blocco di Rubino",
+   
+   "item.easy_emerald.obsidian_sword": "Spada di Ossidiana",
+   "item.easy_emerald.obsidian_bow": "Arco di Ossidiana",
+   "item.easy_emerald.obsidian_pickaxe": "Piccone di Ossidiana",
+   "item.easy_emerald.obsidian_axe": "Ascia di Ossidiana",
+   "item.easy_emerald.obsidian_shovel": "Pala di Ossidiana",
+   "item.easy_emerald.obsidian_hoe": "Zappa di Ossidiana",
+   "item.easy_emerald.obsidian_excavator": "Escavatore di Ossidiana",
+   "item.easy_emerald.obsidian_hammer": "Martello di Ossidiana",
+   "item.easy_emerald.obsidian_paxel": "Paxel di Ossidiana",
+   "item.easy_emerald.obsidian_treeaxe": "Ascia per Alberi di Ossidiana",
+   
+   "item.easy_emerald.obsidian_head": "Elmo di Ossidiana",
+   "item.easy_emerald.obsidian_body": "Corazza di Ossidiana",
+   "item.easy_emerald.obsidian_leggings": "Gambiere di Ossidiana",
+   "item.easy_emerald.obsidian_boots": "Stivali di Ossidiana",
+   
+   "item.easy_emerald.emerald_potato": "Patata della Vita di Smeraldo",
+   "item.easy_emerald.ruby_potato": "Patata della Battaglia di Rubino",
+   
+   "item.easy_emerald.emerald_juju": "Juju di Smeraldo",
+   "item.easy_emerald.emerald_juju.line1": "Dà Respirazione Acquatica",
+
+   "item.easy_emerald.ruby_juju": "Juju di Rubino",
+   "item.easy_emerald.ruby_juju.line1": "Dà Resistenza dal Fuoco",
+      
+  "itemGroup.easy_emerald" : "Easy Emerald"
+}
