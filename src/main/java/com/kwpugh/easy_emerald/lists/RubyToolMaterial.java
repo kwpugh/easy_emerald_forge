@@ -3,10 +3,10 @@ package com.kwpugh.easy_emerald.lists;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 import com.kwpugh.easy_emerald.init.ItemInit;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
 
-public class RubyToolMaterial implements IItemTier
+public class RubyToolMaterial implements Tier
 {
 	private int rubyDurability = GeneralModConfig.RUBY_TOOL_DURABILITY.get();
 	private double rubyEfficiency = GeneralModConfig.RUBY_TOOL_EFFICIENCY.get();
@@ -15,39 +15,39 @@ public class RubyToolMaterial implements IItemTier
 	private int rubyEnchantability = GeneralModConfig.RUBY_TOOL_ENCHANTABILITY.get();
 	
 	@Override
-	public int getMaxUses()
+	public int getUses()
 	{
 		return rubyDurability;
 	}
 
 	@Override
-	public float getEfficiency()
+	public float getSpeed()
 	{
 		return 6.5f;
 	}
 
 	@Override
-	public float getAttackDamage()
+	public float getAttackDamageBonus()
 	{
 		return (float) rubyAttack;
 	}
 
 	@Override
-	public int getHarvestLevel()
+	public int getLevel()
 	{
 		return rubyMiningLevel;
 	}
 
 	@Override
-	public int getEnchantability()
+	public int getEnchantmentValue()
 	{
 		return rubyEnchantability;
 	}
 
 	@Override
-	public Ingredient getRepairMaterial()
+	public Ingredient getRepairIngredient()
 	{
-		return Ingredient.fromItems(ItemInit.RUBY.get());
+		return Ingredient.of(ItemInit.RUBY.get());
 	}
 
 }

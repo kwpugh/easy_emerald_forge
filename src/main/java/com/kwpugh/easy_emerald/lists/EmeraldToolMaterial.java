@@ -2,11 +2,11 @@ package com.kwpugh.easy_emerald.lists;
 
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 
-public class EmeraldToolMaterial implements IItemTier
+public class EmeraldToolMaterial implements Tier
 {
 	private int emeraldDurability = GeneralModConfig.EMERALD_TOOL_DURABILITY.get(); 
 	private double emeraldEfficiency = GeneralModConfig.EMERALD_TOOL_EFFICIENCY.get();
@@ -15,38 +15,38 @@ public class EmeraldToolMaterial implements IItemTier
 	private int emeraldEnchantability = GeneralModConfig.EMERALD_TOOL_ENCHANTABILITY.get();
     
 	@Override
-	public int getMaxUses()
+	public int getUses()
 	{
 		return emeraldDurability;
 	}
 
 	@Override
-	public float getEfficiency()
+	public float getSpeed()
 	{
 		return 5.5f;
 	}
 
 	@Override
-	public float getAttackDamage()
+	public float getAttackDamageBonus()
 	{
 		return (float) emeraldAttack;
 	}
 
 	@Override
-	public int getHarvestLevel()
+	public int getLevel()
 	{
 		return emeraldMiningLevel;
 	}
 
 	@Override
-	public int getEnchantability()
+	public int getEnchantmentValue()
 	{
 		return emeraldEnchantability;
 	}
 
 	@Override
-	public Ingredient getRepairMaterial()
+	public Ingredient getRepairIngredient()
 	{
-		return Ingredient.fromItems(Items.EMERALD);
+		return Ingredient.of(Items.EMERALD);
 	}
 }

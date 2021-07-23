@@ -4,13 +4,13 @@ import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 import com.kwpugh.easy_emerald.init.ItemInit;
 
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 
-public class RubyArmorMaterial implements IArmorMaterial
+public class RubyArmorMaterial implements ArmorMaterial
 {	
 	private static int durabilityMultiplier = GeneralModConfig.RUBY_ARMOR_DURABILITY_MULTIPLIER.get();
 	private static int enchantability = GeneralModConfig.RUBY_ARMOR_ENCHANTABILITY.get();	
@@ -21,33 +21,33 @@ public class RubyArmorMaterial implements IArmorMaterial
     private static final int[] PROTECTION_AMOUNT = new int[]{3, 6, 8, 3};
     
 	@Override
-	public int getDurability(EquipmentSlotType slot)
+	public int getDurabilityForSlot(EquipmentSlot slot)
 	{
 		return BASE_DURABILITY[slot.getIndex()] * durabilityMultiplier;
 	}
 
 	@Override
-	public int getDamageReductionAmount(EquipmentSlotType slot)
+	public int getDefenseForSlot(EquipmentSlot slot)
 	{
 		return PROTECTION_AMOUNT[slot.getIndex()];
 	}
 
 	@Override
-	public int getEnchantability()
+	public int getEnchantmentValue()
 	{
 		return enchantability;
 	}
 
 	@Override
-	public SoundEvent getSoundEvent()
+	public SoundEvent getEquipSound()
 	{
 		return new SoundEvent(new ResourceLocation("item.armor.equip_diamond"));
 	}
 
 	@Override
-	public Ingredient getRepairMaterial()
+	public Ingredient getRepairIngredient()
 	{
-		return Ingredient.fromItems(ItemInit.RUBY.get());
+		return Ingredient.of(ItemInit.RUBY.get());
 	}
 
 	@Override

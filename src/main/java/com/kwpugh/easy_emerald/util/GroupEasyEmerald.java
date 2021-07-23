@@ -1,10 +1,10 @@
 package com.kwpugh.easy_emerald.util;
 
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
-public class GroupEasyEmerald extends ItemGroup
+public class GroupEasyEmerald extends CreativeModeTab
 {
 	public GroupEasyEmerald() 
 	{
@@ -12,7 +12,7 @@ public class GroupEasyEmerald extends ItemGroup
 	}
 
 	@Override
-	public ItemStack createIcon() 
+	public ItemStack makeIcon() 
 	{
 		return new ItemStack(Items.EMERALD);
 	}	

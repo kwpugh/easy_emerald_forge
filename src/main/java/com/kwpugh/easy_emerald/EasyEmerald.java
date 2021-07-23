@@ -2,6 +2,8 @@ package com.kwpugh.easy_emerald;
 
 import java.util.stream.Collectors;
 
+import com.kwpugh.easy_emerald.init.TagInit;
+import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,7 +12,7 @@ import com.kwpugh.easy_emerald.init.BlockInit;
 import com.kwpugh.easy_emerald.init.ItemInit;
 import com.kwpugh.easy_emerald.util.GroupEasyEmerald;
 
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -19,7 +21,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 
@@ -28,7 +29,7 @@ public class EasyEmerald
 {
 	public static final String modid = "easy_emerald";
 	public static final Logger logger = LogManager.getLogger(modid);
-	public static final ItemGroup easy_emerald_group = new GroupEasyEmerald();
+	public static final CreativeModeTab easy_emerald_group = new GroupEasyEmerald();
 
     public EasyEmerald()
     {

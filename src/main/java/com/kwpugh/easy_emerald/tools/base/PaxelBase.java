@@ -13,36 +13,40 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.item.ToolItem;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import com.kwpugh.easy_emerald.init.TagInit;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.util.Constants.WorldEvents;
+
+import net.minecraft.world.item.Item.Properties;
 
 /*
  * This is the base class for all types of Paxels
  * 
  */
-public class PaxelBase extends ToolItem
+public class PaxelBase extends DiggerItem
 {
 	public static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE,
 			Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.POWERED_RAIL,
@@ -65,7 +69,7 @@ public class PaxelBase extends ToolItem
 			Blocks.JUNGLE_PRESSURE_PLATE, Blocks.DARK_OAK_PRESSURE_PLATE, Blocks.ACACIA_PRESSURE_PLATE, Blocks.CLAY,
 			Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.PODZOL, Blocks.FARMLAND, Blocks.GRASS_BLOCK, Blocks.GRAVEL,
 			Blocks.MYCELIUM, Blocks.SAND, Blocks.RED_SAND, Blocks.SNOW_BLOCK, Blocks.SNOW, Blocks.SOUL_SAND,
-			Blocks.GRASS_PATH, Blocks.WHITE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER,
+			Blocks.DIRT_PATH, Blocks.WHITE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER,
 			Blocks.MAGENTA_CONCRETE_POWDER, Blocks.LIGHT_BLUE_CONCRETE_POWDER, Blocks.YELLOW_CONCRETE_POWDER,
 			Blocks.LIME_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER,
 			Blocks.LIGHT_GRAY_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER,
@@ -86,80 +90,80 @@ public class PaxelBase extends ToolItem
 			Blocks.STRIPPED_SPRUCE_WOOD).put(Blocks.SPRUCE_LOG, 
 			Blocks.STRIPPED_SPRUCE_LOG).build();
 	
-	public static final Map<Block, BlockState> SHOVEL_LOOKUP = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.GRASS_PATH.getDefaultState()));
+	public static final Map<Block, BlockState> SHOVEL_LOOKUP = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.DIRT_PATH.defaultBlockState()));
 	
-	public PaxelBase(float attackDamageIn, float attackSpeedIn, IItemTier tier, Set<Block> effectiveBlocksIn,
+	public PaxelBase(float attackDamageIn, float attackSpeedIn, Tier tier, Set<Block> effectiveBlocksIn,
 			Properties builder)
 	{
-		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON, 
-				builder.addToolType(net.minecraftforge.common.ToolType.AXE, tier.getHarvestLevel())
-				.addToolType(net.minecraftforge.common.ToolType.PICKAXE, tier.getHarvestLevel())
-				.addToolType(net.minecraftforge.common.ToolType.SHOVEL, tier.getHarvestLevel()));		
+		super(attackDamageIn, attackSpeedIn, tier, TagInit.PAXEL_MINEABLE,
+				builder.addToolType(net.minecraftforge.common.ToolType.AXE, tier.getLevel())
+				.addToolType(net.minecraftforge.common.ToolType.PICKAXE, tier.getLevel())
+				.addToolType(net.minecraftforge.common.ToolType.SHOVEL, tier.getLevel()));
 	}
 
-	public boolean canHarvestBlock(BlockState blockIn) {
-		int i = this.getTier().getHarvestLevel();
+	public boolean isCorrectToolForDrops(BlockState blockIn) {
+		int i = this.getTier().getLevel();
 		return i >= blockIn.getHarvestLevel();
 	}
 
 	public float getDestroySpeed(ItemStack stack, BlockState state) {
 		Material material = state.getMaterial();
-		return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK
-				&& material != Material.WOOD && material != Material.PLANTS ? super.getDestroySpeed(stack, state)
-						: this.efficiency;
+		return material != Material.METAL && material != Material.HEAVY_METAL && material != Material.STONE
+				&& material != Material.WOOD && material != Material.PLANT ? super.getDestroySpeed(stack, state)
+						: this.speed;
 	}
 	   
     @Nonnull
     @Override
-    public ActionResultType onItemUse(ItemUseContext context)
+    public InteractionResult useOn(UseOnContext context)
     {
-        World world = context.getWorld();
-        BlockPos blockpos = context.getPos();
-        PlayerEntity player = context.getPlayer();
+        Level world = context.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+        Player player = context.getPlayer();
         BlockState blockstate = world.getBlockState(blockpos);
         BlockState resultToSet = null;
         Block strippedResult = BLOCK_STRIPPING_MAP.get(blockstate.getBlock());
         
         if (strippedResult != null)
         {
-            world.playSound(player, blockpos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            resultToSet = strippedResult.getDefaultState().with(RotatedPillarBlock.AXIS, blockstate.get(RotatedPillarBlock.AXIS));
+            world.playSound(player, blockpos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+            resultToSet = strippedResult.defaultBlockState().setValue(RotatedPillarBlock.AXIS, blockstate.getValue(RotatedPillarBlock.AXIS));
         }
         else
         {
-            if (context.getFace() == Direction.DOWN)
+            if (context.getClickedFace() == Direction.DOWN)
             {
-                return ActionResultType.PASS;
+                return InteractionResult.PASS;
             }
             
             BlockState foundResult = SHOVEL_LOOKUP.get(blockstate.getBlock());
             
-            if (foundResult != null && world.isAirBlock(blockpos.up()))
+            if (foundResult != null && world.isEmptyBlock(blockpos.above()))
             {
-                world.playSound(player, blockpos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                world.playSound(player, blockpos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
                 resultToSet = foundResult;
             }
-            else if (blockstate.getBlock() instanceof CampfireBlock && blockstate.get(CampfireBlock.LIT))
+            else if (blockstate.getBlock() instanceof CampfireBlock && blockstate.getValue(CampfireBlock.LIT))
             {
-                world.playEvent(null, WorldEvents.FIRE_EXTINGUISH_SOUND, blockpos, 0);
-                resultToSet = blockstate.with(CampfireBlock.LIT, false);
+                world.levelEvent(null, WorldEvents.FIRE_EXTINGUISH_SOUND, blockpos, 0);
+                resultToSet = blockstate.setValue(CampfireBlock.LIT, false);
             }
         }
         if (resultToSet == null)
         {
-            return ActionResultType.PASS;
+            return InteractionResult.PASS;
         }
-        if (!world.isRemote)
+        if (!world.isClientSide)
         {
-            world.setBlockState(blockpos, resultToSet, 11);
+            world.setBlock(blockpos, resultToSet, 11);
             
             if (player != null)
             {
-                context.getItem().damageItem(1, player, onBroken -> onBroken.sendBreakAnimation(context.getHand()));
+                context.getItemInHand().hurtAndBreak(1, player, onBroken -> onBroken.broadcastBreakEvent(context.getHand()));
             }
         }
         
-        return ActionResultType.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
     
 	@Override
@@ -169,9 +173,9 @@ public class PaxelBase extends ToolItem
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
 	{
-		super.addInformation(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslationTextComponent("item.easy_emerald.paxel.tip1").mergeStyle(TextFormatting.GREEN)));
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
+		tooltip.add((new TranslatableComponent("item.easy_emerald.paxel.tip1").withStyle(ChatFormatting.GREEN)));
 	}
 }

@@ -1,6 +1,7 @@
 package com.kwpugh.easy_emerald.tools.base;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import javax.annotation.Nullable;
@@ -9,23 +10,25 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.kwpugh.easy_emerald.tools.util.ExcavatorUtil;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import net.minecraft.world.item.Item.Properties;
 
 /*
  * This is the base class for all types of Excavators
@@ -34,8 +37,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ExcavatorBase extends ShovelItem
 {
+	Random random = new Random();
+
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(Blocks.GRASS_BLOCK, 
-			Blocks.GRASS_PATH, 
+			Blocks.DIRT_PATH,
 			Blocks.DIRT, 
 			Blocks.COARSE_DIRT, 
 			Blocks.RED_SAND, 
@@ -45,29 +50,23 @@ public class ExcavatorBase extends ShovelItem
 			Blocks.SOUL_SAND, 
 			Blocks.CLAY);
 	
-	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.EARTH);
+	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.DIRT);
 
-	public ExcavatorBase(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
+	public ExcavatorBase(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
 	}
 
-    public boolean onBlockDestroyed(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entity)
+    public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity)
     {
-        stack.attemptDamageItem(1, random, null);
+        stack.hurt(1, random, null);
 
-        if (entity instanceof PlayerEntity)
+        if (entity instanceof Player)
         {
-        	ExcavatorUtil.attemptBreakNeighbors(world, pos, (PlayerEntity) entity, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
+        	ExcavatorUtil.attemptBreakNeighbors(world, pos, (Player) entity, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
         }
-        return super.onBlockDestroyed(stack, world, state, pos, entity);
+        return super.mineBlock(stack, world, state, pos, entity);
     }
- 
-	@Override
-	public int getBurnTime(ItemStack itemStack)
-	{
-		return 400;
-	}
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
@@ -76,9 +75,9 @@ public class ExcavatorBase extends ShovelItem
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
 	{
-		super.addInformation(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslationTextComponent("item.easy_emerald.excavator.tip1").mergeStyle(TextFormatting.GREEN)));
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
+		tooltip.add((new TranslatableComponent("item.easy_emerald.excavator.tip1").withStyle(ChatFormatting.GREEN)));
 	}
 }

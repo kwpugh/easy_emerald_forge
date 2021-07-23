@@ -2,29 +2,31 @@ package com.kwpugh.easy_emerald.items;
 
 import com.kwpugh.easy_emerald.init.ItemInit;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class ObsidianArmor extends ArmorItem
 {
-	public ObsidianArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Properties builder)
+	public ObsidianArmor(ArmorMaterial materialIn, EquipmentSlot slots, Properties builder)
 	{
 		super(materialIn, slots, builder);
 	}	
 	
-	public void onArmorTick(final ItemStack stack, final World world, final PlayerEntity player)
+	public void onArmorTick(final ItemStack stack, final Level world, final Player player)
 	{
-		if(player instanceof PlayerEntity)
+		if(player instanceof Player)
 		{
-			ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-			ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-			ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
-		    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
+			ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);
+			ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
+			ItemStack legs = player.getItemBySlot(EquipmentSlot.LEGS);
+		    ItemStack feet = player.getItemBySlot(EquipmentSlot.FEET);
 		    
 		    //Full Set
 	    	if(head.getItem() == ItemInit.ARMOR_OBSIDIAN_HEAD.get() && 
@@ -82,7 +84,7 @@ public class ObsidianArmor extends ArmorItem
 	}
 
 	@Override
-	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+	public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair)
 	{
 		return repair.getItem() == Items.OBSIDIAN;
 	}

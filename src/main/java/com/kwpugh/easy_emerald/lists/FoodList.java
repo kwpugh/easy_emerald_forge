@@ -1,10 +1,10 @@
 package com.kwpugh.easy_emerald.lists;
 
-import net.minecraft.item.Food;
+import net.minecraft.world.food.FoodProperties;
 
 public class FoodList 
 {	
-	public static Food emerald_potato = (new Food.Builder()).hunger(7).saturation(4).setAlwaysEdible().fastToEat().build();
-	public static Food ruby_potato = (new Food.Builder()).hunger(7).saturation(4).setAlwaysEdible().fastToEat().build();
+	public static FoodProperties emerald_potato = (new FoodProperties.Builder()).nutrition(7).saturationMod(4).alwaysEat().fast().build();
+	public static FoodProperties ruby_potato = (new FoodProperties.Builder()).nutrition(7).saturationMod(4).alwaysEat().fast().build();
 	
 }

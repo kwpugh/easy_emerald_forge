@@ -4,9 +4,9 @@ import javax.annotation.Nonnull;
 
 import com.kwpugh.easy_emerald.init.ItemInit;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ItemStack;
 
 public final class PlayerEquipUtil
 {	   
@@ -17,12 +17,12 @@ public final class PlayerEquipUtil
         return null;
     }
   
-    public static boolean isPlayerGotFallProtection(PlayerEntity player)
+    public static boolean isPlayerGotFallProtection(Player player)
     { 
-    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-		ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
-	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
+    	ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);
+		ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
+		ItemStack legs = player.getItemBySlot(EquipmentSlot.LEGS);
+	    ItemStack feet = player.getItemBySlot(EquipmentSlot.FEET);
 			
 	    //Full Set or token
     	if(		(head.getItem() == ItemInit.ARMOR_RUBY_HEAD.get() && 
@@ -35,7 +35,7 @@ public final class PlayerEquipUtil
 		return false;
     } 
     
-    public static boolean isPlayerGotFireProtection(PlayerEntity player)
+    public static boolean isPlayerGotFireProtection(Player player)
     {
 //    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
 //		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
@@ -54,7 +54,7 @@ public final class PlayerEquipUtil
         return false;
     }
     
-    public static boolean isPlayerGotWaterBreathing(PlayerEntity player)
+    public static boolean isPlayerGotWaterBreathing(Player player)
     {
 //    	ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
 //		ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
@@ -73,9 +73,9 @@ public final class PlayerEquipUtil
         return false;
     }
     
-    public static boolean isPlayerGotRubySwordInHand(PlayerEntity player)
+    public static boolean isPlayerGotRubySwordInHand(Player player)
     { 	    
-    	ItemStack mainHand = player.getHeldItemMainhand();
+    	ItemStack mainHand = player.getMainHandItem();
     	
     	if(mainHand.getItem() == ItemInit.RUBY_SWORD.get())
       	{

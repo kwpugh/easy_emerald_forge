@@ -3,9 +3,9 @@ package com.kwpugh.easy_emerald.util;
 import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.DamageSource;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.living.LootingLevelEvent;
@@ -19,9 +19,9 @@ public final class ForgeEventSubscriber
     @SubscribeEvent
     public static void onLivingHurtEvent(LivingAttackEvent event)
     {
-        if (event.getEntityLiving() instanceof PlayerEntity)
+        if (event.getEntityLiving() instanceof Player)
         {
-            PlayerEntity player = (PlayerEntity) event.getEntityLiving();
+            Player player = (Player) event.getEntityLiving();
 
             //Fall Damage
             if ((event.getSource() == DamageSource.FALL) &&
@@ -52,11 +52,11 @@ public final class ForgeEventSubscriber
     @SubscribeEvent
     public static void extraLootingEvent(LootingLevelEvent event)
     {    	
-    	if(event.getDamageSource() !=null && event.getDamageSource().getTrueSource() !=null)
+    	if(event.getDamageSource() !=null && event.getDamageSource().getEntity() !=null)
     	{	
-			if(event.getEntity() instanceof MobEntity && event.getDamageSource().getTrueSource() instanceof PlayerEntity)
+			if(event.getEntity() instanceof Mob && event.getDamageSource().getEntity() instanceof Player)
 			{
-				PlayerEntity playerEntity = (PlayerEntity) event.getDamageSource().getTrueSource();
+				Player playerEntity = (Player) event.getDamageSource().getEntity();
 				
 				if (PlayerEquipUtil.isPlayerGotRubySwordInHand(playerEntity))
 	            {

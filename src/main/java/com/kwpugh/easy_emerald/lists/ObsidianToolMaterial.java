@@ -2,11 +2,11 @@ package com.kwpugh.easy_emerald.lists;
 
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 
-public class ObsidianToolMaterial implements IItemTier
+public class ObsidianToolMaterial implements Tier
 {
 	private int obsidianDurability = GeneralModConfig.OBSIDIAN_TOOL_DURABILITY.get(); 
 	private double obsidianEfficiency = GeneralModConfig.OBSIDIAN_TOOL_EFFICIENCY.get();
@@ -15,38 +15,38 @@ public class ObsidianToolMaterial implements IItemTier
 	private int obsidianEnchantability = GeneralModConfig.OBSIDIAN_TOOL_ENCHANTABILITY.get();
 	
 	@Override
-	public int getMaxUses()
+	public int getUses()
 	{
 		return obsidianDurability;
 	}
 
 	@Override
-	public float getEfficiency()
+	public float getSpeed()
 	{
 		return 5.5f;
 	}
 
 	@Override
-	public float getAttackDamage()
+	public float getAttackDamageBonus()
 	{
 		return (float) obsidianAttack;
 	}
 
 	@Override
-	public int getHarvestLevel()
+	public int getLevel()
 	{
 		return obsidianMiningLevel;
 	}
 
 	@Override
-	public int getEnchantability()
+	public int getEnchantmentValue()
 	{
 		return obsidianEnchantability;
 	}
 
 	@Override
-	public Ingredient getRepairMaterial()
+	public Ingredient getRepairIngredient()
 	{
-		return Ingredient.fromItems(Items.OBSIDIAN);
+		return Ingredient.of(Items.OBSIDIAN);
 	}
 }
