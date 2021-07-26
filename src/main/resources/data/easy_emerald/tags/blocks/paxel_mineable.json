@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "easy_emerald:ruby_block",
     "minecraft:stone",
     "minecraft:granite",
     "minecraft:polished_granite",
