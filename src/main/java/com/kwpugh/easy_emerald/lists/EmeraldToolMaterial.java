@@ -23,7 +23,7 @@ public class EmeraldToolMaterial implements Tier
 	@Override
 	public float getSpeed()
 	{
-		return 5.5f;
+		return (float) emeraldEfficiency;
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public class RubyToolMaterial implements Tier
 	@Override
 	public float getSpeed()
 	{
-		return 6.5f;
+		return (float) rubyEfficiency;
 	}
 
 	@Override
