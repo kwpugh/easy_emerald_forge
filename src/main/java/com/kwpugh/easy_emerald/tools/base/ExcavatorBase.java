@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.kwpugh.easy_emerald.tools.util.ExcavatorUtil;
 
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
@@ -38,17 +39,6 @@ import net.minecraft.world.item.Item.Properties;
 public class ExcavatorBase extends ShovelItem
 {
 	Random random = new Random();
-
-	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(Blocks.GRASS_BLOCK, 
-			Blocks.DIRT_PATH,
-			Blocks.DIRT, 
-			Blocks.COARSE_DIRT, 
-			Blocks.RED_SAND, 
-			Blocks.SAND, 
-			Blocks.PODZOL, 
-			Blocks.GRAVEL, 
-			Blocks.SOUL_SAND, 
-			Blocks.CLAY);
 	
 	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.DIRT);
 
@@ -63,7 +53,8 @@ public class ExcavatorBase extends ShovelItem
 
         if (entity instanceof Player)
         {
-        	ExcavatorUtil.attemptBreakNeighbors(world, pos, (Player) entity, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
+        	//ExcavatorUtil.attemptBreakNeighbors(world, pos, (Player) entity, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
+			ExcavatorUtil.attemptBreakNeighbors(world, pos, (Player) entity, BlockTags.MINEABLE_WITH_SHOVEL, EFFECTIVE_MATERIALS);
         }
         return super.mineBlock(stack, world, state, pos, entity);
     }

@@ -1,22 +1,20 @@
 package com.kwpugh.easy_emerald.tools;
 
-import java.util.Set;
-
+import com.kwpugh.easy_emerald.init.TagInit;
 import com.kwpugh.easy_emerald.tools.base.PaxelBase;
 
+import net.minecraft.tags.Tag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
-import net.minecraft.world.item.Item.Properties;
-
 public class ObsidianPaxel extends PaxelBase
 {	
-	public ObsidianPaxel(float attackDamageIn, float attackSpeedIn, Tier tier, Set<Block> effectiveBlocksIn,
+	public ObsidianPaxel(float attackDamageIn, float attackSpeedIn, Tier tier, Tag<Block> mineable,
 			Properties builder)
 	{
-		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON, builder);	
+		super(attackDamageIn, attackSpeedIn, tier, TagInit.PAXEL_MINEABLE, builder);
 	}
 
 	@Override

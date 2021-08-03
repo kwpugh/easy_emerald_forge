@@ -6,8 +6,6 @@ import com.kwpugh.easy_emerald.tools.base.ExcavatorBase;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 
-import net.minecraft.world.item.Item.Properties;
-
 public class RubyExcavator extends ExcavatorBase
 {
 	public RubyExcavator(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)

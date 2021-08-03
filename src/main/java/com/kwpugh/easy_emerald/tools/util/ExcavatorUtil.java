@@ -3,6 +3,7 @@ package com.kwpugh.easy_emerald.tools.util;
 import java.util.Random;
 import java.util.Set;
 
+import net.minecraft.tags.Tag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -21,8 +22,8 @@ public class ExcavatorUtil
 {
     public static final Random random = new Random();
 
-    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, Set<Block> effectiveOn, Set<Material> effectiveMaterials)
-    {    	
+    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, Tag<Block> effectiveOn, Set<Material> effectiveMaterials)
+    {
     	HitResult trace = calcRayTrace(world, player, ClipContext.Fluid.ANY);
 
         if (trace.getType() == HitResult.Type.BLOCK)
@@ -48,7 +49,7 @@ public class ExcavatorUtil
         }
     }
     
-    public static void attemptBreak(Level world, BlockPos pos, Player player, Set<Block> effectiveOn, Set<Material> effectiveMaterials)
+    public static void attemptBreak(Level world, BlockPos pos, Player player, Tag<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
 
         BlockState state = world.getBlockState(pos);
