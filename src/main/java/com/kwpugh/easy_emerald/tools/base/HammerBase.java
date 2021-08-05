@@ -7,8 +7,8 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableSet;
-import com.kwpugh.easy_emerald.tools.util.HammerUtil;
 
+import com.kwpugh.easy_emerald.tools.util.HammerUtil;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.item.TooltipFlag;

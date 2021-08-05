@@ -6,8 +6,6 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
-import net.minecraft.world.item.Item.Properties;
-
 public class EmeraldHammer extends HammerBase
 {
 	public EmeraldHammer(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)

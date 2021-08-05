@@ -2,15 +2,15 @@ package com.kwpugh.easy_emerald;
 
 import java.util.stream.Collectors;
 
-import com.kwpugh.easy_emerald.init.TagInit;
-import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.kwpugh.easy_emerald.config.ModConfig;
 import com.kwpugh.easy_emerald.init.BlockInit;
 import com.kwpugh.easy_emerald.init.ItemInit;
 import com.kwpugh.easy_emerald.util.GroupEasyEmerald;
+
+import com.kwpugh.easy_emerald.config.EmeraldModConfig;
+
+import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,7 +33,7 @@ public class EasyEmerald
 
     public EasyEmerald()
     {
-    	ModConfig.loadConfig(ModConfig.CONFIG, FMLPaths.CONFIGDIR.get().resolve("easy-emerald-general.toml"));
+    	EmeraldModConfig.loadConfig(EmeraldModConfig.CONFIG, FMLPaths.CONFIGDIR.get().resolve("easy-emerald-general.toml"));
     	BlockInit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     	ItemInit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

@@ -1,12 +1,9 @@
 package com.kwpugh.easy_emerald.tools;
 
 import com.kwpugh.easy_emerald.tools.base.HammerBase;
-
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-
-import net.minecraft.world.item.Item.Properties;
 
 public class ObsidianHammer extends HammerBase
 {

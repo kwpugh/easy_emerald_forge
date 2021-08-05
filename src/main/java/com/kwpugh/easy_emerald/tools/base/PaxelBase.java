@@ -1,30 +1,21 @@
 package com.kwpugh.easy_emerald.tools.base;
 
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableMap.Builder;
-import com.google.common.collect.Maps;
 
 import com.kwpugh.easy_emerald.init.TagInit;
 
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.Tag;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
@@ -36,7 +27,6 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.util.Constants.WorldEvents;
 
 /*
  * This is the base class for all types of Paxels
@@ -44,23 +34,6 @@ import net.minecraftforge.common.util.Constants.WorldEvents;
  */
 public class PaxelBase extends DiggerItem
 {
-	public static final Map<Block, Block> BLOCK_STRIPPING_MAP = (new Builder<Block, Block>()).put(Blocks.OAK_WOOD, 
-			Blocks.STRIPPED_OAK_WOOD).put(Blocks.OAK_LOG, 
-			Blocks.STRIPPED_OAK_LOG).put(Blocks.DARK_OAK_WOOD, 
-			Blocks.STRIPPED_DARK_OAK_WOOD).put(Blocks.DARK_OAK_LOG, 
-			Blocks.STRIPPED_DARK_OAK_LOG).put(Blocks.ACACIA_WOOD, 
-			Blocks.STRIPPED_ACACIA_WOOD).put(Blocks.ACACIA_LOG, 
-			Blocks.STRIPPED_ACACIA_LOG).put(Blocks.BIRCH_WOOD, 
-			Blocks.STRIPPED_BIRCH_WOOD).put(Blocks.BIRCH_LOG, 
-			Blocks.STRIPPED_BIRCH_LOG).put(Blocks.JUNGLE_WOOD, 
-			Blocks.STRIPPED_JUNGLE_WOOD).put(Blocks.JUNGLE_LOG, 
-			Blocks.STRIPPED_JUNGLE_LOG).put(Blocks.SPRUCE_WOOD, 
-			Blocks.STRIPPED_SPRUCE_WOOD).put(Blocks.SPRUCE_LOG, 
-			Blocks.STRIPPED_SPRUCE_LOG).build();
-	
-	public static final Map<Block, BlockState> SHOVEL_LOOKUP = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK,
-			Blocks.DIRT_PATH.defaultBlockState()));
-
 	public PaxelBase(float attackDamageIn, float attackSpeedIn, Tier tier, Tag<Block> mineabl,
 					 Properties builder)
 	{
@@ -81,58 +54,113 @@ public class PaxelBase extends DiggerItem
 				&& material != Material.WOOD && material != Material.PLANT ? super.getDestroySpeed(stack, state)
 						: this.speed;
 	}
-	   
-    @Nonnull
+
+	/*
+	    Code adapted from vanilla
+	    ShovelItem and AxeItem
+	    and combined
+
+	    Should with both vanilla and properly
+	    coded modded logs and paths
+	 */
     @Override
     public InteractionResult useOn(UseOnContext context)
     {
-        Level world = context.getLevel();
+        // Log-stripping logic
+        Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
         Player player = context.getPlayer();
-        BlockState blockstate = world.getBlockState(blockpos);
-        BlockState resultToSet = null;
-        Block strippedResult = BLOCK_STRIPPING_MAP.get(blockstate.getBlock());
-        
-        if (strippedResult != null)
+        BlockState blockstate = level.getBlockState(blockpos);
+        Optional<BlockState> optional = Optional.ofNullable(blockstate.getToolModifiedState(level, blockpos, player, context.getItemInHand(),  net.minecraftforge.common.ToolType.AXE));
+        Optional<BlockState> optional1 = WeatheringCopper.getPrevious(blockstate);
+        Optional<BlockState> optional2 = Optional.ofNullable(HoneycombItem.WAX_OFF_BY_BLOCK.get().get(blockstate.getBlock())).map((p_150694_) -> {
+            return p_150694_.withPropertiesOf(blockstate);
+        });
+        ItemStack itemstack = context.getItemInHand();
+        Optional<BlockState> optional3 = Optional.empty();
+        if (optional.isPresent())
         {
-            world.playSound(player, blockpos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
-            resultToSet = strippedResult.defaultBlockState().setValue(RotatedPillarBlock.AXIS, blockstate.getValue(RotatedPillarBlock.AXIS));
+            level.playSound(player, blockpos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+            optional3 = optional;
+        }
+        else if (optional1.isPresent())
+        {
+            level.playSound(player, blockpos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.levelEvent(player, 3005, blockpos, 0);
+            optional3 = optional1;
+        }
+        else if (optional2.isPresent())
+        {
+            level.playSound(player, blockpos, SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.levelEvent(player, 3004, blockpos, 0);
+            optional3 = optional2;
+        }
+
+        if (optional3.isPresent())
+        {
+            if (player instanceof ServerPlayer)
+            {
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, blockpos, itemstack);
+            }
+
+            level.setBlock(blockpos, optional3.get(), 11);
+
+            if (player != null)
+            {
+                itemstack.hurtAndBreak(1, player, (p_150686_) -> {
+                    p_150686_.broadcastBreakEvent(context.getHand());
+                });
+            }
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
         }
         else
         {
+            // shovel logic
             if (context.getClickedFace() == Direction.DOWN)
             {
                 return InteractionResult.PASS;
             }
-            
-            BlockState foundResult = SHOVEL_LOOKUP.get(blockstate.getBlock());
-            
-            if (foundResult != null && world.isEmptyBlock(blockpos.above()))
+            else
             {
-                world.playSound(player, blockpos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-                resultToSet = foundResult;
-            }
-            else if (blockstate.getBlock() instanceof CampfireBlock && blockstate.getValue(CampfireBlock.LIT))
-            {
-                world.levelEvent(null, WorldEvents.FIRE_EXTINGUISH_SOUND, blockpos, 0);
-                resultToSet = blockstate.setValue(CampfireBlock.LIT, false);
+                BlockState blockstate1 = blockstate.getToolModifiedState(level, blockpos, player, context.getItemInHand(), net.minecraftforge.common.ToolType.SHOVEL);
+                BlockState blockstate2 = null;
+                if (blockstate1 != null && level.isEmptyBlock(blockpos.above()))
+                {
+                    level.playSound(player, blockpos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    blockstate2 = blockstate1;
+                }
+                else if (blockstate.getBlock() instanceof CampfireBlock && blockstate.getValue(CampfireBlock.LIT))
+                {
+                    if (!level.isClientSide())
+                    {
+                        level.levelEvent((Player)null, 1009, blockpos, 0);
+                    }
+
+                    CampfireBlock.dowse(context.getPlayer(), level, blockpos, blockstate);
+                    blockstate2 = blockstate.setValue(CampfireBlock.LIT, Boolean.valueOf(false));
+                }
+
+                if (blockstate2 != null)
+                {
+                    if (!level.isClientSide)
+                    {
+                        level.setBlock(blockpos, blockstate2, 11);
+                        if (player != null)
+                        {
+                            context.getItemInHand().hurtAndBreak(1, player, (p_43122_) ->
+                            {
+                                p_43122_.broadcastBreakEvent(context.getHand());
+                            });
+                        }
+                    }
+
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
             }
         }
-        if (resultToSet == null)
-        {
-            return InteractionResult.PASS;
-        }
-        if (!world.isClientSide)
-        {
-            world.setBlock(blockpos, resultToSet, 11);
-            
-            if (player != null)
-            {
-                context.getItemInHand().hurtAndBreak(1, player, onBroken -> onBroken.broadcastBreakEvent(context.getHand()));
-            }
-        }
-        
-        return InteractionResult.SUCCESS;
+
+        return InteractionResult.PASS;
     }
     
 	@Override
