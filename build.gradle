@@ -13,19 +13,16 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
-version = '1.1.4'
+version = '1.1.5'
 group = 'com.kwpugh.easy-emerald' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'EasyEmerald-Forge-1.17.1'
 
 repositories {
 
-    mavenLocal()
 }
 
 dependencies {
 
-    //PughTools for common area tools
-    //library "com.kwpugh:pugh-tools-forge-1.17.1:1.0.0"
 }
 
 // Mojang ships Java 16 to end users in 1.17+ instead of Java 8 in 1.16 or lower, so your mod should target Java 16.
@@ -150,7 +147,7 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.22'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.25'
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
