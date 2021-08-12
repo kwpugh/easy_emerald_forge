@@ -9,7 +9,7 @@ license="MIT"
 
 [[mods]] #mandatory
 modId="easy_emerald" #mandatory
-version="1.1.5" #mandatory
+version="1.2.0" #mandatory
 displayName="Easy Emerald" #mandatory
 description='''
 Gear made from gems
@@ -19,7 +19,7 @@ Gear made from gems
 [[dependencies.ring_of_return]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[37,)" #mandatory
+    versionRange="[37.0.31,,)" #mandatory
     ordering="NONE"
     side="BOTH"
 
