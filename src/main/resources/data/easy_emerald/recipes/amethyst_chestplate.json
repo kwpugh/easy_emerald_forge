@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "e e",
+    "eee",
+    "eee"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:amethyst_shard",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:amethyst_chestplate"
+  }
+}

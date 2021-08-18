@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " r ",
+    " r ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:amethyst_sword"
+  }
+}
