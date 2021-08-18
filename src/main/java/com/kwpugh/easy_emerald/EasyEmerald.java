@@ -55,7 +55,7 @@ public class EasyEmerald
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
-        InterModComms.sendTo("easy_emerald", "helloworld", () -> { logger.info("Hello world from EasyEmerald"); return "Hello world";});
+        InterModComms.sendTo("easy_emerald", "hello world", () -> { logger.info("Hello world from EasyEmerald"); return "Hello world";});
     }
 
     private void processIMC(final InterModProcessEvent event)

@@ -1,8 +1,9 @@
-package com.kwpugh.easy_emerald.tools.util;
+package com.kwpugh.easy_emerald.items.tools.util;
 
 import java.util.Random;
 import java.util.Set;
 
+import net.minecraft.tags.Tag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -17,12 +18,12 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
 
-public class HammerUtil
+public class ExcavatorUtil
 {
     public static final Random random = new Random();
 
-    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
-    {    	
+    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, Tag<Block> effectiveOn, Set<Material> effectiveMaterials)
+    {
     	HitResult trace = calcRayTrace(world, player, ClipContext.Fluid.ANY);
 
         if (trace.getType() == HitResult.Type.BLOCK)
@@ -42,27 +43,23 @@ public class HammerUtil
                     if (face == Direction.NORTH || face == Direction.SOUTH) target = pos.offset(a, b, 0);
                     if (face == Direction.EAST  || face == Direction.WEST)  target = pos.offset(0, a, b);
 
-                    attemptBreak(world, target, player, effectiveMaterials);
+                    attemptBreak(world, target, player, effectiveOn, effectiveMaterials);
                 }
             }
         }
     }
     
-    public static void attemptBreak(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
+    public static void attemptBreak(Level world, BlockPos pos, Player player, Tag<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
+
         BlockState state = world.getBlockState(pos);
-        boolean isWithinHarvestLevel = player.getMainHandItem().isCorrectToolForDrops(state);  //added to ensure each block in the breaking is harvestable with this tool material
-        boolean isEffective = effectiveMaterials.contains(state.getMaterial());
-        
+        boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
         boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
         
-        if(isEffective && !witherImmune && isWithinHarvestLevel)	
+        if(isEffective && !witherImmune)	
         {
-        	if(!state.hasBlockEntity())
-        	{
-        		world.destroyBlock(pos, false);  
-    	    	Block.dropResources(state, world, pos, null, player, player.getMainHandItem());   
-        	}  	   
+        	world.destroyBlock(pos, false);  
+	    	Block.dropResources(state, world, pos, null, player, player.getMainHandItem());
         }
     }
     	

@@ -55,6 +55,22 @@
    "item.easy_emerald.obsidian_leggings": "Obsidian Leggings",
    "item.easy_emerald.obsidian_boots": "Obsidian Boots",
 
+  "item.easy_emerald.amethyst_sword": "Amethyst Sword",
+  "item.easy_emerald.amethyst_bow": "Amethyst Bow",
+  "item.easy_emerald.amethyst_pickaxe": "Amethyst Pickaxe",
+  "item.easy_emerald.amethyst_axe": "Amethyst Axe",
+  "item.easy_emerald.amethyst_shovel": "Amethyst Shovel",
+  "item.easy_emerald.amethyst_hoe": "Amethyst Hoe",
+  "item.easy_emerald.amethyst_excavator": "Amethyst Excavator",
+  "item.easy_emerald.amethyst_hammer": "Amethyst Hammer",
+  "item.easy_emerald.amethyst_paxel": "Amethyst Paxel",
+  "item.easy_emerald.amethyst_treeaxe": "Amethyst TreeAxe",
+
+  "item.easy_emerald.amethyst_head": "Amethyst Helmet",
+  "item.easy_emerald.amethyst_bady": "Amethyst Chestplate",
+  "item.easy_emerald.amethyst_leggings": "Amethyst Leggings",
+  "item.easy_emerald.amethyst_boots": "Amethyst Boots",
+
    "item.easy_emerald.emerald_potato": "Emerald Potato of Health",
    "item.easy_emerald.ruby_potato": "Ruby Potato of Battle",
 

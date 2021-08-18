@@ -1,4 +1,4 @@
-package com.kwpugh.easy_emerald.tools.base;
+package com.kwpugh.easy_emerald.items.tools.base;
 
 import java.util.List;
 import java.util.Random;
@@ -7,13 +7,10 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
-import com.kwpugh.easy_emerald.tools.util.ExcavatorUtil;
+import com.kwpugh.easy_emerald.items.tools.util.ExcavatorUtil;
 
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,8 +25,6 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import net.minecraft.world.item.Item.Properties;
 
 /*
  * This is the base class for all types of Excavators

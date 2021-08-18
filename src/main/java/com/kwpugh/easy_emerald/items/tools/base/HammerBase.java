@@ -1,4 +1,4 @@
-package com.kwpugh.easy_emerald.tools.base;
+package com.kwpugh.easy_emerald.items.tools.base;
 
 import java.util.List;
 import java.util.Random;
@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableSet;
 
-import com.kwpugh.easy_emerald.tools.util.HammerUtil;
+import com.kwpugh.easy_emerald.items.tools.util.HammerUtil;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.item.TooltipFlag;

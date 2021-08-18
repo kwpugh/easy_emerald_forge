@@ -1,4 +1,4 @@
-package com.kwpugh.easy_emerald.tools.base;
+package com.kwpugh.easy_emerald.items.tools.base;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -31,8 +31,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.minecraft.world.item.Item.Properties;
 
 /*
  * Adapted from several sources
