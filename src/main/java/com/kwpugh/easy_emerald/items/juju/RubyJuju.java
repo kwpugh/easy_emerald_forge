@@ -1,4 +1,4 @@
-package com.kwpugh.easy_emerald.items;
+package com.kwpugh.easy_emerald.items.juju;
 
 import java.util.List;
 
@@ -19,11 +19,9 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import net.minecraft.world.item.Item.Properties;
-
-public class EmeraldJuju extends Item
+public class RubyJuju extends Item
 {
-	public EmeraldJuju(Properties properties)
+	public RubyJuju(Properties properties)
 	{
 		super(properties);
 	}
@@ -31,7 +29,7 @@ public class EmeraldJuju extends Item
 	@Override
 	public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
 	{
-		MobEffectInstance effect = new MobEffectInstance(MobEffects.WATER_BREATHING, 8, 0, false, false);
+		MobEffectInstance effect = new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 8, 0, false, false);
 		LivingEntity player = (LivingEntity) entity;
 		{
 			player.addEffect(effect);
@@ -42,6 +40,6 @@ public class EmeraldJuju extends Item
 	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
 	{
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslatableComponent("item.easy_emerald.emerald_juju.line1").withStyle(ChatFormatting.GREEN)));
+		tooltip.add((new TranslatableComponent("item.easy_emerald.ruby_juju.line1").withStyle(ChatFormatting.GREEN)));
 	}     
 }

@@ -2,13 +2,15 @@ package com.kwpugh.easy_emerald.init;
 
 import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
-import com.kwpugh.easy_emerald.items.EmeraldJuju;
-import com.kwpugh.easy_emerald.items.EmeraldPotato;
-import com.kwpugh.easy_emerald.items.RubyJuju;
-import com.kwpugh.easy_emerald.items.RubyPotato;
+import com.kwpugh.easy_emerald.items.food.AmethystPotato;
+import com.kwpugh.easy_emerald.items.food.EmeraldPotato;
+import com.kwpugh.easy_emerald.items.food.RubyPotato;
+import com.kwpugh.easy_emerald.items.juju.AmethystJuju;
+import com.kwpugh.easy_emerald.items.juju.EmeraldJuju;
+import com.kwpugh.easy_emerald.items.juju.RubyJuju;
+import com.kwpugh.easy_emerald.items.tools.*;
 import com.kwpugh.easy_emerald.lists.*;
 
-import com.kwpugh.easy_emerald.items.tools.base.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
@@ -113,7 +115,9 @@ public class ItemInit
 
 	public static final RegistryObject<Item> EMERALD_POTATO = ITEMS.register("emerald_potato", () -> new EmeraldPotato(new Item.Properties().food(FoodList.emerald_potato).tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_POTATO = ITEMS.register("ruby_potato", () -> new RubyPotato(new Item.Properties().food(FoodList.ruby_potato).tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_POTATO = ITEMS.register("amethyst_potato", () -> new AmethystPotato(new Item.Properties().food(FoodList.amethyst_potato).tab(EasyEmerald.easy_emerald_group)));
 
 	public static final RegistryObject<Item> EMERALD_JUJU = ITEMS.register("emerald_juju", () -> new EmeraldJuju(new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_JUJU = ITEMS.register("ruby_juju", () -> new RubyJuju(new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_JUJU = ITEMS.register("amethyst_juju", () -> new AmethystJuju(new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 }

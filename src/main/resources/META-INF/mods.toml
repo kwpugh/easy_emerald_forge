@@ -9,14 +9,14 @@ license="MIT"
 
 [[mods]] #mandatory
 modId="easy_emerald" #mandatory
-version="1.2.1" #mandatory
+version="1.2.2" #mandatory
 displayName="Easy Emerald" #mandatory
 description='''
 Gear made from gems
 '''
 
 
-[[dependencies.ring_of_return]] #optional
+[[dependencies.easy_emerald]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
     versionRange="[37.0.31,,)" #mandatory
@@ -25,7 +25,7 @@ Gear made from gems
 
 
 # Here's another dependency
-[[dependencies.ring_of_return]]
+[[dependencies.easy_emerald]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.17.1]"

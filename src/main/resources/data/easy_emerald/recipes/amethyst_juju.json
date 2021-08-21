@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " g ",
+    "geg",
+    " g "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:amethyst_juju"
+  }
+}

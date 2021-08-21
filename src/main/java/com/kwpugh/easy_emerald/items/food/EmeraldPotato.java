@@ -1,4 +1,4 @@
-package com.kwpugh.easy_emerald.items;
+package com.kwpugh.easy_emerald.items.food;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -9,11 +9,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
 
-import net.minecraft.world.item.Item.Properties;
-
-public class RubyPotato extends Item
+public class EmeraldPotato extends Item
 {
-	public RubyPotato(Properties properties)
+	public EmeraldPotato(Properties properties)
 	{
 		super(properties);
 	}
@@ -24,9 +22,9 @@ public class RubyPotato extends Item
 		
 		ItemStack itemstack = super.finishUsingItem(stack, worldIn, entityLiving);
 
-		player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, false, false));
-		player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, false, false));
-		player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 0, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 300, 1, false, false));
 
 		return itemstack;
 	}	   

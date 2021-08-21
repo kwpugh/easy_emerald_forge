@@ -1,7 +1,8 @@
-package com.kwpugh.easy_emerald.items.tools.base;
+package com.kwpugh.easy_emerald.items.tools;
 
 import com.kwpugh.easy_emerald.init.TagInit;
 
+import com.kwpugh.easy_emerald.items.tools.base.PaxelBase;
 import net.minecraft.tags.Tag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Tier;

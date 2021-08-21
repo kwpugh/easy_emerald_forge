@@ -73,12 +73,16 @@
 
    "item.easy_emerald.emerald_potato": "Emerald Potato of Health",
    "item.easy_emerald.ruby_potato": "Ruby Potato of Battle",
+   "item.easy_emerald.amethyst_potato": "Amethyst Potato of Luck",
 
    "item.easy_emerald.emerald_juju": "Emerald Juju",
    "item.easy_emerald.emerald_juju.line1": "Provides Water Breathing",
 
    "item.easy_emerald.ruby_juju": "Ruby Juju",
    "item.easy_emerald.ruby_juju.line1": "Provides Fire Protection",
+
+  "item.easy_emerald.amethyst_juju": "Amethyst Juju",
+  "item.easy_emerald.amethyst_juju.line1": "Provides Night Vision",
 
   "itemGroup.easy_emerald" : "Easy Emerald"
 }

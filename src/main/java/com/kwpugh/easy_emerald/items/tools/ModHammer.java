@@ -1,5 +1,6 @@
-package com.kwpugh.easy_emerald.items.tools.base;
+package com.kwpugh.easy_emerald.items.tools;
 
+import com.kwpugh.easy_emerald.items.tools.base.HammerBase;
 import net.minecraft.world.item.Tier;
 
 public class ModHammer extends HammerBase

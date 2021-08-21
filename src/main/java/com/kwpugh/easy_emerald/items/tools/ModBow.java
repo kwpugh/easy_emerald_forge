@@ -1,4 +1,4 @@
-package com.kwpugh.easy_emerald.items.tools.base;
+package com.kwpugh.easy_emerald.items.tools;
 
 import java.util.Random;
 import java.util.function.Predicate;
