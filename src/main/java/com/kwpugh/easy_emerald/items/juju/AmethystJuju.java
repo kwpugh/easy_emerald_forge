@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,6 +30,12 @@ public class AmethystJuju extends Item
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
     {
+
+        if(stack.getItem() instanceof SwordItem)
+        {
+
+        }
+
         MobEffectInstance effect = new MobEffectInstance(MobEffects.NIGHT_VISION, 8, 0, false, false);
         LivingEntity player = (LivingEntity) entity;
         {

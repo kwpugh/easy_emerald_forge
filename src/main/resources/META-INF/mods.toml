@@ -19,7 +19,7 @@ Gear made from gems
 [[dependencies.easy_emerald]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[37.0.31,,)" #mandatory
+    versionRange="[37.0.31,)" #mandatory
     ordering="NONE"
     side="BOTH"
 

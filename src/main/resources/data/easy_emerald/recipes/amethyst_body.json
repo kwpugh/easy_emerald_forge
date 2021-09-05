@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "eee",
     "e e",
-    "   "
+    "eee",
+    "eee"
   ],
   "key": {
     "e": {
@@ -12,6 +12,6 @@
     }
   },
   "result": {
-    "item": "easy_emerald:amethyst_helmet"
+    "item": "easy_emerald:amethyst_body"
   }
 }
