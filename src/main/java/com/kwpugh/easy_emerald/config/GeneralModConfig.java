@@ -15,7 +15,8 @@ public class GeneralModConfig
 	public static ForgeConfigSpec.DoubleValue RUBY_TOOL_ATTACK;
 	public static ForgeConfigSpec.IntValue RUBY_TOOL_MINING_LEVEL;
 	public static ForgeConfigSpec.IntValue RUBY_TOOL_ENCHANTABILITY;
-	
+    public static ForgeConfigSpec.BooleanValue RUBY_SWORD_PERKS;
+
 	public static ForgeConfigSpec.IntValue OBSIDIAN_TOOL_DURABILITY;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_TOOL_EFFICIENCY;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_TOOL_ATTACK;
@@ -68,7 +69,8 @@ public class GeneralModConfig
         RUBY_TOOL_ATTACK = SERVER_BUILDER.comment("Ruby attack damage [1-40, default: 4.0]").defineInRange("emeraldAttackDamage", 4.0, 0.0, 40.0);
         RUBY_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Ruby tool mining level [1-5, default: 3]").defineInRange("emeraldMiningLevel", 3, 1, 5);
         RUBY_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Ruby tool enchantability [1-30, default: 25]").defineInRange("emeraldEnchantability", 25, 1, 30);
-        
+        RUBY_SWORD_PERKS = SERVER_BUILDER.comment("Enable extra loot drops from Ruby Swords [true / false]").define("rubySwordExtraLoot", false);
+
         SERVER_BUILDER.pop();
         
         

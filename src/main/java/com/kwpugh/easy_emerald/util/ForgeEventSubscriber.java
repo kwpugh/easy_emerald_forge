@@ -14,7 +14,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = EasyEmerald.modid, bus = EventBusSubscriber.Bus.FORGE )
 public final class ForgeEventSubscriber
-{	
+{
+    static boolean enableRubySwordLoot = GeneralModConfig.RUBY_SWORD_PERKS.get();
+
 	//Protects the player from various forms of damage
     @SubscribeEvent
     public static void onLivingHurtEvent(LivingAttackEvent event)
@@ -51,7 +53,9 @@ public final class ForgeEventSubscriber
     //Gives extra loot drops when killing a mob
     @SubscribeEvent
     public static void extraLootingEvent(LootingLevelEvent event)
-    {    	
+    {
+        if(!enableRubySwordLoot) return;
+
     	if(event.getDamageSource() !=null && event.getDamageSource().getEntity() !=null)
     	{	
 			if(event.getEntity() instanceof Mob && event.getDamageSource().getEntity() instanceof Player)
@@ -66,24 +70,5 @@ public final class ForgeEventSubscriber
 			}
     	} 	
     }
-
-    //Gives greater XP when killing mobs that normally drop XP on death
-//    @SubscribeEvent
-//    public static void onKillingExpDropEvent(LivingExperienceDropEvent event)
-//    {
-//    	//int killingExp = GeneralModConfig.KILLING_EXP.get();
-//    	
-//    	if (event.getAttackingPlayer() instanceof PlayerEntity && event.getEntityLiving()instanceof MobEntity)
-//    	{
-//    		PlayerEntity player = (PlayerEntity) event.getAttackingPlayer();
-//    		
-//    		if (PlayerEquipUtil.isPlayerGotRubySwordInHand(player))
-//    		{
-//    			int orgExp = event.getOriginalExperience();
-//    			int newExp = orgExp * killingExp;
-//    			event.setDroppedExperience(newExp);
-//    		} 
-//    	}
-//    }
 }
  
