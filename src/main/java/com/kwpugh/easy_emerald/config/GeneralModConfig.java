@@ -23,6 +23,12 @@ public class GeneralModConfig
 	public static ForgeConfigSpec.IntValue OBSIDIAN_TOOL_MINING_LEVEL;
 	public static ForgeConfigSpec.IntValue OBSIDIAN_TOOL_ENCHANTABILITY;
 
+    public static ForgeConfigSpec.IntValue COPPER_TOOL_DURABILITY;
+    public static ForgeConfigSpec.DoubleValue COPPER_TOOL_EFFICIENCY;
+    public static ForgeConfigSpec.DoubleValue COPPER_TOOL_ATTACK;
+    public static ForgeConfigSpec.IntValue COPPER_TOOL_MINING_LEVEL;
+    public static ForgeConfigSpec.IntValue COPPER_TOOL_ENCHANTABILITY;
+
     public static ForgeConfigSpec.IntValue AMETHYST_TOOL_DURABILITY;
     public static ForgeConfigSpec.DoubleValue AMETHYST_TOOL_EFFICIENCY;
     public static ForgeConfigSpec.DoubleValue AMETHYST_TOOL_ATTACK;
@@ -43,6 +49,11 @@ public class GeneralModConfig
 	public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_ENCHANTABILITY;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_ARMOR_TOUGHNESS;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_ARMOR_KNOCKBACK_RESISTANCE;
+
+    public static ForgeConfigSpec.IntValue COPPER_ARMOR_DURABILITY_MULTIPLIER;
+    public static ForgeConfigSpec.IntValue COPPER_ARMOR_ENCHANTABILITY;
+    public static ForgeConfigSpec.DoubleValue COPPER_ARMOR_TOUGHNESS;
+    public static ForgeConfigSpec.DoubleValue COPPER_ARMOR_KNOCKBACK_RESISTANCE;
 
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_DURABILITY_MULTIPLIER;
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_ENCHANTABILITY;
@@ -76,12 +87,23 @@ public class GeneralModConfig
         
         SERVER_BUILDER.comment("Obsidian Tool Material").push("obsidian_tool_material");
 
-        OBSIDIAN_TOOL_DURABILITY = SERVER_BUILDER.comment("Obsidian Tool Durability [250-3000, default: 525]").defineInRange("emeraldToolDurability", 525, 250, 3000);
-        OBSIDIAN_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Obsidian Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("emeraldToolEfficiency", 5.5, 0.0, 7.0);
-        OBSIDIAN_TOOL_ATTACK = SERVER_BUILDER.comment("Obsidian attack damage [1-40, default: 3.0]").defineInRange("emeraldAttackDamage", 3.0, 0.0, 40.0);
-        OBSIDIAN_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Obsidian tool mining level [1-5, default: 3]").defineInRange("emeraldMiningLevel", 3, 1, 5);
-        OBSIDIAN_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Obsidian tool enchantability [1-30, default: 18]").defineInRange("emeraldEnchantability", 18, 1, 30);
+        OBSIDIAN_TOOL_DURABILITY = SERVER_BUILDER.comment("Obsidian Tool Durability [250-3000, default: 525]").defineInRange("obsidianToolDurability", 525, 250, 3000);
+        OBSIDIAN_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Obsidian Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("obsidianToolEfficiency", 5.5, 0.0, 7.0);
+        OBSIDIAN_TOOL_ATTACK = SERVER_BUILDER.comment("Obsidian attack damage [1-40, default: 3.0]").defineInRange("obsidianAttackDamage", 3.0, 0.0, 40.0);
+        OBSIDIAN_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Obsidian tool mining level [1-5, default: 3]").defineInRange("obsidianMiningLevel", 3, 1, 5);
+        OBSIDIAN_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Obsidian tool enchantability [1-30, default: 18]").defineInRange("obsidianEnchantability", 18, 1, 30);
         
+        SERVER_BUILDER.pop();
+
+
+        SERVER_BUILDER.comment("Copper Tool Material").push("copper_tool_material");
+
+        COPPER_TOOL_DURABILITY = SERVER_BUILDER.comment("Copper Tool Durability [250-3000, default: 525]").defineInRange("copperToolDurability", 225, 200, 3000);
+        COPPER_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Copper Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("copperToolEfficiency", 5.5, 0.0, 7.0);
+        COPPER_TOOL_ATTACK = SERVER_BUILDER.comment("Copper attack damage [1-40, default: 3.0]").defineInRange("copperAttackDamage", 3.0, 0.0, 40.0);
+        COPPER_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Copper tool mining level [1-5, default: 3]").defineInRange("copperMiningLevel", 2, 1, 5);
+        COPPER_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Copper tool enchantability [1-30, default: 18]").defineInRange("copperEnchantability", 18, 1, 30);
+
         SERVER_BUILDER.pop();
 
 
@@ -124,6 +146,16 @@ public class GeneralModConfig
         OBSIDIAN_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Obsidian armor toughness [0.0-4.0, default: 1.0]").defineInRange("obsidianArmorToughness", 1.0, 0.0, 4.0);
         OBSIDIAN_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Obsidian armor knockback resistance [0.0-4.0, default: 0.0]").defineInRange("obsidianArmorKnockbackResistance", 0.0, 0.0, 4.0);
         
+        SERVER_BUILDER.pop();
+
+
+        SERVER_BUILDER.comment("Copper Armor Material").push("copper_armor_material");
+
+        COPPER_ARMOR_DURABILITY_MULTIPLIER = SERVER_BUILDER.comment("Copper armor durability multiplier [1-50, default: 29]").defineInRange("copperArmorDurabilityMultiplier", 14, 1, 50);
+        COPPER_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Copper armor enchantability [1-31, default: 13]").defineInRange("copperArmorEnchantability", 13, 1, 31);
+        COPPER_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Copper armor toughness [0.0-4.0, default: 1.0]").defineInRange("copperArmorToughness", 0.0, 0.0, 4.0);
+        COPPER_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Copper armor knockback resistance [0.0-4.0, default: 0.0]").defineInRange("copperArmorKnockbackResistance", 0.0, 0.0, 4.0);
+
         SERVER_BUILDER.pop();
 
 

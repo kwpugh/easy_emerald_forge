@@ -33,16 +33,19 @@ public class ItemInit
 	public static final Tier RUBY_TOOL_MATERIAL = new RubyToolMaterial();
 	public static final Tier OBSIDIAN_TOOL_MATERIAL = new ObsidianToolMaterial();
 	public static final Tier AMETHYST_TOOL_MATERIAL = new AmethystToolMaterial();
+	public static final Tier COPPER_TOOL_MATERIAL = new CopperToolMaterial();
 
 	public static final ArmorMaterial EMERALD_ARMOR_MATERIAL = new EmeraldArmorMaterial();
 	public static final ArmorMaterial RUBY_ARMOR_MATERIAL = new RubyArmorMaterial();
 	public static final ArmorMaterial OBSIDIAN_ARMOR_MATERIAL = new ObsidianArmorMaterial();
 	public static final ArmorMaterial AMETHYST_ARMOR_MATERIAL = new AmethystArmorMaterial();
+	public static final ArmorMaterial COPPER_ARMOR_MATERIAL = new CopperArmorMaterial();
 
 	static int emeraldDurability = GeneralModConfig.EMERALD_TOOL_DURABILITY.get();
 	static int rubyDurability = GeneralModConfig.RUBY_TOOL_DURABILITY.get();
 	static int obsidianDurability = GeneralModConfig.OBSIDIAN_TOOL_DURABILITY.get();
 	static int amethystDurability = GeneralModConfig.AMETHYST_TOOL_DURABILITY.get();
+	static int copperDurability = GeneralModConfig.COPPER_TOOL_DURABILITY.get();
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EasyEmerald.modid);
 	
@@ -82,6 +85,17 @@ public class ItemInit
 	public static final RegistryObject<Item> OBSIDIAN_PAXEL = ITEMS.register("obsidian_paxel", () -> new ModPaxel(4, -3.0f, OBSIDIAN_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> OBSIDIAN_TREEAXE = ITEMS.register("obsidian_treeaxe", () -> new ModTreeAxe(OBSIDIAN_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 
+	public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(COPPER_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_BOW = ITEMS.register("copper_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(copperDurability)));
+	public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new PickaxeItem(COPPER_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe", () -> new AxeItem(COPPER_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", () -> new ShovelItem(COPPER_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", () -> new HoeItem(COPPER_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_EXCAVATOR = ITEMS.register("copper_excavator", () -> new ModExcavator(COPPER_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_HAMMER = ITEMS.register("copper_hammer", () -> new ModHammer(COPPER_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_PAXEL = ITEMS.register("copper_paxel", () -> new ModPaxel(4, -3.0f, COPPER_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_TREEAXE = ITEMS.register("copper_treeaxe", () -> new ModTreeAxe(COPPER_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
 	public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword", () -> new SwordItem(AMETHYST_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> AMETHYST_BOW = ITEMS.register("amethyst_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(amethystDurability)));
 	public static final RegistryObject<Item> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe", () -> new PickaxeItem(AMETHYST_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
@@ -107,6 +121,11 @@ public class ItemInit
 	public static final RegistryObject<Item> ARMOR_OBSIDIAN_BODY = ITEMS.register("obsidian_body", () -> new ArmorItem(OBSIDIAN_ARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> ARMOR_OBSIDIAN_LEGGINGS = ITEMS.register("obsidian_leggings", () -> new ArmorItem(OBSIDIAN_ARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> ARMOR_OBSIDIAN_BOOTS = ITEMS.register("obsidian_boots", () -> new ArmorItem(OBSIDIAN_ARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
+	public static final RegistryObject<Item> ARMOR_COPPER_HEAD = ITEMS.register("copper_head", () -> new ArmorItem(COPPER_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> ARMOR_COPPER_BODY = ITEMS.register("copper_body", () -> new ArmorItem(COPPER_ARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> ARMOR_COPPER_LEGGINGS = ITEMS.register("copper_leggings", () -> new ArmorItem(COPPER_ARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> ARMOR_COPPER_BOOTS = ITEMS.register("copper_boots", () -> new ArmorItem(COPPER_ARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 
 	public static final RegistryObject<Item> ARMOR_AMETHYST_HEAD = ITEMS.register("amethyst_head", () -> new ArmorItem(AMETHYST_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> ARMOR_AMETHYST_BODY = ITEMS.register("amethyst_body", () -> new ArmorItem(AMETHYST_ARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
