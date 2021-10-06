@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eee",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "e": {
+      "item": "minecraft:copper_ingot",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:copper_pickaxe"
+  }
+}

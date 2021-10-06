@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ee",
+    " se",
+    "s  "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:copper_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:copper_excavator"
+  }
+}

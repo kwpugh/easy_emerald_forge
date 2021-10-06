@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " r ",
+    " r ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:copper_sword"
+  }
+}

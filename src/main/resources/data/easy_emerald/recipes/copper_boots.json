@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "e e",
+    "e e"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:copper_ingot",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "easy_emerald:copper_boots"
+  }
+}

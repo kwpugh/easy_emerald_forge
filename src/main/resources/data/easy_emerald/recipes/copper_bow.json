@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:bow"
+  },
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "result": {
+    "item": "easy_emerald:copper_bow"
+  }
+}
