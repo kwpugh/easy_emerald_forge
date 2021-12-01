@@ -8,7 +8,7 @@ import com.kwpugh.easy_emerald.util.GroupEasyEmerald;
 
 import com.kwpugh.easy_emerald.config.EmeraldModConfig;
 
-import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -66,7 +66,7 @@ public class EasyEmerald
     }
 
     @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event)
+    public void onServerStarting(ServerStartingEvent event)
     {
     	logger.info("EasyEmerald server setup");
     }
