@@ -19,7 +19,7 @@ public class CopperArmorMaterial implements ArmorMaterial
     private static double copperKnochback = GeneralModConfig.COPPER_ARMOR_KNOCKBACK_RESISTANCE.get();
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNT = new int[]{3, 6, 8, 3};
+    private static final int[] PROTECTION_AMOUNT = new int[]{2, 4, 5, 2};
 
     @Override
     public int getDurabilityForSlot(EquipmentSlot slot)

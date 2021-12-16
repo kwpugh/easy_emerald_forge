@@ -151,9 +151,9 @@ public class GeneralModConfig
 
         SERVER_BUILDER.comment("Copper Armor Material").push("copper_armor_material");
 
-        COPPER_ARMOR_DURABILITY_MULTIPLIER = SERVER_BUILDER.comment("Copper armor durability multiplier [1-50, default: 29]").defineInRange("copperArmorDurabilityMultiplier", 14, 1, 50);
+        COPPER_ARMOR_DURABILITY_MULTIPLIER = SERVER_BUILDER.comment("Copper armor durability multiplier [1-50, default: 14]").defineInRange("copperArmorDurabilityMultiplier", 14, 1, 50);
         COPPER_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Copper armor enchantability [1-31, default: 13]").defineInRange("copperArmorEnchantability", 13, 1, 31);
-        COPPER_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Copper armor toughness [0.0-4.0, default: 1.0]").defineInRange("copperArmorToughness", 0.0, 0.0, 4.0);
+        COPPER_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Copper armor toughness [0.0-4.0, default: 0.0]").defineInRange("copperArmorToughness", 0.0, 0.0, 4.0);
         COPPER_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Copper armor knockback resistance [0.0-4.0, default: 0.0]").defineInRange("copperArmorKnockbackResistance", 0.0, 0.0, 4.0);
 
         SERVER_BUILDER.pop();
