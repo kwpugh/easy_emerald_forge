@@ -17,9 +17,14 @@ public class ObsidianArmorMaterial implements ArmorMaterial
 	private static int enchantability = GeneralModConfig.OBSIDIAN_ARMOR_ENCHANTABILITY.get();	
 	private static double toughness = GeneralModConfig.OBSIDIAN_ARMOR_TOUGHNESS.get();
 	private static double knochback = GeneralModConfig.OBSIDIAN_ARMOR_KNOCKBACK_RESISTANCE.get();
-				
+
+	private static int obsidianHead = GeneralModConfig.OBSIDIAN_ARMOR_PROTECTION_HEAD.get();
+	private static int obsidianBody = GeneralModConfig.OBSIDIAN_ARMOR_PROTECTION_BODY.get();
+	private static int obsidianLeggings = GeneralModConfig.OBSIDIAN_ARMOR_PROTECTION_LEGGINGS.get();
+	private static int obsidianFeet = GeneralModConfig.OBSIDIAN_ARMOR_PROTECTION_FEET.get();
+
 	private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNT = new int[]{3, 6, 8, 3};
+    private static final int[] PROTECTION_AMOUNT = new int[]{obsidianHead, obsidianLeggings, obsidianBody, obsidianFeet};
     
 	@Override
 	public int getDurabilityForSlot(EquipmentSlot slot)

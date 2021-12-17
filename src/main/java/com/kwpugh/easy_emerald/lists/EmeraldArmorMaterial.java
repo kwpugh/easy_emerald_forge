@@ -16,9 +16,14 @@ public class EmeraldArmorMaterial implements ArmorMaterial
 	private static int enchantability = GeneralModConfig.EMERALD_ARMOR_ENCHANTABILITY.get();	
 	private static double toughness = GeneralModConfig.EMERALD_ARMOR_TOUGHNESS.get();
 	private static double knochback = GeneralModConfig.EMERALD_ARMOR_KNOCKBACK_RESISTANCE.get();
-				
+
+	private static int emeraldHead = GeneralModConfig.EMERALD_ARMOR_PROTECTION_HEAD.get();
+	private static int emeraldBody = GeneralModConfig.EMERALD_ARMOR_PROTECTION_BODY.get();
+	private static int emeraldLeggings = GeneralModConfig.EMERALD_ARMOR_PROTECTION_LEGGINGS.get();
+	private static int emeraldFeet = GeneralModConfig.EMERALD_ARMOR_PROTECTION_FEET.get();
+
 	private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNT = new int[]{3, 6, 8, 3};
+    private static final int[] PROTECTION_AMOUNT = new int[]{emeraldHead, emeraldLeggings, emeraldBody, emeraldFeet};
     
 	@Override
 	public int getDurabilityForSlot(EquipmentSlot slot)

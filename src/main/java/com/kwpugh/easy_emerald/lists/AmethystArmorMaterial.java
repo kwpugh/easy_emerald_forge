@@ -18,8 +18,13 @@ public class AmethystArmorMaterial implements ArmorMaterial
     private static double toughness = GeneralModConfig.AMETHYST_ARMOR_TOUGHNESS.get();
     private static double knochback = GeneralModConfig.AMETHYST_ARMOR_KNOCKBACK_RESISTANCE.get();
 
+    private static int amethystHead = GeneralModConfig.AMETHYST_ARMOR_PROTECTION_HEAD.get();
+    private static int amethystBody = GeneralModConfig.AMETHYST_ARMOR_PROTECTION_BODY.get();
+    private static int amethystLeggings = GeneralModConfig.AMETHYST_ARMOR_PROTECTION_LEGGINGS.get();
+    private static int amethystFeet = GeneralModConfig.AMETHYST_ARMOR_PROTECTION_FEET.get();
+
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNT = new int[]{3, 6, 8, 3};
+    private static final int[] PROTECTION_AMOUNT = new int[]{amethystHead, amethystLeggings, amethystBody, amethystFeet};
 
     @Override
     public int getDurabilityForSlot(EquipmentSlot slot)

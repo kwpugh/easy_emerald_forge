@@ -18,8 +18,13 @@ public class CopperArmorMaterial implements ArmorMaterial
     private static double copperToughness = GeneralModConfig.COPPER_ARMOR_TOUGHNESS.get();
     private static double copperKnochback = GeneralModConfig.COPPER_ARMOR_KNOCKBACK_RESISTANCE.get();
 
+    private static int copperHead = GeneralModConfig.COPPER_ARMOR_PROTECTION_HEAD.get();
+    private static int copperBody = GeneralModConfig.COPPER_ARMOR_PROTECTION_BODY.get();
+    private static int copperLeggings = GeneralModConfig.COPPER_ARMOR_PROTECTION_LEGGINGS.get();
+    private static int copperFeet = GeneralModConfig.COPPER_ARMOR_PROTECTION_FEET.get();
+
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNT = new int[]{2, 4, 5, 2};
+    private static final int[] PROTECTION_AMOUNT = new int[]{copperHead, copperLeggings, copperBody, copperFeet};
 
     @Override
     public int getDurabilityForSlot(EquipmentSlot slot)

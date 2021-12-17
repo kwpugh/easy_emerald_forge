@@ -16,9 +16,14 @@ public class RubyArmorMaterial implements ArmorMaterial
 	private static int enchantability = GeneralModConfig.RUBY_ARMOR_ENCHANTABILITY.get();	
 	private static double toughness = GeneralModConfig.RUBY_ARMOR_TOUGHNESS.get();
 	private static double knochback = GeneralModConfig.RUBY_ARMOR_KNOCKBACK_RESISTANCE.get();
-				
+
+	private static int rubyHead = GeneralModConfig.RUBY_ARMOR_PROTECTION_HEAD.get();
+	private static int rubyBody = GeneralModConfig.RUBY_ARMOR_PROTECTION_BODY.get();
+	private static int rubyLeggings = GeneralModConfig.RUBY_ARMOR_PROTECTION_LEGGINGS.get();
+	private static int rubyFeet = GeneralModConfig.RUBY_ARMOR_PROTECTION_FEET.get();
+
 	private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNT = new int[]{3, 6, 8, 3};
+    private static final int[] PROTECTION_AMOUNT = new int[]{rubyHead, rubyLeggings, rubyBody, rubyFeet};
     
 	@Override
 	public int getDurabilityForSlot(EquipmentSlot slot)

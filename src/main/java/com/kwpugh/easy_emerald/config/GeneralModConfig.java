@@ -39,26 +39,46 @@ public class GeneralModConfig
 	public static ForgeConfigSpec.IntValue EMERALD_ARMOR_ENCHANTABILITY;
 	public static ForgeConfigSpec.DoubleValue EMERALD_ARMOR_TOUGHNESS;
 	public static ForgeConfigSpec.DoubleValue EMERALD_ARMOR_KNOCKBACK_RESISTANCE;
-	
+    public static ForgeConfigSpec.IntValue EMERALD_ARMOR_PROTECTION_HEAD;
+    public static ForgeConfigSpec.IntValue EMERALD_ARMOR_PROTECTION_BODY;
+    public static ForgeConfigSpec.IntValue EMERALD_ARMOR_PROTECTION_LEGGINGS;
+    public static ForgeConfigSpec.IntValue EMERALD_ARMOR_PROTECTION_FEET;
+
 	public static ForgeConfigSpec.IntValue RUBY_ARMOR_DURABILITY_MULTIPLIER;
 	public static ForgeConfigSpec.IntValue RUBY_ARMOR_ENCHANTABILITY;
 	public static ForgeConfigSpec.DoubleValue RUBY_ARMOR_TOUGHNESS;
 	public static ForgeConfigSpec.DoubleValue RUBY_ARMOR_KNOCKBACK_RESISTANCE;
-	
+    public static ForgeConfigSpec.IntValue RUBY_ARMOR_PROTECTION_HEAD;
+    public static ForgeConfigSpec.IntValue RUBY_ARMOR_PROTECTION_BODY;
+    public static ForgeConfigSpec.IntValue RUBY_ARMOR_PROTECTION_LEGGINGS;
+    public static ForgeConfigSpec.IntValue RUBY_ARMOR_PROTECTION_FEET;
+
 	public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_DURABILITY_MULTIPLIER;
 	public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_ENCHANTABILITY;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_ARMOR_TOUGHNESS;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_ARMOR_KNOCKBACK_RESISTANCE;
+    public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_PROTECTION_HEAD;
+    public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_PROTECTION_BODY;
+    public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_PROTECTION_LEGGINGS;
+    public static ForgeConfigSpec.IntValue OBSIDIAN_ARMOR_PROTECTION_FEET;
 
     public static ForgeConfigSpec.IntValue COPPER_ARMOR_DURABILITY_MULTIPLIER;
     public static ForgeConfigSpec.IntValue COPPER_ARMOR_ENCHANTABILITY;
     public static ForgeConfigSpec.DoubleValue COPPER_ARMOR_TOUGHNESS;
     public static ForgeConfigSpec.DoubleValue COPPER_ARMOR_KNOCKBACK_RESISTANCE;
+    public static ForgeConfigSpec.IntValue COPPER_ARMOR_PROTECTION_HEAD;
+    public static ForgeConfigSpec.IntValue COPPER_ARMOR_PROTECTION_BODY;
+    public static ForgeConfigSpec.IntValue COPPER_ARMOR_PROTECTION_LEGGINGS;
+    public static ForgeConfigSpec.IntValue COPPER_ARMOR_PROTECTION_FEET;
 
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_DURABILITY_MULTIPLIER;
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_ENCHANTABILITY;
     public static ForgeConfigSpec.DoubleValue AMETHYST_ARMOR_TOUGHNESS;
     public static ForgeConfigSpec.DoubleValue AMETHYST_ARMOR_KNOCKBACK_RESISTANCE;
+    public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_HEAD;
+    public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_BODY;
+    public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_LEGGINGS;
+    public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_FEET;
 
     public static void init(ForgeConfigSpec.Builder SERVER_BUILDER)
     {          	        
@@ -125,7 +145,11 @@ public class GeneralModConfig
         EMERALD_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Emerald armor enchantability [1-31, default: 15]").defineInRange("emeraldArmorEnchantability", 15, 1, 31);
         EMERALD_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Emerald armor toughness [0.0-4.0, default: 0.0]").defineInRange("emeraldArmorToughness", 0.0, 0.0, 4.0);
         EMERALD_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Emerald armor knockback resistance [0.0-4.0, default: 0.0]").defineInRange("emeraldArmorKnockbackResistance", 0.0, 0.0, 4.0);
-        
+        EMERALD_ARMOR_PROTECTION_HEAD = SERVER_BUILDER.comment("Emerald armor protection head [1-50, default: 3]").defineInRange("emeraldArmorProtectionHead", 3, 1, 50);
+        EMERALD_ARMOR_PROTECTION_BODY = SERVER_BUILDER.comment("Emerald armor protection body [1-50, default: 8]").defineInRange("emeraldArmorProtectionBody", 8, 1, 50);
+        EMERALD_ARMOR_PROTECTION_LEGGINGS = SERVER_BUILDER.comment("Emerald armor protection leggings [1-50, default: 6]").defineInRange("emeraldArmorProtectionLeggings", 6, 1, 50);
+        EMERALD_ARMOR_PROTECTION_FEET = SERVER_BUILDER.comment("Emerald armor protection feet [1-50, default: 3]").defineInRange("emeraldArmorProtectionFeet", 3, 1, 50);
+
         SERVER_BUILDER.pop();
  
         
@@ -135,7 +159,11 @@ public class GeneralModConfig
         RUBY_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Ruby armor enchantability [1-31, default: 17]").defineInRange("rubyArmorEnchantability", 17, 1, 31);
         RUBY_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Ruby armor toughness [0.0-4.0, default: 0.5]").defineInRange("rubyArmorToughness", 0.5, 0.0, 4.0);
         RUBY_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Ruby armor knockback resistance [0.0-4.0, default: 0.1]").defineInRange("rubyArmorKnockbackResistance", 0.1, 0.0, 4.0);
-        
+        RUBY_ARMOR_PROTECTION_HEAD = SERVER_BUILDER.comment("Ruby armor protection head [1-50, default: 3]").defineInRange("rubyArmorProtectionHead", 3, 1, 50);
+        RUBY_ARMOR_PROTECTION_BODY = SERVER_BUILDER.comment("Ruby armor protection body [1-50, default: 8]").defineInRange("rubyArmorProtectionBody", 8, 1, 50);
+        RUBY_ARMOR_PROTECTION_LEGGINGS = SERVER_BUILDER.comment("Ruby armor protection leggings [1-50, default: 6]").defineInRange("rubyArmorProtectionLeggings", 6, 1, 50);
+        RUBY_ARMOR_PROTECTION_FEET = SERVER_BUILDER.comment("Ruby armor protection feet [1-50, default: 3]").defineInRange("rubyArmorProtectionFeet", 3, 1, 50);
+
         SERVER_BUILDER.pop();
  
         
@@ -145,7 +173,11 @@ public class GeneralModConfig
         OBSIDIAN_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Obsidian armor enchantability [1-31, default: 13]").defineInRange("obsidianArmorEnchantability", 13, 1, 31);
         OBSIDIAN_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Obsidian armor toughness [0.0-4.0, default: 1.0]").defineInRange("obsidianArmorToughness", 1.0, 0.0, 4.0);
         OBSIDIAN_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Obsidian armor knockback resistance [0.0-4.0, default: 0.0]").defineInRange("obsidianArmorKnockbackResistance", 0.0, 0.0, 4.0);
-        
+        OBSIDIAN_ARMOR_PROTECTION_HEAD = SERVER_BUILDER.comment("Obsidian armor protection head [1-50, default: 3]").defineInRange("obsidianArmorProtectionHead", 3, 1, 50);
+        OBSIDIAN_ARMOR_PROTECTION_BODY = SERVER_BUILDER.comment("Obsidian armor protection body [1-50, default: 8]").defineInRange("obsidianArmorProtectionBody", 8, 1, 50);
+        OBSIDIAN_ARMOR_PROTECTION_LEGGINGS = SERVER_BUILDER.comment("Obsidian armor protection leggings [1-50, default: 6]").defineInRange("obsidianArmorProtectionLeggings", 6, 1, 50);
+        OBSIDIAN_ARMOR_PROTECTION_FEET = SERVER_BUILDER.comment("Obsidian armor protection feet [1-50, default: 3]").defineInRange("obsidianArmorProtectionFeet", 3, 1, 50);
+
         SERVER_BUILDER.pop();
 
 
@@ -155,6 +187,10 @@ public class GeneralModConfig
         COPPER_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Copper armor enchantability [1-31, default: 13]").defineInRange("copperArmorEnchantability", 13, 1, 31);
         COPPER_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Copper armor toughness [0.0-4.0, default: 0.0]").defineInRange("copperArmorToughness", 0.0, 0.0, 4.0);
         COPPER_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Copper armor knockback resistance [0.0-4.0, default: 0.0]").defineInRange("copperArmorKnockbackResistance", 0.0, 0.0, 4.0);
+        COPPER_ARMOR_PROTECTION_HEAD = SERVER_BUILDER.comment("Copper armor protection head [1-50, default: 2]").defineInRange("copperArmorProtectionHead", 2, 1, 50);
+        COPPER_ARMOR_PROTECTION_BODY = SERVER_BUILDER.comment("Copper armor protection body [1-50, default: 5]").defineInRange("copperArmorProtectionBody", 5, 1, 50);
+        COPPER_ARMOR_PROTECTION_LEGGINGS = SERVER_BUILDER.comment("Copper armor protection leggings [1-50, default: 4]").defineInRange("copperArmorProtectionLeggings", 4, 1, 50);
+        COPPER_ARMOR_PROTECTION_FEET = SERVER_BUILDER.comment("Copper armor protection feet [1-50, default: 2]").defineInRange("copperArmorProtectionFeet", 2, 1, 50);
 
         SERVER_BUILDER.pop();
 
@@ -165,6 +201,10 @@ public class GeneralModConfig
         AMETHYST_ARMOR_ENCHANTABILITY = SERVER_BUILDER.comment("Amethyst armor enchantability [1-31, default: 25]").defineInRange("amethystArmorEnchantability", 25, 1, 31);
         AMETHYST_ARMOR_TOUGHNESS = SERVER_BUILDER.comment("Amethyst armor toughness [0.0-4.0, default: 0.75]").defineInRange("amethystArmorToughness", 0.75, 0.0, 4.0);
         AMETHYST_ARMOR_KNOCKBACK_RESISTANCE = SERVER_BUILDER.comment("Amethyst armor knockback resistance [0.0-4.0, default: 0.25]").defineInRange("amethystArmorKnockbackResistance", 0.25, 0.0, 4.0);
+        AMETHYST_ARMOR_PROTECTION_HEAD = SERVER_BUILDER.comment("Amethyst armor protection head [1-50, default: 3]").defineInRange("amethystArmorProtectionHead", 3, 1, 50);
+        AMETHYST_ARMOR_PROTECTION_BODY = SERVER_BUILDER.comment("Amethyst armor protection body [1-50, default: 8]").defineInRange("amethystArmorProtectionBody", 8, 1, 50);
+        AMETHYST_ARMOR_PROTECTION_LEGGINGS = SERVER_BUILDER.comment("Amethyst armor protection leggings [1-50, default: 6]").defineInRange("amethystArmorProtectionLeggings", 6, 1, 50);
+        AMETHYST_ARMOR_PROTECTION_FEET = SERVER_BUILDER.comment("Amethyst armor protection feet [1-50, default: 3]").defineInRange("amethystArmorProtectionFeet", 3, 1, 50);
 
         SERVER_BUILDER.pop();
     }
