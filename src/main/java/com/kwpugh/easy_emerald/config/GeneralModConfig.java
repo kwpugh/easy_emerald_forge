@@ -87,7 +87,6 @@ public class GeneralModConfig
         EMERALD_TOOL_DURABILITY = SERVER_BUILDER.comment("Emerald Tool Durability [250-3000, default: 700]").defineInRange("emeraldToolDurability", 700, 250, 3000);
         EMERALD_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Emerald Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("emeraldToolEfficiency", 5.5, 0.0, 7.0);
         EMERALD_TOOL_ATTACK = SERVER_BUILDER.comment("Emerald attack damage [1-40, default: 3.0]").defineInRange("emeraldAttackDamage", 3.0, 0.0, 40.0);
-        EMERALD_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Emerald tool mining level [1-5, default: 2]").defineInRange("emeraldMiningLevel", 2, 1, 5);
         EMERALD_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Emerald tool enchantability [1-30, default: 21]").defineInRange("emeraldEnchantability", 21, 1, 30);
         
         SERVER_BUILDER.pop();
@@ -98,7 +97,6 @@ public class GeneralModConfig
         RUBY_TOOL_DURABILITY = SERVER_BUILDER.comment("Ruby Tool Durability [250-3000, default: 1050]").defineInRange("emeraldToolDurability", 1050, 250, 3000);
         RUBY_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Ruby Tool efficiency [1.0-7.0, default: 6.5]").defineInRange("emeraldToolEfficiency", 6.5, 0.0, 7.0);
         RUBY_TOOL_ATTACK = SERVER_BUILDER.comment("Ruby attack damage [1-40, default: 4.0]").defineInRange("emeraldAttackDamage", 4.0, 0.0, 40.0);
-        RUBY_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Ruby tool mining level [1-5, default: 3]").defineInRange("emeraldMiningLevel", 3, 1, 5);
         RUBY_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Ruby tool enchantability [1-30, default: 25]").defineInRange("emeraldEnchantability", 25, 1, 30);
         RUBY_SWORD_PERKS = SERVER_BUILDER.comment("Enable extra loot drops from Ruby Swords [true / false]").define("rubySwordExtraLoot", false);
 
@@ -110,7 +108,6 @@ public class GeneralModConfig
         OBSIDIAN_TOOL_DURABILITY = SERVER_BUILDER.comment("Obsidian Tool Durability [250-3000, default: 525]").defineInRange("obsidianToolDurability", 525, 250, 3000);
         OBSIDIAN_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Obsidian Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("obsidianToolEfficiency", 5.5, 0.0, 7.0);
         OBSIDIAN_TOOL_ATTACK = SERVER_BUILDER.comment("Obsidian attack damage [1-40, default: 3.0]").defineInRange("obsidianAttackDamage", 3.0, 0.0, 40.0);
-        OBSIDIAN_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Obsidian tool mining level [1-5, default: 3]").defineInRange("obsidianMiningLevel", 3, 1, 5);
         OBSIDIAN_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Obsidian tool enchantability [1-30, default: 18]").defineInRange("obsidianEnchantability", 18, 1, 30);
         
         SERVER_BUILDER.pop();
@@ -121,7 +118,6 @@ public class GeneralModConfig
         COPPER_TOOL_DURABILITY = SERVER_BUILDER.comment("Copper Tool Durability [250-3000, default: 525]").defineInRange("copperToolDurability", 225, 200, 3000);
         COPPER_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Copper Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("copperToolEfficiency", 5.5, 0.0, 7.0);
         COPPER_TOOL_ATTACK = SERVER_BUILDER.comment("Copper attack damage [1-40, default: 3.0]").defineInRange("copperAttackDamage", 3.0, 0.0, 40.0);
-        COPPER_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Copper tool mining level [1-5, default: 3]").defineInRange("copperMiningLevel", 2, 1, 5);
         COPPER_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Copper tool enchantability [1-30, default: 18]").defineInRange("copperEnchantability", 18, 1, 30);
 
         SERVER_BUILDER.pop();
@@ -132,7 +128,6 @@ public class GeneralModConfig
         AMETHYST_TOOL_DURABILITY = SERVER_BUILDER.comment("Amethyst Tool Durability [250-3000, default: 1404]").defineInRange("amethystToolDurability", 1404, 250, 3000);
         AMETHYST_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Amethyst Tool efficiency [1.0-7.0, default: 6.8]").defineInRange("amethystToolEfficiency", 6.8, 0.0, 7.0);
         AMETHYST_TOOL_ATTACK = SERVER_BUILDER.comment("Amethyst attack damage [1-40, default: 5.0]").defineInRange("amethystAttackDamage", 5.0, 0.0, 40.0);
-        AMETHYST_TOOL_MINING_LEVEL = SERVER_BUILDER.comment("Amethyst tool mining level [1-5, default: 3]").defineInRange("amethystMiningLevel", 3, 1, 5);
         AMETHYST_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Amethyst tool enchantability [1-30, default: 25]").defineInRange("amethystEnchantability", 25, 1, 30);
 
         SERVER_BUILDER.pop();

@@ -10,31 +10,14 @@ import com.kwpugh.easy_emerald.items.juju.EmeraldJuju;
 import com.kwpugh.easy_emerald.items.juju.RubyJuju;
 import com.kwpugh.easy_emerald.items.tools.*;
 import com.kwpugh.easy_emerald.lists.*;
-
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PickaxeItem;
-
-import net.minecraft.world.item.ShovelItem;
-import net.minecraft.world.item.SwordItem;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit
 {
-	public static final Tier EMERALD_TOOL_MATERIAL = new EmeraldToolMaterial();
-	public static final Tier RUBY_TOOL_MATERIAL = new RubyToolMaterial();
-	public static final Tier OBSIDIAN_TOOL_MATERIAL = new ObsidianToolMaterial();
-	public static final Tier AMETHYST_TOOL_MATERIAL = new AmethystToolMaterial();
-	public static final Tier COPPER_TOOL_MATERIAL = new CopperToolMaterial();
-
 	public static final ArmorMaterial EMERALD_ARMOR_MATERIAL = new EmeraldArmorMaterial();
 	public static final ArmorMaterial RUBY_ARMOR_MATERIAL = new RubyArmorMaterial();
 	public static final ArmorMaterial OBSIDIAN_ARMOR_MATERIAL = new ObsidianArmorMaterial();
@@ -49,63 +32,63 @@ public class ItemInit
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EasyEmerald.modid);
 	
-	public static final RegistryObject<Item> EMERALD_SWORD = ITEMS.register("emerald_sword", () -> new SwordItem(EMERALD_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_SWORD = ITEMS.register("emerald_sword", () -> new SwordItem(ToolMaterialTiers.EMERALD, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> EMERALD_BOW = ITEMS.register("emerald_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(emeraldDurability)));
-	public static final RegistryObject<Item> EMERALD_PICKAXE = ITEMS.register("emerald_pickaxe", () -> new PickaxeItem(EMERALD_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_AXE = ITEMS.register("emerald_axe", () -> new AxeItem(EMERALD_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_SHOVEL = ITEMS.register("emerald_shovel", () -> new ShovelItem(EMERALD_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_HOE = ITEMS.register("emerald_hoe", () -> new HoeItem(EMERALD_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_EXCAVATOR = ITEMS.register("emerald_excavator", () -> new ModExcavator(EMERALD_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_HAMMER = ITEMS.register("emerald_hammer", () -> new ModHammer(EMERALD_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_PAXEL = ITEMS.register("emerald_paxel", () -> new ModPaxel(4, -3.0f, EMERALD_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> EMERALD_TREEAXE = ITEMS.register("emerald_treeaxe", () -> new ModTreeAxe(EMERALD_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_PICKAXE = ITEMS.register("emerald_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.EMERALD, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_AXE = ITEMS.register("emerald_axe", () -> new AxeItem(ToolMaterialTiers.EMERALD, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_SHOVEL = ITEMS.register("emerald_shovel", () -> new ShovelItem(ToolMaterialTiers.EMERALD, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_HOE = ITEMS.register("emerald_hoe", () -> new HoeItem(ToolMaterialTiers.EMERALD, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_EXCAVATOR = ITEMS.register("emerald_excavator", () -> new ModExcavator(ToolMaterialTiers.EMERALD, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_HAMMER = ITEMS.register("emerald_hammer", () -> new ModHammer(ToolMaterialTiers.EMERALD, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_PAXEL = ITEMS.register("emerald_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.EMERALD, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> EMERALD_TREEAXE = ITEMS.register("emerald_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.EMERALD, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	
 	public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_BLOCK = ITEMS.register("ruby_block", () -> new BlockItem(BlockInit.RUBY_BLOCK.get(), new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	
-	public static final RegistryObject<Item> RUBY_SWORD = ITEMS.register("ruby_sword", () -> new SwordItem(RUBY_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_SWORD = ITEMS.register("ruby_sword", () -> new SwordItem(ToolMaterialTiers.RUBY, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_BOW = ITEMS.register("ruby_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(rubyDurability)));
-	public static final RegistryObject<Item> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe", () -> new PickaxeItem(RUBY_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_AXE = ITEMS.register("ruby_axe", () -> new AxeItem(RUBY_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_SHOVEL = ITEMS.register("ruby_shovel", () -> new ShovelItem(RUBY_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_HOE = ITEMS.register("ruby_hoe", () -> new HoeItem(RUBY_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_EXCAVATOR = ITEMS.register("ruby_excavator", () -> new ModExcavator(RUBY_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_HAMMER = ITEMS.register("ruby_hammer", () -> new ModHammer(RUBY_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_PAXEL = ITEMS.register("ruby_paxel", () -> new ModPaxel(4, -3.0f, RUBY_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> RUBY_TREEAXE = ITEMS.register("ruby_treeaxe", () -> new ModTreeAxe(RUBY_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.RUBY, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_AXE = ITEMS.register("ruby_axe", () -> new AxeItem(ToolMaterialTiers.RUBY, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_SHOVEL = ITEMS.register("ruby_shovel", () -> new ShovelItem(ToolMaterialTiers.RUBY, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_HOE = ITEMS.register("ruby_hoe", () -> new HoeItem(ToolMaterialTiers.RUBY, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_EXCAVATOR = ITEMS.register("ruby_excavator", () -> new ModExcavator(ToolMaterialTiers.RUBY, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_HAMMER = ITEMS.register("ruby_hammer", () -> new ModHammer(ToolMaterialTiers.RUBY, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_PAXEL = ITEMS.register("ruby_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.RUBY, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> RUBY_TREEAXE = ITEMS.register("ruby_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.RUBY, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	
-	public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword", () -> new SwordItem(OBSIDIAN_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword", () -> new SwordItem(ToolMaterialTiers.OBSIDIAN, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> OBSIDIAN_BOW = ITEMS.register("obsidian_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(obsidianDurability)));
-	public static final RegistryObject<Item> OBSIDIAN_PICKAXE = ITEMS.register("obsidian_pickaxe", () -> new PickaxeItem(OBSIDIAN_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_AXE = ITEMS.register("obsidian_axe", () -> new AxeItem(OBSIDIAN_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_SHOVEL = ITEMS.register("obsidian_shovel", () -> new ShovelItem(OBSIDIAN_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_HOE = ITEMS.register("obsidian_hoe", () -> new HoeItem(OBSIDIAN_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_EXCAVATOR = ITEMS.register("obsidian_excavator", () -> new ModExcavator(OBSIDIAN_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_HAMMER = ITEMS.register("obsidian_hammer", () -> new ModHammer(OBSIDIAN_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_PAXEL = ITEMS.register("obsidian_paxel", () -> new ModPaxel(4, -3.0f, OBSIDIAN_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_TREEAXE = ITEMS.register("obsidian_treeaxe", () -> new ModTreeAxe(OBSIDIAN_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_PICKAXE = ITEMS.register("obsidian_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.OBSIDIAN, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_AXE = ITEMS.register("obsidian_axe", () -> new AxeItem(ToolMaterialTiers.OBSIDIAN, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_SHOVEL = ITEMS.register("obsidian_shovel", () -> new ShovelItem(ToolMaterialTiers.OBSIDIAN, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_HOE = ITEMS.register("obsidian_hoe", () -> new HoeItem(ToolMaterialTiers.OBSIDIAN, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_EXCAVATOR = ITEMS.register("obsidian_excavator", () -> new ModExcavator(ToolMaterialTiers.OBSIDIAN, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_HAMMER = ITEMS.register("obsidian_hammer", () -> new ModHammer(ToolMaterialTiers.OBSIDIAN, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_PAXEL = ITEMS.register("obsidian_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.OBSIDIAN, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_TREEAXE = ITEMS.register("obsidian_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.OBSIDIAN, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 
-	public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(COPPER_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(ToolMaterialTiers.COPPER, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> COPPER_BOW = ITEMS.register("copper_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(copperDurability)));
-	public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new PickaxeItem(COPPER_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe", () -> new AxeItem(COPPER_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", () -> new ShovelItem(COPPER_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", () -> new HoeItem(COPPER_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_EXCAVATOR = ITEMS.register("copper_excavator", () -> new ModExcavator(COPPER_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_HAMMER = ITEMS.register("copper_hammer", () -> new ModHammer(COPPER_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_PAXEL = ITEMS.register("copper_paxel", () -> new ModPaxel(4, -3.0f, COPPER_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> COPPER_TREEAXE = ITEMS.register("copper_treeaxe", () -> new ModTreeAxe(COPPER_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.COPPER, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe", () -> new AxeItem(ToolMaterialTiers.COPPER, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", () -> new ShovelItem(ToolMaterialTiers.COPPER, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", () -> new HoeItem(ToolMaterialTiers.COPPER, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_EXCAVATOR = ITEMS.register("copper_excavator", () -> new ModExcavator(ToolMaterialTiers.COPPER, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_HAMMER = ITEMS.register("copper_hammer", () -> new ModHammer(ToolMaterialTiers.COPPER, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_PAXEL = ITEMS.register("copper_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.COPPER, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> COPPER_TREEAXE = ITEMS.register("copper_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.COPPER, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 
-	public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword", () -> new SwordItem(AMETHYST_TOOL_MATERIAL, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword", () -> new SwordItem(ToolMaterialTiers.AMETHYST, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> AMETHYST_BOW = ITEMS.register("amethyst_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(amethystDurability)));
-	public static final RegistryObject<Item> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe", () -> new PickaxeItem(AMETHYST_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_AXE = ITEMS.register("amethyst_axe", () -> new AxeItem(AMETHYST_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_SHOVEL = ITEMS.register("amethyst_shovel", () -> new ShovelItem(AMETHYST_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_HOE = ITEMS.register("amethyst_hoe", () -> new HoeItem(AMETHYST_TOOL_MATERIAL, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_EXCAVATOR = ITEMS.register("amethyst_excavator", () -> new ModExcavator(AMETHYST_TOOL_MATERIAL, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_HAMMER = ITEMS.register("amethyst_hammer", () -> new ModHammer(AMETHYST_TOOL_MATERIAL, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_PAXEL = ITEMS.register("amethyst_paxel", () -> new ModPaxel(4, -3.0f, AMETHYST_TOOL_MATERIAL, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> AMETHYST_TREEAXE = ITEMS.register("amethyst_treeaxe", () -> new ModTreeAxe(AMETHYST_TOOL_MATERIAL, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.AMETHYST, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_AXE = ITEMS.register("amethyst_axe", () -> new AxeItem(ToolMaterialTiers.AMETHYST, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_SHOVEL = ITEMS.register("amethyst_shovel", () -> new ShovelItem(ToolMaterialTiers.AMETHYST, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_HOE = ITEMS.register("amethyst_hoe", () -> new HoeItem(ToolMaterialTiers.AMETHYST, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_EXCAVATOR = ITEMS.register("amethyst_excavator", () -> new ModExcavator(ToolMaterialTiers.AMETHYST, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_HAMMER = ITEMS.register("amethyst_hammer", () -> new ModHammer(ToolMaterialTiers.AMETHYST, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_PAXEL = ITEMS.register("amethyst_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.AMETHYST, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> AMETHYST_TREEAXE = ITEMS.register("amethyst_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.AMETHYST, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 
 	public static final RegistryObject<Item> ARMOR_EMERALD_HEAD = ITEMS.register("emerald_head", () -> new ArmorItem(EMERALD_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> ARMOR_EMERALD_BODY = ITEMS.register("emerald_body", () -> new ArmorItem(EMERALD_ARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
