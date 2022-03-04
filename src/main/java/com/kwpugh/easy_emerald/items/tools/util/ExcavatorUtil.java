@@ -1,28 +1,28 @@
 package com.kwpugh.easy_emerald.items.tools.util;
 
-import java.util.Random;
-import java.util.Set;
-
-import net.minecraft.tags.Tag;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.core.Direction;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.Level;
+
+import java.util.Random;
+import java.util.Set;
 
 public class ExcavatorUtil
 {
     public static final Random random = new Random();
 
-    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, Tag<Block> effectiveOn, Set<Material> effectiveMaterials)
+    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, TagKey<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
     	HitResult trace = calcRayTrace(world, player, ClipContext.Fluid.ANY);
 
@@ -49,13 +49,16 @@ public class ExcavatorUtil
         }
     }
     
-    public static void attemptBreak(Level world, BlockPos pos, Player player, Tag<Block> effectiveOn, Set<Material> effectiveMaterials)
+    public static void attemptBreak(Level world, BlockPos pos, Player player, TagKey<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
 
         BlockState state = world.getBlockState(pos);
-        boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
-        boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
-        
+//        boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
+//        boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
+
+        boolean isEffective = (state.is(effectiveOn)) || effectiveMaterials.contains(state.getMaterial());
+        boolean witherImmune = state.is(BlockTags.WITHER_IMMUNE);
+
         if(isEffective && !witherImmune)	
         {
         	world.destroyBlock(pos, false);  

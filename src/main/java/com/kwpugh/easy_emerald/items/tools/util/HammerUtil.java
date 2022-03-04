@@ -55,7 +55,7 @@ public class HammerUtil
         boolean isWithinHarvestLevel = player.getMainHandItem().isCorrectToolForDrops(state);  //added to ensure each block in the breaking is harvestable with this tool material
         boolean isHarvestable = block.canHarvestBlock(state, world, pos, player);  // added in case a block overrides canHarvestBlock to false at block level
         boolean isEffective = effectiveMaterials.contains(state.getMaterial());
-        boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
+        boolean witherImmune = state.is(BlockTags.WITHER_IMMUNE);
 
         if(isEffective && !witherImmune && isWithinHarvestLevel & isHarvestable)
         {
