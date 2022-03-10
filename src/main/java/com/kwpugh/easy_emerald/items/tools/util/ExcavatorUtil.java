@@ -51,11 +51,7 @@ public class ExcavatorUtil
     
     public static void attemptBreak(Level world, BlockPos pos, Player player, TagKey<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
-
         BlockState state = world.getBlockState(pos);
-//        boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
-//        boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
-
         boolean isEffective = (state.is(effectiveOn)) || effectiveMaterials.contains(state.getMaterial());
         boolean witherImmune = state.is(BlockTags.WITHER_IMMUNE);
 
