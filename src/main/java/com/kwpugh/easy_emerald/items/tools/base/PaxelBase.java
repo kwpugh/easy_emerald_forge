@@ -6,12 +6,10 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -60,9 +58,9 @@ public class PaxelBase extends DiggerItem
         BlockPos blockpos = context.getClickedPos();
         Player player = context.getPlayer();
         BlockState blockstate = level.getBlockState(blockpos);
-        Optional<BlockState> optional = Optional.ofNullable(blockstate.getToolModifiedState(level, blockpos, player, context.getItemInHand(), ToolActions.AXE_STRIP));
-        Optional<BlockState> optional1 = Optional.ofNullable(blockstate.getToolModifiedState(level, blockpos, player, context.getItemInHand(), ToolActions.AXE_SCRAPE));
-        Optional<BlockState> optional2 = Optional.ofNullable(blockstate.getToolModifiedState(level, blockpos, player, context.getItemInHand(), ToolActions.AXE_WAX_OFF));
+        Optional<BlockState> optional = Optional.ofNullable(blockstate.getToolModifiedState(context, ToolActions.AXE_STRIP, false));
+        Optional<BlockState> optional1 = Optional.ofNullable(blockstate.getToolModifiedState(context, ToolActions.AXE_SCRAPE, false));
+        Optional<BlockState> optional2 = Optional.ofNullable(blockstate.getToolModifiedState(context, ToolActions.AXE_WAX_OFF, false));
         ItemStack itemstack = context.getItemInHand();
         Optional<BlockState> optional3 = Optional.empty();
         if (optional.isPresent())
@@ -110,7 +108,7 @@ public class PaxelBase extends DiggerItem
             }
             else
             {
-                BlockState blockstate1 = blockstate.getToolModifiedState(level, blockpos, player, context.getItemInHand(), ToolActions.SHOVEL_FLATTEN);
+                BlockState blockstate1 = blockstate.getToolModifiedState(context, ToolActions.SHOVEL_FLATTEN, false);
                 BlockState blockstate2 = null;
                 if (blockstate1 != null && level.isEmptyBlock(blockpos.above()))
                 {
@@ -182,6 +180,6 @@ public class PaxelBase extends DiggerItem
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add((new TranslatableComponent("item.easy_emerald.paxel.tip1").withStyle(ChatFormatting.GREEN)));
+        tooltip.add((Component.translatable("item.easy_emerald.paxel.tip1").withStyle(ChatFormatting.GREEN)));
     }
 }

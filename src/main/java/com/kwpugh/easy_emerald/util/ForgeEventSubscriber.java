@@ -21,9 +21,9 @@ public final class ForgeEventSubscriber
     @SubscribeEvent
     public static void onLivingHurtEvent(LivingAttackEvent event)
     {
-        if (event.getEntityLiving() instanceof Player)
+        if (event.getEntity() instanceof Player)
         {
-            Player player = (Player) event.getEntityLiving();
+            Player player = (Player) event.getEntity();
 
             //Fall Damage
             if ((event.getSource() == DamageSource.FALL) &&

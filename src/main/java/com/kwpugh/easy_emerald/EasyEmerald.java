@@ -36,10 +36,12 @@ public class EasyEmerald
     	EmeraldModConfig.loadConfig(EmeraldModConfig.CONFIG, FMLPaths.CONFIGDIR.get().resolve("easy-emerald-general.toml"));
     	BlockInit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     	ItemInit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+
+    	FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
      
