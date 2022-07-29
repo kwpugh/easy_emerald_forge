@@ -9,7 +9,7 @@ license="MIT"
 
 [[mods]] #mandatory
 modId="easy_emerald" #mandatory
-version="1.4.1" #mandatory
+version="1.4.2" #mandatory
 displayName="Easy Emerald" #mandatory
 description='''
 Gear made from gems

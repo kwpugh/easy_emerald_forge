@@ -15,6 +15,8 @@ public class EmeraldModConfig
 
     static
     {
+        com.electronwill.nightconfig.core.Config.setInsertionOrderPreserved(true);
+        
         GeneralModConfig.init(BUILDER);
 
         CONFIG = BUILDER.build();
