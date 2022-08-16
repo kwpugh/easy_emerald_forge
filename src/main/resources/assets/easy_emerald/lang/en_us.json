@@ -88,6 +88,31 @@
   "item.easy_emerald.amethyst_leggings": "Amethyst Leggings",
   "item.easy_emerald.amethyst_boots": "Amethyst Boots",
 
+  "item.easy_emerald.wooden_excavator": "Wooden Excavator",
+  "item.easy_emerald.wooden_hammer": "Wooden Hammer",
+  "item.easy_emerald.wooden_paxel": "Wooden Paxel",
+  "item.easy_emerald.wooden_treeaxe": "Wooden Tree Axe",
+
+  "item.easy_emerald.iron_excavator": "Iron Excavator",
+  "item.easy_emerald.iron_hammer": "Iron Hammer",
+  "item.easy_emerald.iron_paxel": "Iron Paxel",
+  "item.easy_emerald.iron_treeaxe": "Iron Tree Axe",
+
+  "item.easy_emerald.gold_excavator": "Golden Excavator",
+  "item.easy_emerald.gold_hammer": "Golden Hammer",
+  "item.easy_emerald.gold_paxel": "Golden Paxel",
+  "item.easy_emerald.gold_treeaxe": "Golden Tree Axe",
+
+  "item.easy_emerald.diamond_excavator": "Diamond Excavator",
+  "item.easy_emerald.diamond_hammer": "Diamond Hammer",
+  "item.easy_emerald.diamond_paxel": "Diamond Paxel",
+  "item.easy_emerald.diamond_treeaxe": "Diamond Tree Axe",
+
+  "item.easy_emerald.netherite_excavator": "Netherite Excavator",
+  "item.easy_emerald.netherite_hammer": "Netherite Hammer",
+  "item.easy_emerald.netherite_paxel": "Netherite Paxel",
+  "item.easy_emerald.netherite_treeaxe": "Netherite Tree Axe",
+
    "item.easy_emerald.emerald_potato": "Emerald Potato of Health",
    "item.easy_emerald.ruby_potato": "Ruby Potato of Battle",
    "item.easy_emerald.amethyst_potato": "Amethyst Potato of Luck",

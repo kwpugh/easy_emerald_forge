@@ -1,0 +1,12 @@
+{
+   "type": "minecraft:smithing",
+   "base": {
+     "item": "easy_emerald:diamond_hammer"
+   },
+   "addition": {
+     "item": "minecraft:netherite_ingot"
+   },
+   "result": {
+     "item": "easy_emerald:netherite_hammer"
+   }
+ }

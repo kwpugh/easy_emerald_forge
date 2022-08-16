@@ -90,6 +90,31 @@ public class ItemInit
 	public static final RegistryObject<Item> AMETHYST_PAXEL = ITEMS.register("amethyst_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.AMETHYST, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> AMETHYST_TREEAXE = ITEMS.register("amethyst_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.AMETHYST, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 
+	public static final RegistryObject<Item> WOODEN_EXCAVATOR = ITEMS.register("wooden_excavator", () -> new ModExcavator(Tiers.WOOD, 1, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> WOODEN_HAMMER = ITEMS.register("wooden_hammer", () -> new ModHammer(Tiers.WOOD, 1, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> WOODEN_PAXEL = ITEMS.register("wooden_paxel", () -> new ModPaxel(1, -2.8f, Tiers.WOOD, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> WOODEN_TREEAXE = ITEMS.register("wooden_treeaxe", () -> new ModTreeAxe(Tiers.WOOD, 6, -3.2f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
+	public static final RegistryObject<Item> IRON_EXCAVATOR = ITEMS.register("iron_excavator", () -> new ModExcavator(Tiers.IRON, 1, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer", () -> new ModHammer(Tiers.IRON, 1, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> IRON_PAXEL = ITEMS.register("iron_paxel", () -> new ModPaxel(1, -2.8f, Tiers.IRON, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> IRON_TREEAXE = ITEMS.register("iron_treeaxe", () -> new ModTreeAxe(Tiers.IRON, 6, -3.1f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
+	public static final RegistryObject<Item> GOLD_EXCAVATOR = ITEMS.register("gold_excavator", () -> new ModExcavator(Tiers.GOLD, 1, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> GOLD_HAMMER = ITEMS.register("gold_hammer", () -> new ModHammer(Tiers.GOLD, 1, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> GOLD_PAXEL = ITEMS.register("gold_paxel", () -> new ModPaxel(1, -2.8f, Tiers.GOLD, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> GOLD_TREEAXE = ITEMS.register("gold_treeaxe", () -> new ModTreeAxe(Tiers.GOLD, 6, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
+	public static final RegistryObject<Item> DIAMOND_EXCAVATOR = ITEMS.register("diamond_excavator", () -> new ModExcavator(Tiers.DIAMOND, 1, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> DIAMOND_HAMMER = ITEMS.register("diamond_hammer", () -> new ModHammer(Tiers.DIAMOND, 1, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> DIAMOND_PAXEL = ITEMS.register("diamond_paxel", () -> new ModPaxel(1, -2.8f, Tiers.DIAMOND, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> DIAMOND_TREEAXE = ITEMS.register("diamond_treeaxe", () -> new ModTreeAxe(Tiers.DIAMOND, 5, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
+	public static final RegistryObject<Item> NETHERITE_EXCAVATOR = ITEMS.register("netherite_excavator", () -> new ModExcavator(Tiers.NETHERITE, 1, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> NETHERITE_HAMMER = ITEMS.register("netherite_hammer", () -> new ModHammer(Tiers.NETHERITE, 1, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> NETHERITE_PAXEL = ITEMS.register("netherite_paxel", () -> new ModPaxel(1, -2.8f, Tiers.NETHERITE, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> NETHERITE_TREEAXE = ITEMS.register("netherite_treeaxe", () -> new ModTreeAxe(Tiers.NETHERITE, 5, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+
 	public static final RegistryObject<Item> ARMOR_EMERALD_HEAD = ITEMS.register("emerald_head", () -> new ArmorItem(EMERALD_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> ARMOR_EMERALD_BODY = ITEMS.register("emerald_body", () -> new ArmorItem(EMERALD_ARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> ARMOR_EMERALD_LEGGINGS = ITEMS.register("emerald_leggings", () -> new ArmorItem(EMERALD_ARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));

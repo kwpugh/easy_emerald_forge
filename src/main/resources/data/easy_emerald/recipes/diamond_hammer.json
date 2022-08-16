@@ -1,0 +1,19 @@
+ {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eee",
+    "ese",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "e": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "easy_emerald:diamond_hammer"
+  }
+}
