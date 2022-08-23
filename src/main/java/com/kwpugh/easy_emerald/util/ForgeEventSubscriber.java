@@ -21,24 +21,25 @@ public final class ForgeEventSubscriber
     @SubscribeEvent
     public static void onLivingHurtEvent(LivingAttackEvent event)
     {
-        if (event.getEntity() instanceof Player)
+        if (event.getEntity() instanceof Player player)
         {
-            Player player = (Player) event.getEntity();
-
             //Fall Damage
             if ((event.getSource() == DamageSource.FALL) &&
                 PlayerEquipUtil.isPlayerGotFallProtection(player))
             {
                 if (event.isCancelable()) event.setCanceled(true);
-            } 
-            
+            }
+
             //Fire & Lava
-            if (((event.getSource() == DamageSource.IN_FIRE) ||
-            		(event.getSource() == DamageSource.ON_FIRE) || 
-            		(event.getSource() == DamageSource.LAVA)) && 
-            		PlayerEquipUtil.isPlayerGotFireProtection(player))
+            if ((event.getSource() == DamageSource.IN_FIRE) ||
+                    (event.getSource() == DamageSource.ON_FIRE) ||
+                    (event.getSource() == DamageSource.HOT_FLOOR) ||
+                    (event.getSource() == DamageSource.LAVA))
             {
-                if (event.isCancelable()) event.setCanceled(true);
+                if(PlayerEquipUtil.isPlayerGotFireProtection(player))
+                {
+                    if (event.isCancelable()) event.setCanceled(true);
+                }
             }
             
             //Drowning
@@ -58,11 +59,9 @@ public final class ForgeEventSubscriber
 
     	if(event.getDamageSource() !=null && event.getDamageSource().getEntity() !=null)
     	{	
-			if(event.getEntity() instanceof Mob && event.getDamageSource().getEntity() instanceof Player)
+			if(event.getEntity() instanceof Mob && event.getDamageSource().getEntity() instanceof Player playerEntity)
 			{
-				Player playerEntity = (Player) event.getDamageSource().getEntity();
-				
-				if (PlayerEquipUtil.isPlayerGotRubySwordInHand(playerEntity))
+                if (PlayerEquipUtil.isPlayerGotRubySwordInHand(playerEntity))
 	            {
 	                event.setLootingLevel(event.getLootingLevel()+9);
 	            }

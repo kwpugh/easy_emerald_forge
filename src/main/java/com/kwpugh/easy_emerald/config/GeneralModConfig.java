@@ -7,32 +7,27 @@ public class GeneralModConfig
 	public static ForgeConfigSpec.IntValue EMERALD_TOOL_DURABILITY;
 	public static ForgeConfigSpec.DoubleValue EMERALD_TOOL_EFFICIENCY;
 	public static ForgeConfigSpec.DoubleValue EMERALD_TOOL_ATTACK;
-	public static ForgeConfigSpec.IntValue EMERALD_TOOL_MINING_LEVEL;
 	public static ForgeConfigSpec.IntValue EMERALD_TOOL_ENCHANTABILITY;
 	
 	public static ForgeConfigSpec.IntValue RUBY_TOOL_DURABILITY;
 	public static ForgeConfigSpec.DoubleValue RUBY_TOOL_EFFICIENCY;
 	public static ForgeConfigSpec.DoubleValue RUBY_TOOL_ATTACK;
-	public static ForgeConfigSpec.IntValue RUBY_TOOL_MINING_LEVEL;
 	public static ForgeConfigSpec.IntValue RUBY_TOOL_ENCHANTABILITY;
     public static ForgeConfigSpec.BooleanValue RUBY_SWORD_PERKS;
 
 	public static ForgeConfigSpec.IntValue OBSIDIAN_TOOL_DURABILITY;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_TOOL_EFFICIENCY;
 	public static ForgeConfigSpec.DoubleValue OBSIDIAN_TOOL_ATTACK;
-	public static ForgeConfigSpec.IntValue OBSIDIAN_TOOL_MINING_LEVEL;
 	public static ForgeConfigSpec.IntValue OBSIDIAN_TOOL_ENCHANTABILITY;
 
     public static ForgeConfigSpec.IntValue COPPER_TOOL_DURABILITY;
     public static ForgeConfigSpec.DoubleValue COPPER_TOOL_EFFICIENCY;
     public static ForgeConfigSpec.DoubleValue COPPER_TOOL_ATTACK;
-    public static ForgeConfigSpec.IntValue COPPER_TOOL_MINING_LEVEL;
     public static ForgeConfigSpec.IntValue COPPER_TOOL_ENCHANTABILITY;
 
     public static ForgeConfigSpec.IntValue AMETHYST_TOOL_DURABILITY;
     public static ForgeConfigSpec.DoubleValue AMETHYST_TOOL_EFFICIENCY;
     public static ForgeConfigSpec.DoubleValue AMETHYST_TOOL_ATTACK;
-    public static ForgeConfigSpec.IntValue AMETHYST_TOOL_MINING_LEVEL;
     public static ForgeConfigSpec.IntValue AMETHYST_TOOL_ENCHANTABILITY;
 
 	public static ForgeConfigSpec.IntValue EMERALD_ARMOR_DURABILITY_MULTIPLIER;
@@ -79,6 +74,10 @@ public class GeneralModConfig
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_BODY;
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_LEGGINGS;
     public static ForgeConfigSpec.IntValue AMETHYST_ARMOR_PROTECTION_FEET;
+
+    public static ForgeConfigSpec.BooleanValue RUBY_FIRE_PROTECTION;
+    public static ForgeConfigSpec.BooleanValue EMERAALD_WATER_BREATHING;
+    public static ForgeConfigSpec.BooleanValue AMETHYST_NO_FALL_DAMAGE;
 
     public static void init(ForgeConfigSpec.Builder SERVER_BUILDER)
     {          	        
@@ -200,6 +199,15 @@ public class GeneralModConfig
         AMETHYST_ARMOR_PROTECTION_BODY = SERVER_BUILDER.comment("Amethyst armor protection body [1-50, default: 8]").defineInRange("amethystArmorProtectionBody", 8, 1, 50);
         AMETHYST_ARMOR_PROTECTION_LEGGINGS = SERVER_BUILDER.comment("Amethyst armor protection leggings [1-50, default: 6]").defineInRange("amethystArmorProtectionLeggings", 6, 1, 50);
         AMETHYST_ARMOR_PROTECTION_FEET = SERVER_BUILDER.comment("Amethyst armor protection feet [1-50, default: 3]").defineInRange("amethystArmorProtectionFeet", 3, 1, 50);
+
+        SERVER_BUILDER.pop();
+
+
+        SERVER_BUILDER.comment("Armor Full Set Bonus").push("full_set_bonus");
+
+        RUBY_FIRE_PROTECTION = SERVER_BUILDER.comment("Enable ruby armor fire protection [true / false]").define("rubyFullSetBonus", false);
+        EMERAALD_WATER_BREATHING = SERVER_BUILDER.comment("Enable emerald armor water breathing [true / false]").define("emeraldFullSetBonus", false);
+        AMETHYST_NO_FALL_DAMAGE = SERVER_BUILDER.comment("Enable amethyst armor no fall damage [true / false]").define("amethystFullSetBonus", false);
 
         SERVER_BUILDER.pop();
     }
