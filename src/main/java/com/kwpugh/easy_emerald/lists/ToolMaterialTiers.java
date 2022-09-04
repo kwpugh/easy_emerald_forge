@@ -1,12 +1,18 @@
 package com.kwpugh.easy_emerald.lists;
 
+import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 import com.kwpugh.easy_emerald.init.ItemInit;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
+import net.minecraftforge.common.TierSortingRegistry;
+
+import java.util.List;
 
 public class ToolMaterialTiers
 {
@@ -41,18 +47,48 @@ public class ToolMaterialTiers
     private static int rubyEnchantability = GeneralModConfig.RUBY_TOOL_ENCHANTABILITY.get();
 
 
-    public static final Tier COPPER = new ForgeTier(copperMiningLevel, copperDurability, (float) copperEfficiency, (float) copperAttack, copperEnchantability,
+    public static final Tier COPPER = new ForgeTier(copperMiningLevel,
+            copperDurability,
+            (float) copperEfficiency,
+            (float) copperAttack,
+            copperEnchantability,
             BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Items.COPPER_INGOT));
 
-    public static final Tier OBSIDIAN = new ForgeTier(obsidianMiningLevel, obsidianDurability, (float) obsidianEfficiency, (float) obsidianAttack, obsidianEnchantability,
+    public static final Tier OBSIDIAN = new ForgeTier(obsidianMiningLevel,
+            obsidianDurability,
+            (float) obsidianEfficiency,
+            (float) obsidianAttack,
+            obsidianEnchantability,
             BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Items.OBSIDIAN));
 
-    public static final Tier EMERALD = new ForgeTier(emeraldMiningLevel, emeraldDurability, (float) emeraldEfficiency, (float) emeraldAttack, emeraldEnchantability,
+    public static final Tier EMERALD = new ForgeTier(emeraldMiningLevel,
+            emeraldDurability,
+            (float) emeraldEfficiency,
+            (float) emeraldAttack,
+            emeraldEnchantability,
             BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Items.EMERALD));
 
-    public static final Tier AMETHYST = new ForgeTier(amethystMiningLevel, amethystDurability, (float) amethystEfficiency, (float) amethystAttack, amethystEnchantability,
+    public static final Tier AMETHYST = new ForgeTier(amethystMiningLevel,
+            amethystDurability,
+            (float) amethystEfficiency,
+            (float) amethystAttack,
+            amethystEnchantability,
             BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 
-    public static final Tier RUBY = new ForgeTier(rubyMiningLevel, rubyDurability, (float) rubyEfficiency, (float) rubyAttack, rubyEnchantability,
+    public static final Tier RUBY = new ForgeTier(rubyMiningLevel,
+            rubyDurability,
+            (float) rubyEfficiency,
+            (float) rubyAttack,
+            rubyEnchantability,
             BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemInit.RUBY.get()));
+
+    
+    public static void register()
+    {
+        TierSortingRegistry.registerTier(COPPER, new ResourceLocation(EasyEmerald.modid, "copper"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
+        TierSortingRegistry.registerTier(OBSIDIAN, new ResourceLocation(EasyEmerald.modid, "obsidian"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
+        TierSortingRegistry.registerTier(AMETHYST, new ResourceLocation(EasyEmerald.modid, "amethyst"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(EMERALD, new ResourceLocation(EasyEmerald.modid, "emerald"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(RUBY, new ResourceLocation(EasyEmerald.modid, "ruby"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+    }
 }

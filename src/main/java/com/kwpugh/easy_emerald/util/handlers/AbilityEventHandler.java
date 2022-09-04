@@ -1,8 +1,9 @@
-package com.kwpugh.easy_emerald.util;
+package com.kwpugh.easy_emerald.util.handlers;
 
 import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
+import com.kwpugh.easy_emerald.util.PlayerEquipUtil;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.damagesource.DamageSource;
@@ -13,7 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = EasyEmerald.modid, bus = EventBusSubscriber.Bus.FORGE )
-public final class ForgeEventSubscriber
+public final class AbilityEventHandler
 {
     static boolean enableRubySwordLoot = GeneralModConfig.RUBY_SWORD_PERKS.get();
 

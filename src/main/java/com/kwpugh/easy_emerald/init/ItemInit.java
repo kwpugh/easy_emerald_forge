@@ -57,16 +57,16 @@ public class ItemInit
 	public static final RegistryObject<Item> RUBY_PAXEL = ITEMS.register("ruby_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.RUBY, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> RUBY_TREEAXE = ITEMS.register("ruby_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.RUBY, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	
-	public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword", () -> new SwordItem(ToolMaterialTiers.OBSIDIAN, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_BOW = ITEMS.register("obsidian_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(obsidianDurability)));
-	public static final RegistryObject<Item> OBSIDIAN_PICKAXE = ITEMS.register("obsidian_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.OBSIDIAN, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_AXE = ITEMS.register("obsidian_axe", () -> new AxeItem(ToolMaterialTiers.OBSIDIAN, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_SHOVEL = ITEMS.register("obsidian_shovel", () -> new ShovelItem(ToolMaterialTiers.OBSIDIAN, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_HOE = ITEMS.register("obsidian_hoe", () -> new HoeItem(ToolMaterialTiers.OBSIDIAN, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_EXCAVATOR = ITEMS.register("obsidian_excavator", () -> new ModExcavator(ToolMaterialTiers.OBSIDIAN, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_HAMMER = ITEMS.register("obsidian_hammer", () -> new ModHammer(ToolMaterialTiers.OBSIDIAN, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_PAXEL = ITEMS.register("obsidian_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.OBSIDIAN, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
-	public static final RegistryObject<Item> OBSIDIAN_TREEAXE = ITEMS.register("obsidian_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.OBSIDIAN, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
+	public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword", () -> new SwordItem(ToolMaterialTiers.OBSIDIAN, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_BOW = ITEMS.register("obsidian_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(obsidianDurability).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_PICKAXE = ITEMS.register("obsidian_pickaxe", () -> new PickaxeItem(ToolMaterialTiers.OBSIDIAN, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_AXE = ITEMS.register("obsidian_axe", () -> new AxeItem(ToolMaterialTiers.OBSIDIAN, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_SHOVEL = ITEMS.register("obsidian_shovel", () -> new ShovelItem(ToolMaterialTiers.OBSIDIAN, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_HOE = ITEMS.register("obsidian_hoe", () -> new HoeItem(ToolMaterialTiers.OBSIDIAN, 0, -2.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_EXCAVATOR = ITEMS.register("obsidian_excavator", () -> new ModExcavator(ToolMaterialTiers.OBSIDIAN, 0, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_HAMMER = ITEMS.register("obsidian_hammer", () -> new ModHammer(ToolMaterialTiers.OBSIDIAN, 0, -2.8f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_PAXEL = ITEMS.register("obsidian_paxel", () -> new ModPaxel(4, -3.0f, ToolMaterialTiers.OBSIDIAN, null, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
+	public static final RegistryObject<Item> OBSIDIAN_TREEAXE = ITEMS.register("obsidian_treeaxe", () -> new ModTreeAxe(ToolMaterialTiers.OBSIDIAN, 4, -3.0f, new Item.Properties().tab(EasyEmerald.easy_emerald_group).fireResistant()));
 
 	public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(ToolMaterialTiers.COPPER, 2, -2.4f, new Item.Properties().tab(EasyEmerald.easy_emerald_group)));
 	public static final RegistryObject<Item> COPPER_BOW = ITEMS.register("copper_bow", () -> new ModBow((new Item.Properties()).stacksTo(1).tab(EasyEmerald.easy_emerald_group).durability(copperDurability)));

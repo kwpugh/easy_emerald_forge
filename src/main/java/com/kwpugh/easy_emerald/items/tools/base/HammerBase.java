@@ -13,6 +13,7 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,16 +40,25 @@ public class HammerBase extends PickaxeItem
 		super(tier, attackDamageIn, attackSpeedIn, builder);
 	}
 
-    public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity)
-    {
-        stack.hurt(1, world.getRandom(), null);
+	@Override
+	public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity)
+	{
+		stack.hurt(1, world.random, null);
 
-        if (entity instanceof Player)
-        {
-        	HammerUtil.attemptBreakNeighbors(world, pos, (Player) entity, EFFECTIVE_MATERIALS);
-        }
-        return super.mineBlock(stack, world, state, pos, entity);
-    }
+		if(entity instanceof Player player)
+		{
+			Block block = state.getBlock();
+			boolean isWithinHarvestLevel = player.getMainHandItem().isCorrectToolForDrops(state);  //added to ensure each block in the breaking is harvestable with this tool material
+			boolean isHarvestable = block.canHarvestBlock(state, world, pos, player);  // added in case a block overrides canHarvestBlock to false at block level
+
+			if(isHarvestable && isWithinHarvestLevel)
+			{
+				HammerUtil.attemptBreakNeighbors(world, pos, player, EFFECTIVE_MATERIALS);
+			}
+		}
+
+		return super.mineBlock(stack, world, state, pos, entity);
+	}
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)

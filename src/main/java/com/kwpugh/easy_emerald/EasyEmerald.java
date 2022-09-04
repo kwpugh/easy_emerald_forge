@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 
 import com.kwpugh.easy_emerald.init.BlockInit;
 import com.kwpugh.easy_emerald.init.ItemInit;
+import com.kwpugh.easy_emerald.lists.ToolMaterialTiers;
 import com.kwpugh.easy_emerald.util.GroupEasyEmerald;
 
 import com.kwpugh.easy_emerald.config.EmeraldModConfig;

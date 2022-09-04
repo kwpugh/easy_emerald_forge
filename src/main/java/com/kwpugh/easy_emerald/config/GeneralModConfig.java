@@ -79,6 +79,8 @@ public class GeneralModConfig
     public static ForgeConfigSpec.BooleanValue EMERAALD_WATER_BREATHING;
     public static ForgeConfigSpec.BooleanValue AMETHYST_NO_FALL_DAMAGE;
 
+    public static ForgeConfigSpec.DoubleValue BOW_ZOOM;
+
     public static void init(ForgeConfigSpec.Builder SERVER_BUILDER)
     {          	        
         SERVER_BUILDER.comment("Emerald Tool Material").push("emerald_tool_material");
@@ -114,7 +116,7 @@ public class GeneralModConfig
 
         SERVER_BUILDER.comment("Copper Tool Material").push("copper_tool_material");
 
-        COPPER_TOOL_DURABILITY = SERVER_BUILDER.comment("Copper Tool Durability [250-3000, default: 525]").defineInRange("copperToolDurability", 225, 200, 3000);
+        COPPER_TOOL_DURABILITY = SERVER_BUILDER.comment("Copper Tool Durability [250-3000, default: 225]").defineInRange("copperToolDurability", 225, 200, 3000);
         COPPER_TOOL_EFFICIENCY = SERVER_BUILDER.comment("Copper Tool efficiency [1.0-7.0, default: 5.5]").defineInRange("copperToolEfficiency", 5.5, 0.0, 7.0);
         COPPER_TOOL_ATTACK = SERVER_BUILDER.comment("Copper attack damage [1-40, default: 3.0]").defineInRange("copperAttackDamage", 3.0, 0.0, 40.0);
         COPPER_TOOL_ENCHANTABILITY = SERVER_BUILDER.comment("Copper tool enchantability [1-30, default: 18]").defineInRange("copperEnchantability", 18, 1, 30);
@@ -208,6 +210,13 @@ public class GeneralModConfig
         RUBY_FIRE_PROTECTION = SERVER_BUILDER.comment("Enable ruby armor fire protection [true / false]").define("rubyFullSetBonus", false);
         EMERAALD_WATER_BREATHING = SERVER_BUILDER.comment("Enable emerald armor water breathing [true / false]").define("emeraldFullSetBonus", false);
         AMETHYST_NO_FALL_DAMAGE = SERVER_BUILDER.comment("Enable amethyst armor no fall damage [true / false]").define("amethystFullSetBonus", false);
+
+        SERVER_BUILDER.pop();
+
+
+        SERVER_BUILDER.comment("Bow Zoom Value").push("bow_zoom");
+
+        BOW_ZOOM = SERVER_BUILDER.comment("Bow zoom valuee [0.0-1.0, default: .45]").defineInRange("bow_zoom_value", .45, 0.1,  0.9);
 
         SERVER_BUILDER.pop();
     }
