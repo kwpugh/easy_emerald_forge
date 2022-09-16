@@ -9,5 +9,4 @@ public class ModTreeAxe extends TreeAxeBase
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
     }
-
 }
