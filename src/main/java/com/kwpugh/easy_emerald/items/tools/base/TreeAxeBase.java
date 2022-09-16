@@ -62,17 +62,15 @@ public class TreeAxeBase extends AxeItem
     {
         stack.hurt(3, world.getRandom(), null);
 
-        if (entityLiving instanceof Player)
+        if (entityLiving instanceof Player player)
         {
-            Player player = (Player) entityLiving;
-
             if (!attemptFellTree(world, pos, player))
             {
                 attemptBreakNeighbors(world, pos, player, EFFECTIVE_ON, EFFECTIVE_MATERIALS, false);
             }
         }
 
-        return super.mineBlock(stack, world, state, pos, entityLiving);
+        return true;
     }
 
     private boolean attemptFellTree(Level world, BlockPos pos, Player player)
