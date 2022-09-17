@@ -80,6 +80,7 @@ public class GeneralModConfig
     public static ForgeConfigSpec.BooleanValue AMETHYST_NO_FALL_DAMAGE;
 
     public static ForgeConfigSpec.DoubleValue BOW_ZOOM;
+    public static ForgeConfigSpec.BooleanValue FULL_DAMAGE;
 
     public static void init(ForgeConfigSpec.Builder SERVER_BUILDER)
     {          	        
@@ -217,6 +218,13 @@ public class GeneralModConfig
         SERVER_BUILDER.comment("Bow Zoom Value").push("bow_zoom");
 
         BOW_ZOOM = SERVER_BUILDER.comment("Bow zoom valuee [0.0-1.0, default: .45]").defineInRange("bow_zoom_value", .45, 0.1,  0.9);
+
+        SERVER_BUILDER.pop();
+
+
+        SERVER_BUILDER.comment("Full Damage").push("full_damage");
+
+        FULL_DAMAGE = SERVER_BUILDER.comment("3x3 tools take full damage [true / false]").define("full_damage", false);
 
         SERVER_BUILDER.pop();
     }

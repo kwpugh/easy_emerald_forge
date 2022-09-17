@@ -1,11 +1,13 @@
 package com.kwpugh.easy_emerald.items.tools.base;
 
 import com.google.common.collect.ImmutableSet;
+import com.kwpugh.easy_emerald.config.GeneralModConfig;
 import com.kwpugh.easy_emerald.items.tools.util.HammerUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -31,7 +33,7 @@ import java.util.Set;
 
 public class HammerBase extends PickaxeItem
 {
-	Random random = new Random();
+	int blocksBroken = 0;
 
 	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.STONE, Material.METAL, Material.GLASS, Material.ICE, Material.ICE_SOLID, Material.HEAVY_METAL);
 
@@ -53,7 +55,14 @@ public class HammerBase extends PickaxeItem
 
 			if(isHarvestable && isWithinHarvestLevel)
 			{
-				HammerUtil.attemptBreakNeighbors(world, pos, player, EFFECTIVE_MATERIALS);
+				blocksBroken = HammerUtil.attemptBreakNeighbors(world, pos, player, EFFECTIVE_MATERIALS);
+
+				if(GeneralModConfig.FULL_DAMAGE.get())
+				{
+					stack.hurtAndBreak(blocksBroken, player, (e) -> {
+						e.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+					});
+				}
 			}
 		}
 

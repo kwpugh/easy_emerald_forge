@@ -1,28 +1,29 @@
 package com.kwpugh.easy_emerald.items.tools.util;
 
-import java.util.Random;
-import java.util.Set;
-
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.core.Direction;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.Level;
+
+import java.util.Set;
 
 public class HammerUtil
 {
-    public static final Random random = new Random();
+    static int blocksBroken;
 
-    public static void attemptBreakNeighbors(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
-    {    	
+    public static int attemptBreakNeighbors(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
+    {
+        blocksBroken = 0;
+
     	HitResult trace = calcRayTrace(world, player, ClipContext.Fluid.ANY);
 
         if (trace.getType() == HitResult.Type.BLOCK)
@@ -46,6 +47,8 @@ public class HammerUtil
                 }
             }
         }
+
+        return blocksBroken;
     }
 
     public static void attemptBreak(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
@@ -63,6 +66,8 @@ public class HammerUtil
             {
                 world.destroyBlock(pos, false);  //true or false?
                 Block.dropResources(state, world, pos, null, player, player.getMainHandItem());
+
+                blocksBroken = blocksBroken + 1;
             }
         }
     }

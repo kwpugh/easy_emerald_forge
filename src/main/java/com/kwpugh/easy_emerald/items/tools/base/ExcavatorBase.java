@@ -1,12 +1,15 @@
 package com.kwpugh.easy_emerald.items.tools.base;
 
 import com.google.common.collect.ImmutableSet;
+import com.kwpugh.easy_emerald.EasyEmerald;
+import com.kwpugh.easy_emerald.config.GeneralModConfig;
 import com.kwpugh.easy_emerald.items.tools.util.ExcavatorUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -31,7 +34,7 @@ import java.util.Set;
 
 public class ExcavatorBase extends ShovelItem
 {
-	Random random = new Random();
+	int blocksBroken = 0;
 
 	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.DIRT);
 
@@ -44,9 +47,16 @@ public class ExcavatorBase extends ShovelItem
     {
         stack.hurt(1, world.getRandom(), null);
 
-        if (entity instanceof Player)
+        if (entity instanceof Player player)
         {
-			ExcavatorUtil.attemptBreakNeighbors(world, pos, (Player) entity, BlockTags.MINEABLE_WITH_SHOVEL, EFFECTIVE_MATERIALS);
+			blocksBroken = ExcavatorUtil.attemptBreakNeighbors(world, pos, player, BlockTags.MINEABLE_WITH_SHOVEL, EFFECTIVE_MATERIALS);
+
+			if(GeneralModConfig.FULL_DAMAGE.get())
+			{
+				stack.hurtAndBreak(blocksBroken, player, (e) -> {
+					e.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+				});
+			}
         }
 
         return true;
