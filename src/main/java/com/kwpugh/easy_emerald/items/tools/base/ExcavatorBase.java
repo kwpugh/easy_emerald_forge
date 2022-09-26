@@ -59,7 +59,7 @@ public class ExcavatorBase extends ShovelItem
 			}
         }
 
-        return true;
+		return super.mineBlock(stack, world, state, pos, entity);
     }
 	
 	@Override
