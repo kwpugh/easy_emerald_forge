@@ -19,7 +19,7 @@ public final class BowUtils
 
         Item item = stack.getItem();
         int ticks = event.getPlayer().getTicksUsingItem();
-        if (item instanceof BowItem)
+        if (item instanceof BowItem && PlayerEquipUtil.hasArrowInInventory(event.getPlayer()))
         {
             float zoom = 1.0F;
             if (predicate.test(item))
@@ -32,6 +32,7 @@ public final class BowUtils
             newFOV = oldFOV - (ticks * zoom / 20.0F);
             if (newFOV < oldFOV - zoom)
                 newFOV = (oldFOV - zoom);
+
             event.setNewFovModifier(newFOV);
         }
     }
