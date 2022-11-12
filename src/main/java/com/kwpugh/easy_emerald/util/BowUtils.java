@@ -15,11 +15,14 @@ public final class BowUtils
         float newFOV = 1.0F;
 
         ItemStack stack = event.getPlayer().getMainHandItem();
+        ItemStack stackOffhand = event.getPlayer().getOffhandItem();
         if (stack.isEmpty()) return;
 
         Item item = stack.getItem();
         int ticks = event.getPlayer().getTicksUsingItem();
-        if (item instanceof BowItem && PlayerEquipUtil.hasArrowInInventory(event.getPlayer()))
+        if (item instanceof BowItem &&
+                PlayerEquipUtil.hasArrowInInventory(event.getPlayer()) &&
+                stackOffhand == ItemStack.EMPTY)
         {
             float zoom = 1.0F;
             if (predicate.test(item))

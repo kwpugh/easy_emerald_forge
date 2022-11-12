@@ -4,6 +4,7 @@ import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 import com.kwpugh.easy_emerald.init.ItemInit;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -46,7 +47,7 @@ public class RubyArmorMaterial implements ArmorMaterial
 	@Override
 	public SoundEvent getEquipSound()
 	{
-		return new SoundEvent(new ResourceLocation("item.armor.equip_diamond"));
+		return SoundEvents.ARMOR_EQUIP_DIAMOND;
 	}
 
 	@Override

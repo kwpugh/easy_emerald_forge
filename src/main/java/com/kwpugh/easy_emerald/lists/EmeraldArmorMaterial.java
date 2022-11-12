@@ -3,6 +3,7 @@ package com.kwpugh.easy_emerald.lists;
 import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
@@ -46,7 +47,7 @@ public class EmeraldArmorMaterial implements ArmorMaterial
 	@Override
 	public SoundEvent getEquipSound()
 	{
-		return new SoundEvent(new ResourceLocation("item.armor.equip_diamond"));
+		return SoundEvents.ARMOR_EQUIP_DIAMOND;
 	}
 
 	@Override
