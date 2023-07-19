@@ -4,11 +4,10 @@ import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
 public class EmeraldArmorMaterial implements ArmorMaterial
@@ -27,15 +26,13 @@ public class EmeraldArmorMaterial implements ArmorMaterial
     private static final int[] PROTECTION_AMOUNT = new int[]{emeraldHead, emeraldLeggings, emeraldBody, emeraldFeet};
     
 	@Override
-	public int getDurabilityForSlot(EquipmentSlot slot)
-	{
-		return BASE_DURABILITY[slot.getIndex()] * durabilityMultiplier;
+	public int getDurabilityForType(ArmorItem.Type p_266807_) {
+		return BASE_DURABILITY[p_266807_.getSlot().getIndex()] * durabilityMultiplier;
 	}
 
 	@Override
-	public int getDefenseForSlot(EquipmentSlot slot)
-	{
-		return PROTECTION_AMOUNT[slot.getIndex()];
+	public int getDefenseForType(ArmorItem.Type p_267168_) {
+		return PROTECTION_AMOUNT[p_267168_.getSlot().getIndex()];
 	}
 
 	@Override
@@ -59,7 +56,7 @@ public class EmeraldArmorMaterial implements ArmorMaterial
 	@Override
 	public String getName()
 	{
-		return EasyEmerald.modid + ":" + "emerald";
+		return EasyEmerald.Modid + ":" + "emerald";
 	}
 
 	@Override

@@ -16,8 +16,12 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlassBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -35,7 +39,14 @@ public class HammerBase extends PickaxeItem
 {
 	int blocksBroken = 0;
 
-	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.STONE, Material.METAL, Material.GLASS, Material.ICE, Material.ICE_SOLID, Material.HEAVY_METAL);
+	public static final Set<BlockBehaviour.Properties> EFFECTIVE_MATERIALS =
+			ImmutableSet.of(
+					BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM), // STONE
+					BlockBehaviour.Properties.of().mapColor(MapColor.METAL), // METAL
+					BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT), // GLASS
+					BlockBehaviour.Properties.of().mapColor(MapColor.ICE), // ICE, ICE_SOLID
+					BlockBehaviour.Properties.of().mapColor(MapColor.METAL).pushReaction(PushReaction.BLOCK) // HEAVY_METAL
+			);
 
 	public HammerBase(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
 	{

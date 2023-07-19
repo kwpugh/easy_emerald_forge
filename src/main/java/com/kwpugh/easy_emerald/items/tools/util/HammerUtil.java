@@ -8,19 +8,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.ForgeMod;
 
 import java.util.Set;
+import java.util.logging.Logger;
 
 public class HammerUtil
 {
     static int blocksBroken;
 
-    public static int attemptBreakNeighbors(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
+    public static int attemptBreakNeighbors(Level world, BlockPos pos, Player player, Set<BlockBehaviour.Properties> effectiveMaterials)
     {
         blocksBroken = 0;
 
@@ -51,13 +53,13 @@ public class HammerUtil
         return blocksBroken;
     }
 
-    public static void attemptBreak(Level world, BlockPos pos, Player player, Set<Material> effectiveMaterials)
+    public static void attemptBreak(Level world, BlockPos pos, Player player, Set<BlockBehaviour.Properties> effectiveMaterials)
     {
         BlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         boolean isWithinHarvestLevel = player.getMainHandItem().isCorrectToolForDrops(state);  //added to ensure each block in the breaking is harvestable with this tool material
         boolean isHarvestable = block.canHarvestBlock(state, world, pos, player);  // added in case a block overrides canHarvestBlock to false at block level
-        boolean isEffective = effectiveMaterials.contains(state.getMaterial());
+        boolean isEffective = state.is(BlockTags.MINEABLE_WITH_PICKAXE);
         boolean witherImmune = state.is(BlockTags.WITHER_IMMUNE);
 
         if(isEffective && !witherImmune && isWithinHarvestLevel & isHarvestable)
@@ -83,7 +85,7 @@ public class HammerUtil
         float f5 = Mth.sin(-f * ((float)Math.PI / 180F));
         float f6 = f3 * f4;
         float f7 = f2 * f4;
-        double d0 = player.getAttribute(net.minecraftforge.common.ForgeMod.REACH_DISTANCE.get()).getValue() + 1;;
+        double d0 = player.getAttribute(ForgeMod.BLOCK_REACH.get()).getValue() + 1;;
         Vec3 vec3d1 = vec3d.add((double)f6 * d0, (double)f5 * d0, (double)f7 * d0);
         return worldIn.clip(new ClipContext(vec3d, vec3d1, ClipContext.Block.OUTLINE, fluidMode, player));
     }
