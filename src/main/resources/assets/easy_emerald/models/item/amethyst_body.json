@@ -1,5 +1,68 @@
 {
   "parent": "item/generated",
+  "overrides": [
+    {
+      "model": "easy_emerald:item/amethyst_body_quartz_trim",
+      "predicate": {
+        "trim_type": 0.1
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_iron_trim",
+      "predicate": {
+        "trim_type": 0.2
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_netherite_trim",
+      "predicate": {
+        "trim_type": 0.3
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_redstone_trim",
+      "predicate": {
+        "trim_type": 0.4
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_copper_trim",
+      "predicate": {
+        "trim_type": 0.5
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_gold_trim",
+      "predicate": {
+        "trim_type": 0.6
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_emerald_trim",
+      "predicate": {
+        "trim_type": 0.7
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_diamond_trim",
+      "predicate": {
+        "trim_type": 0.8
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_lapis_trim",
+      "predicate": {
+        "trim_type": 0.9
+      }
+    },
+    {
+      "model": "easy_emerald:item/amethyst_body_amethyst_trim",
+      "predicate": {
+        "trim_type": 1.0
+      }
+    }
+  ],
+
   "textures": {
     "layer0": "easy_emerald:item/amethyst_body"
   }

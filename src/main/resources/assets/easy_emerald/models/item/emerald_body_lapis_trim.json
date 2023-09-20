@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "easy_emerald:item/emerald_body",
+    "layer1": "minecraft:trims/items/chestplate_trim_lapis"
+  }
+}
