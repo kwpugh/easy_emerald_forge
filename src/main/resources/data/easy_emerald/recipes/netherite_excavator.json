@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
   "base": {
     "item": "easy_emerald:diamond_excavator"
   },
@@ -8,5 +8,8 @@
   },
   "result": {
     "item": "easy_emerald:netherite_excavator"
+  },
+  "template": {
+    "item": "minecraft:diamond"
   }
 }

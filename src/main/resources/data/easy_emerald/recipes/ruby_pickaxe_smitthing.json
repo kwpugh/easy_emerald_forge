@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
   "base": {
     "item": "easy_emerald:emerald_pickaxe"
   },
@@ -8,5 +8,8 @@
   },
   "result": {
     "item": "easy_emerald:ruby_pickaxe"
+  },
+  "template": {
+    "item": "minecraft:emerald"
   }
 }
