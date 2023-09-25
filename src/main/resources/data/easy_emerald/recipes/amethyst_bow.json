@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:bow"
-  },
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "minecraft:amethyst_shard"
   },
+  "base": {
+    "item": "minecraft:bow"
+  },
   "result": {
     "item": "easy_emerald:amethyst_bow"
+  },
+  "template": {
+    "item": "minecraft:string"
   }
 }

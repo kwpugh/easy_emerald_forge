@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
   "base": {
     "item": "easy_emerald:diamond_paxel"
   },
@@ -8,5 +8,8 @@
   },
   "result": {
     "item": "easy_emerald:netherite_paxel"
+  },
+  "template": {
+    "item": "minecraft:diamond"
   }
 }

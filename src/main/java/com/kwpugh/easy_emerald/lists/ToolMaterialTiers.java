@@ -85,10 +85,10 @@ public class ToolMaterialTiers
     
     public static void register()
     {
-        TierSortingRegistry.registerTier(COPPER, new ResourceLocation(EasyEmerald.modid, "copper"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
-        TierSortingRegistry.registerTier(OBSIDIAN, new ResourceLocation(EasyEmerald.modid, "obsidian"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
-        TierSortingRegistry.registerTier(AMETHYST, new ResourceLocation(EasyEmerald.modid, "amethyst"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
-        TierSortingRegistry.registerTier(EMERALD, new ResourceLocation(EasyEmerald.modid, "emerald"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
-        TierSortingRegistry.registerTier(RUBY, new ResourceLocation(EasyEmerald.modid, "ruby"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(COPPER, new ResourceLocation(EasyEmerald.Modid, "copper"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
+        TierSortingRegistry.registerTier(OBSIDIAN, new ResourceLocation(EasyEmerald.Modid, "obsidian"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
+        TierSortingRegistry.registerTier(AMETHYST, new ResourceLocation(EasyEmerald.Modid, "amethyst"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(EMERALD, new ResourceLocation(EasyEmerald.Modid, "emerald"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(RUBY, new ResourceLocation(EasyEmerald.Modid, "ruby"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
     }
 }

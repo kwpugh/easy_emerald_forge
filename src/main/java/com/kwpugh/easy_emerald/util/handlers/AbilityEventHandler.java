@@ -4,16 +4,15 @@ import com.kwpugh.easy_emerald.EasyEmerald;
 import com.kwpugh.easy_emerald.config.GeneralModConfig;
 
 import com.kwpugh.easy_emerald.util.PlayerEquipUtil;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.living.LootingLevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = EasyEmerald.modid, bus = EventBusSubscriber.Bus.FORGE )
+@EventBusSubscriber(modid = EasyEmerald.Modid, bus = EventBusSubscriber.Bus.FORGE )
 public final class AbilityEventHandler
 {
     static boolean enableRubySwordLoot = GeneralModConfig.RUBY_SWORD_PERKS.get();
@@ -25,17 +24,17 @@ public final class AbilityEventHandler
         if (event.getEntity() instanceof Player player)
         {
             //Fall Damage
-            if ((event.getSource() == DamageSource.FALL) &&
+            if ((event.getSource().is(DamageTypes.FALL)) &&
                 PlayerEquipUtil.isPlayerGotFallProtection(player))
             {
                 if (event.isCancelable()) event.setCanceled(true);
             }
 
             //Fire & Lava
-            if ((event.getSource() == DamageSource.IN_FIRE) ||
-                    (event.getSource() == DamageSource.ON_FIRE) ||
-                    (event.getSource() == DamageSource.HOT_FLOOR) ||
-                    (event.getSource() == DamageSource.LAVA))
+            if ((event.getSource().is(DamageTypes.IN_FIRE)) ||
+                    (event.getSource().is(DamageTypes.ON_FIRE)) ||
+                    (event.getSource().is(DamageTypes.HOT_FLOOR)) ||
+                    (event.getSource().is(DamageTypes.LAVA)))
             {
                 if(PlayerEquipUtil.isPlayerGotFireProtection(player))
                 {
@@ -44,7 +43,7 @@ public final class AbilityEventHandler
             }
             
             //Drowning
-            if ((event.getSource() == DamageSource.DROWN) &&
+            if ((event.getSource().is(DamageTypes.DROWN)) &&
                     PlayerEquipUtil.isPlayerGotWaterBreathing(player))
             {
             	if (event.isCancelable()) event.setCanceled(true);

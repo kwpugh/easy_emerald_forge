@@ -17,8 +17,9 @@ import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -36,7 +37,9 @@ public class ExcavatorBase extends ShovelItem
 {
 	int blocksBroken = 0;
 
-	public static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(Material.DIRT);
+	public static final Set<BlockBehaviour.Properties> EFFECTIVE_MATERIALS = ImmutableSet.of(
+			BlockBehaviour.Properties.of().mapColor(MapColor.DIRT) // DIRT
+	);
 
 	public ExcavatorBase(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
 	{

@@ -9,7 +9,7 @@ import net.minecraftforge.client.event.ComputeFovModifierEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid= EasyEmerald.modid, bus=EventBusSubscriber.Bus.FORGE, value=Dist.CLIENT)
+@EventBusSubscriber(modid= EasyEmerald.Modid, bus=EventBusSubscriber.Bus.FORGE, value=Dist.CLIENT)
 public class BowFovEventHandler
 {
     static double zoom = GeneralModConfig.BOW_ZOOM.get();

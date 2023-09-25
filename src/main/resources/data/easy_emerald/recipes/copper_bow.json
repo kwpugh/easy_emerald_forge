@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:bow"
-  },
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "minecraft:copper_ingot"
   },
+  "base": {
+    "item": "minecraft:bow"
+  },
   "result": {
     "item": "easy_emerald:copper_bow"
+  },
+  "template": {
+    "item": "minecraft:string"
   }
 }
