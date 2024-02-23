@@ -1,0 +1,169 @@
+{
+  "item.emerald_tools.bow_template": "Кузнечный щаблон лука",
+  "item.emerald_tools.sword_template": "Кузнечный шаблон меча",
+
+  "item.emerald_tools.emerald_sword": "Изумрудный меч",
+  "item.emerald_tools.emerald_bow": "Изумрудный лук",
+  "item.emerald_tools.emerald_pickaxe": "Изумрудная кирка",
+  "item.emerald_tools.emerald_shovel": "Изумрудная лопата",
+  "item.emerald_tools.emerald_hoe": "Изумрудная мотыга",
+  "item.emerald_tools.emerald_axe": "Изумрудный топор",
+  "item.emerald_tools.emerald_excavator": "Изумрудный заступ",
+  "item.emerald_tools.emerald_hammer": "Изумрудная кувалда",
+  "item.emerald_tools.emerald_paxel": "Изумрудный мультиинструмент",
+  "item.emerald_tools.emerald_treeaxe": "Тяжёлый изумрудный топор",
+
+  "item.emerald_tools.excavator.tip1": "Лопата 3×3",
+  "item.emerald_tools.hammer.tip1": "Кирка 3×3",
+  "item.emerald_tools.paxel.tip1": "Кирка, топор и лопата 3 в 1",
+  "item.emerald_tools.treeaxe.tip1": "Попытается срубить всё дерево целиком",
+
+  "item.emerald_tools.ruby": "Рубин",
+  "item.emerald_tools.ruby_block": "Рубиновый блок",
+  "block.emerald_tools.ruby_block": "Рубиновый блок",
+
+  "item.emerald_tools.ruby_sword": "Рубиновый меч",
+  "item.emerald_tools.ruby_bow": "Рубиновый лук",
+  "item.emerald_tools.ruby_steel_sword": "Рубиново-стальной меч",
+  "item.emerald_tools.ruby_pickaxe": "Рубиновая кирка",
+  "item.emerald_tools.ruby_axe": "Рубиновый топор",
+  "item.emerald_tools.ruby_shovel": "Рубиновая лопата",
+  "item.emerald_tools.ruby_hoe": "Рубиновая мотыга",
+  "item.emerald_tools.ruby_excavator": "Рубиновый заступ",
+  "item.emerald_tools.ruby_hammer": "Рубиновая кувалда",
+  "item.emerald_tools.ruby_paxel": "Рубиновый мультиинструмент",
+  "item.emerald_tools.ruby_treeaxe": "Тяжёлый рубиновый топор",
+
+  "item.emerald_tools.amethyst_sword": "Аметистовый меч",
+  "item.emerald_tools.amethyst_bow": "Аметистовый лук",
+  "item.emerald_tools.amethyst_pickaxe": "Аметистовая кирка",
+  "item.emerald_tools.amethyst_axe": "Аметистовый топор",
+  "item.emerald_tools.amethyst_shovel": "Аметистовая лопата",
+  "item.emerald_tools.amethyst_hoe": "Аметистовая мoтыга",
+  "item.emerald_tools.amethyst_excavator": "Аметистовый заступ",
+  "item.emerald_tools.amethyst_hammer": "Аметистовая кувалда",
+  "item.emerald_tools.amethyst_paxel": "Аметистовый мультиинструмент",
+  "item.emerald_tools.amethyst_treeaxe": "Тяжёлый аметистовый топор",
+
+  "item.emerald_tools.obsidian_sword": "Обсидиановый меч",
+  "item.emerald_tools.obsidian_bow": "Обсидиановый лук",
+  "item.emerald_tools.obsidian_pickaxe": "Обсидиановая кирка",
+  "item.emerald_tools.obsidian_axe": "Обсидиановый топор",
+  "item.emerald_tools.obsidian_shovel": "Обсидиановая лопата",
+  "item.emerald_tools.obsidian_hoe": "Обсидиановая мотыга",
+  "item.emerald_tools.obsidian_excavator": "Обсидиановый заступ",
+  "item.emerald_tools.obsidian_hammer": "Обсидиановая кувалда",
+  "item.emerald_tools.obsidian_paxel": "Обсидиановый мультиинструмент",
+  "item.emerald_tools.obsidian_treeaxe": "Тяжёлый обсидиановый топор",
+
+  "item.emerald_tools.steel_ingot": "Стальной слиток", 
+  "item.emerald_tools.steel_block": "Стальной блок",
+  "block.emerald_tools.steel_block": "Стальной блок",
+  
+  "item.emerald_tools.steel_sword": "Стальной меч",
+  "item.emerald_tools.steel_bow": "Стальной лук",
+  "item.emerald_tools.steel_pickaxe": "Стальная кирка",
+  "item.emerald_tools.steel_axe": "Стальной топор",
+  "item.emerald_tools.steel_shovel": "Стальная лопата",
+  "item.emerald_tools.steel_hoe": "Стальная мотыга",
+  "item.emerald_tools.steel_excavator": "Стальной заступ",
+  "item.emerald_tools.steel_hammer": "Стальной кувалда",
+  "item.emerald_tools.steel_paxel": "Стальной мультиинструмент",
+  "item.emerald_tools.steel_treeaxe": "Тяжёлый стальной топор",
+
+  "item.emerald_tools.copper_sword": "Медный меч",
+  "item.emerald_tools.copper_bow": "Медный лук",
+  "item.emerald_tools.copper_pickaxe": "Медная кирка",
+  "item.emerald_tools.copper_axe": "Медный топор",
+  "item.emerald_tools.copper_shovel": "Медная лопата",
+  "item.emerald_tools.copper_hoe": "Медная мoтыга",
+  "item.emerald_tools.copper_shears": "Медные ножницы",
+  "item.emerald_tools.copper_excavator": "Медный заступ",
+  "item.emerald_tools.copper_hammer": "Медная кувалда",
+  "item.emerald_tools.copper_paxel": "Медный мультиинструмент",
+  "item.emerald_tools.copper_treeaxe": "Тяжёлый медный топор",
+
+  "item.emerald_tools.wooden_excavator": "Деревянный заступ",
+  "item.emerald_tools.wooden_hammer": "Деревянный кувалда",
+  "item.emerald_tools.wooden_paxel": "Деревянный мультиинструмент",
+  "item.emerald_tools.wooden_treeaxe": "Тяжёлый деревянный топор",
+
+  "item.emerald_tools.gold_excavator": "Золотой заступ",
+  "item.emerald_tools.gold_hammer": "Золотой кувалда",
+  "item.emerald_tools.gold_paxel": "Золотой мультиинструмент",
+  "item.emerald_tools.gold_treeaxe": "Тяжёлый золотой топор",
+  "item.emerald_tools.gold_bow": "Золотой лук",
+
+  "item.emerald_tools.iron_excavator": "Железный заступ",
+  "item.emerald_tools.iron_hammer": "Железный кувалда",
+  "item.emerald_tools.iron_paxel": "Железный мультиинструмент",
+  "item.emerald_tools.iron_treeaxe": "Тяжёлый железный топор",
+  "item.emerald_tools.iron_bow": "Железный лук",
+
+  "item.emerald_tools.diamond_excavator": "Алмазный заступ",
+  "item.emerald_tools.diamond_hammer": "Алмазный кувалда",
+  "item.emerald_tools.diamond_paxel": "Алмазный мультиинструмент",
+  "item.emerald_tools.diamond_treeaxe": "Тяжёлый алмазный топор",
+  "item.emerald_tools.diamond_bow": "Алмазный лук",
+
+  "item.emerald_tools.netherite_excavator": "Незеритовый заступ",
+  "item.emerald_tools.netherite_hammer": "Незеритовый кувалда",
+  "item.emerald_tools.netherite_paxel": "Незеритовый мультиинструмент",
+  "item.emerald_tools.netherite_treeaxe": "Тяжёлый незеритовый топор",
+  "item.emerald_tools.netherite_bow": "Незеритовый лук",
+
+  "item.emerald_tools.emerald_helmet": "Изумрудный шлем",
+  "item.emerald_tools.emerald_chestplate": "Изумрудный нагрудник",
+  "item.emerald_tools.emerald_leggings": "Изумрудные поножи",
+  "item.emerald_tools.emerald_boots": "Изумрудные ботинки",
+
+  "item.emerald_tools.ruby_helmet": "Рубиновый шлем",
+  "item.emerald_tools.ruby_chestplate": "Рубиновый нагрудник",
+  "item.emerald_tools.ruby_leggings": "Рубиновые поножи",
+  "item.emerald_tools.ruby_boots": "Рубиновые ботинки",
+
+  "item.emerald_tools.amethyst_helmet": "Аметистовый шлем",
+  "item.emerald_tools.amethyst_chestplate": "Аметистовый нагрудник",
+  "item.emerald_tools.amethyst_leggings": "Аметистоные поножи",
+  "item.emerald_tools.amethyst_boots": "Аметистовый ботинки",
+    
+  "item.emerald_tools.steel_helmet": "Стальной шлем",
+  "item.emerald_tools.steel_chestplate": "Стальной нагрудник",
+  "item.emerald_tools.steel_leggings": "Стальные поножи",
+  "item.emerald_tools.steel_boots": "Стальные ботинки",
+
+  "item.emerald_tools.obsidian_helmet": "Обсидиановый шлем",
+  "item.emerald_tools.obsidian_chestplate": "Обсидиановый нагрудник",
+  "item.emerald_tools.obsidian_leggings": "Обсидиановые поножи",
+  "item.emerald_tools.obsidian_boots": "Обсидиановый ботинки",
+
+  "item.emerald_tools.copper_helmet": "Медный шлем",
+  "item.emerald_tools.copper_chestplate": "Медный нагрудник",
+  "item.emerald_tools.copper_leggings": "Медные поножи",
+  "item.emerald_tools.copper_boots": "Медный ботинки",
+
+  "item.emerald_tools.emerald_arrow": "Изумрудная стрела",
+  "item.emerald_tools.ruby_arrow": "Рубиновая стрела",
+  "item.emerald_tools.amethyst_arrow": "Аметистовая стрела",
+  "item.emerald_tools.diamond_arrow": "Алмазная стрела",
+
+  "item.emerald_tools.arrow.pierce": "Пронзающая стрела +%s",
+  "item.emerald_tools.arrow.punch": "Отталкивание +%s",
+  "item.emerald_tools.arrow.damage": "Урон +%s",
+  
+  "itemGroup.emerald_tools.emerald_tools_group" : "Простые изумрудные инструменты и другое"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
